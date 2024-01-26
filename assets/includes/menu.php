@@ -6,7 +6,7 @@
 	
 			<img src="assets/img/logo-negativo.png" width="75px">
 
-		<div class="sidebar-brand-text mx-3">MENU SRNRAT</div>
+		<div class="sidebar-brand-text mx-3">MENU PRINCIPAL</div>
 	</a>
 
 	<!-- Divider -->
@@ -24,12 +24,15 @@
 	<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 			<i class="fas fa-fw fa-cog"></i>
-			<span>Validación de Pago</span>
+			<span>Mascotas y Dueños</span>
 		</a>
 		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
-			  	<a class="collapse-item" href="index.php?c=pago">Listado de Pendientes</a>
+			  	<a class="collapse-item" href="index.php?c=mascota">Registro de Mascotas</a>
+				  <a class="collapse-item" href="index.php?c=dueño">Registro de Dueños</a>
+
 			</div>
+			
 		</div>
 	</li>
 
