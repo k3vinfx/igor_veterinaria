@@ -72,8 +72,7 @@
                                 </td>
 
                                 <td>
-                                    <a href="?c=principal&a=Crud&idMascota=<?php echo $r->Neurona_Id; ?>"
-                                        class="btn btn-success"><i class='fas fa-edit'></i></a>
+                                 
                                         <button type="button" id="btnEditar" name="btnEditar" class="btn btn-success btnEditar"
 
                                          data-id="<?php echo $r->idMascota; ?>"

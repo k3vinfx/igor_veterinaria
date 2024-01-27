@@ -29,10 +29,8 @@
 		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 			  	<a class="collapse-item" href="index.php?c=mascota">Registro de Mascotas</a>
-				  <a class="collapse-item" href="index.php?c=dueño">Registro de Dueños</a>
-
-			</div>
-			
+			    <a class="collapse-item" href="index.php?c=propietario">Registro de Dueños</a>
+			</div>	
 		</div>
 	</li>
 
