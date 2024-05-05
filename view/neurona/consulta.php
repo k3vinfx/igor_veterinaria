@@ -873,77 +873,88 @@ dialog {
 
 <script>
 $(document).ready(function () {
+
     var entrenamiento = [];
 var net = new brain.NeuralNetwork();
 
-// Función para realizar la predicción
-function Predecir() {
+// Función para manejar el evento de hacer clic en el botón de buscar
+$('#buscarIa').click(function() {
     const inputValues = [];
-    // Obtener los valores de entrada
     for (let i = 1; i <= 12; i++) {
-        const inputElement = document.getElementById('entrada_' + i);
-        const newValue = inputElement ? (inputElement.value) : 0;
+        const newValue = parseFloat(document.getElementById('entrada_' + i).value) || 0.00;
         inputValues.push(newValue);
 
     }
-    console.log('Resultado de la predicción entrada:', inputValues);
-    // Realizar la predicción
-    const output = net.run({
-        sintoma1: inputValues[0], sintoma2: inputValues[1], sintoma3: inputValues[2],
-        sintoma4: inputValues[3], sintoma5: inputValues[4], sintoma6: inputValues[5],
-        sintoma7: inputValues[6], sintoma8: inputValues[7], sintoma9: inputValues[8],
-        sintoma10: inputValues[9], sintoma11: inputValues[10], sintoma12: inputValues[11]
+    // que va buscar y en donde
+ 
+    const predictionResult = net.run(inputValues);
+
+    console.log('Resultado de la busqueda:', inputValues);
+    console.log('Resultado de la predicción:', predictionResult);
+});
+function convertirDatosParaEntrenamiento(data) {
+    data.forEach(function(dato) {
+        const input = {
+            sintoma1: dato.inPeso_01,
+            sintoma2: dato.inPeso_02,
+            sintoma3: dato.inPeso_03,
+            sintoma4: dato.inPeso_04,
+            sintoma5: dato.inPeso_05,
+            sintoma6: dato.inPeso_06,
+            sintoma7: dato.inPeso_07,
+            sintoma8: dato.inPeso_08,
+            sintoma9: dato.inPeso_09,
+            sintoma10: dato.inPeso_10,
+            sintoma11: dato.inPeso_11,
+            sintoma12: dato.inPeso_12
+        };
+        const output = {
+            resultadoEsperado1: parseFloat(dato.outPeso_01),
+            resultadoEsperado2: parseFloat(dato.outPeso_02),
+            resultadoEsperado3: parseFloat(dato.outPeso_03),
+            resultadoEsperado4: parseFloat(dato.outPeso_04),
+            resultadoEsperado5: parseFloat(dato.outPeso_05),
+            resultadoEsperado6: parseFloat(dato.outPeso_06),
+            resultadoEsperado7: parseFloat(dato.outPeso_07),
+            resultadoEsperado8: parseFloat(dato.outPeso_08)
+        };
+        entrenamiento.push({ input, output });
     });
-    // Mostrar el resultado de la predicción
-    console.log('Resultado de la predicción:', output);
 }
 
-// Función para manejar el evento de hacer clic en el botón de buscar
-$('#buscarIa').click(function() {
-    // Llamar a la función Predecir
-    console.log("Llamando a la función Predecir");
-    Predecir();
-});
+function entrenarRedNeuronal() {
+    net.train(entrenamiento, {
+        errorThresh: 0.0005, // Umbral de error
+        log: true, // Mostrar información de entrenamiento en la consola
+        logPeriod: 10, // Mostrar información de entrenamiento cada 10 iteraciones
+        iterations: 1000, // Número de iteraciones de entrenamiento
+        learningRate: 0.1 // Tasa de aprendizaje
+    });
 
+}
 // Función para manejar el evento de cambio en el select de sintomas
 $('#sintomas').change(function() {
-    // Ocultar el modal
     var aux = $('#sintomas').val();
     console.log("Datos obtenidos:", aux);
 
-    // Realizar la solicitud AJAX para obtener los datos de entrenamiento
     $.ajax({
         url: '?c=neurona&a=ListadoNeurona&X=' + aux,
         type: 'POST',
         dataType: 'json',
         success: function(data) {
             console.log("Respuesta del servidor:", data);
+            
             // Convertir los datos recibidos en el formato adecuado para entrenar la red neuronal
-            data.forEach(function(dato) {
-                const input = {
-                    sintoma1: dato.inPeso_01, sintoma2: dato.inPeso_02, sintoma3: dato.inPeso_03,
-                    sintoma4: dato.inPeso_04, sintoma5: dato.inPeso_05, sintoma6: dato.inPeso_06,
-                    sintoma7: dato.inPeso_07, sintoma8: dato.inPeso_08, sintoma9: dato.inPeso_09,
-                    sintoma10: dato.inPeso_10, sintoma11: dato.inPeso_11, sintoma12: dato.inPeso_12
-                };
-                const output = {
-                    resultadoEsperado1: dato.outPeso_01, resultadoEsperado2: dato.outPeso_02,
-                    resultadoEsperado3: dato.outPeso_03, resultadoEsperado4: dato.outPeso_04,
-                    resultadoEsperado5: dato.outPeso_05, resultadoEsperado6: dato.outPeso_06,
-                    resultadoEsperado7: dato.outPeso_07, resultadoEsperado8: dato.outPeso_08
-                };
-                entrenamiento.push({ input, output });
-            });
+            convertirDatosParaEntrenamiento(data);
+
             // Entrenar la red neuronal
-            net.train(entrenamiento);
-            console.log("afuera2:", entrenamiento);
+            entrenarRedNeuronal();
         },
         error: function(xhr, status, error) {
             console.error("Hubo un error al obtener la información:", error);
         }
     });
 });
-
 
 console.log("afuera2:", entrenamiento);
    
@@ -959,37 +970,7 @@ console.log("afuera2:", entrenamiento);
      
     });
 
-    $('#duenoMascota').change(function() {
-        // Ocultar el modal
-       var aux=  $('#duenoMascota').val();
-       console.log("Datos obtenido es:", aux);
-
-       $.ajax({
-            url: '?c=antecedentes&a=getMascotaAux&X=' + aux, // La URL donde tu servidor procesa la solicitud
-            type: 'POST', // Puede ser 'GET' o 'POST', dependiendo de cómo quieras enviar los datos
-           // Datos que quieres enviar al servidor
-            dataType: 'json',
-            success: function(data) {
-            console.log("Respuesta del servidor:", data);
-               // Limpia el select actual
-               $('#nombreMascota').empty();
-                // Agrega una opción predeterminada
-                $('#nombreMascota').append('<option value="0">Seleccionar</option>');
-
-                console.log('Respuesta del servidor:', data);
-                // Llena el select con los datos obtenidos
-                $.each(data, function (key, value) {
-                    $('#nombreMascota').append('<option value="' + value.idMascota + '">' + value.nombreMascota + '</option>');
-                });          
-            },
-            error: function(xhr, status, error) {
-                // Manejar el error
-                console.error("Hubo un error al obtener la información:", error);
-            }
-        });
-
-     
-    });
+  
     $('.btnEntrenar').on('click', function () {
 
         var id = $(this).data('id');
