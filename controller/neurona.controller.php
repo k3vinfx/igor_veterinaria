@@ -31,10 +31,10 @@ class NeuronaController{
 
        
     }
-    // Llamado plantilla principal
+    // Llamado plantilla consulta
     public function Consulta(){
         require_once 'view/principal/header.php';
-        require_once 'view/neurona/neurona.php';
+        require_once 'view/neurona/consulta.php';
         require_once 'view/footerx.php';
     }
  
