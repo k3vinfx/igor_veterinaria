@@ -97,10 +97,10 @@ dialog {
             <form id="frm-proprietario" action="?c=neurona&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
         <!-- Formulario para propietario -->
         <div class="row">
-            <div class="col-md-6">  
+            <div class="col-md-12">  
                 <div class="form-group">
                     <label id="lb_entrada_1">Sintomas</label>
-                    <select class="custom-select selevt" name="sintoma1" id="sintoma1" >
+                    <select class="custom-select selevt" name="sintomas" id="sintomas" >
                         <option  value="0">Seleccion</option>
                         <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
                             <option  value="<?php echo $Tipo->idEnfermadad; ?>">
@@ -114,11 +114,13 @@ dialog {
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="enfermedades">Tratamiento 1</label>
-                    <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" required>
+                    <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" >
                 </div>
+                <div class="col-md-6">
                 <div class="form-group">
                     <label for="tratamientos">Tratamiento 2</label>
                     <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2">
+                </div> 
                 </div> 
             </div>
         </div> <!-- Fin de la primera fila -->
