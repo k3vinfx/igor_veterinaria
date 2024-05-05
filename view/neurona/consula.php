@@ -41,7 +41,7 @@ dialog {
 
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-6">
-        <h1 class="h3 mb-0 text-gray-800">Red Neuronal Recurrente</h1>
+        <h1 class="h3 mb-0 text-gray-800">Consulta a la I.A.</h1>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#RegistroMVC">
             Nuevo
         </button>
