@@ -25,6 +25,18 @@ class neurona
             die($e->getMessage());
         }
     }
+
+    public function Listar_Sin()
+    {
+        try {
+            $result = array();
+            $stm = $this->pdo->prepare("SELECT * FROM enfermadad_rnn;");
+            $stm->execute();
+            return $stm->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
     public function ListarTipoMascota()
     {
         try {

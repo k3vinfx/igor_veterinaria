@@ -99,14 +99,21 @@ dialog {
                     <div class="col-md-3">
 
 
+         
+               
+
+                     
                     <div class="form-group">
-                            <label for="pesoPropietario">Nombre Enfermedad</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de la Enfermedad" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="alturaPropietario">Sintoma 1</label>
-                            <input type="text" class="form-control" id="sintoma1" name="sintoma1" placeholder="Sintoma de la enfermedad" required>                       
-                        </div>
+                        <label id="lb_entrada_1">Sintoma 1</label>
+                            <select class="custom-select selevt" name="duenoMascota" id="duenoMascota" >
+                            <option  value="0">Seleccion </opcion>
+                            <?php foreach ($this->model->Listar() as $Tipo): ?>
+                                <option  value="<?php echo $Tipo->idDueno; ?>">
+                                    <?php echo $Tipo->idEnfermadad; ?>  <?php echo $Tipo->sintomaEnfermadad1; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                </option>       
+                            <?php endforeach; ?>
+                        </select>                 
+                    </div>
                         <div class="form-group">
                             <label for="alergicoPropietario">Sintoma 2</label>
                             <input type="text" class="form-control" id="sintoma2" name="sintoma2" placeholder="Sintoma de la enfermedad" >
