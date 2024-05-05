@@ -111,16 +111,17 @@ dialog {
                 </div>
             </div>
             <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="enfermedades">Tratamiento 1</label>
-                    <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" >
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="enfermedades">Tratamiento 1</label>
+                        <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" >
+                    </div>
                 </div>
                 <div class="col-md-6">
-                <div class="form-group">
-                    <label for="tratamientos">Tratamiento 2</label>
-                    <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2">
-                </div> 
+                    <div class="form-group">
+                        <label for="tratamientos">Tratamiento 2</label>
+                        <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2">
+                    </div> 
                 </div> 
             </div>
         </div> <!-- Fin de la primera fila -->
