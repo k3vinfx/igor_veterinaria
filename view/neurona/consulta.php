@@ -12,7 +12,7 @@
 dialog {
 	padding: 1rem 3rem;
 	background: white;
-	max-width: 350px;
+	max-width: 250px;
 	padding-top: 2rem;
 	border-radius: 10px;
 	border: 10px;
@@ -84,7 +84,7 @@ dialog {
                                     <?php  if ($r->estado==0){echo "Inactivo";?> 
 
                             <!-- Modal para Registro de Propietario -->
-                            <div class="modal fade" id="RegistroMVC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="RegistroMVC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
