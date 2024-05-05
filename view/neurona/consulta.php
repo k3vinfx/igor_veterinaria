@@ -104,49 +104,17 @@ dialog {
 
                      
                     <div class="form-group">
-                        <label id="lb_entrada_1">Sintoma 1</label>
+                        <label id="lb_entrada_1">Sintomas</label>
                             <select class="custom-select selevt" name="sintoma1" id="sintoma1" >
                             <option  value="0">Seleccion </opcion>
                             <?php foreach ($this->model->Listar() as $Tipo): ?>
                                 <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                    <?php echo $Tipo->idEnfermadad; ?>  <?php echo $Tipo->sintomaEnfermadad1; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                    <?php echo $Tipo->sintomaEnfermadad1; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
                                 </option>       
                             <?php endforeach; ?>
                         </select>                 
                     </div>
-                        <div class="form-group">
-                            <label for="alergicoPropietario">Sintoma 2</label>
-                            <select class="custom-select selevt" name="sintoma2" id="sintoma2" >
-                            <option  value="0">Seleccion </opcion>
-                            <?php foreach ($this->model->Listar() as $Tipo): ?>
-                                <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                    <?php echo $Tipo->idEnfermadad; ?>  <?php echo $Tipo->sintomaEnfermadad2; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
-                                </option>       
-                            <?php endforeach; ?>
-                        </select>  
-                        </div>
-                        <div class="form-group">
-                            <label for="tipoSangrePropietario">Sintoma 3</label>
-                             <select class="custom-select selevt" name="sintoma3" id="sintoma3" >
-                            <option  value="0">Seleccion </opcion>
-                            <?php foreach ($this->model->Listar() as $Tipo): ?>
-                                <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                    <?php echo $Tipo->idEnfermadad; ?>  <?php echo $Tipo->sintomaEnfermadad3; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
-                                </option>       
-                            <?php endforeach; ?>
-                        </select>  
-                        </div>
-                        <div class="form-group">
-                            <label for="enfermedades">Sintoma 4</label>
-                            <select class="custom-select selevt" name="sintoma4" id="sintoma4" >
-                            <option  value="0">Seleccion </opcion>
-                            <?php foreach ($this->model->Listar() as $Tipo): ?>
-                                <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                    <?php echo $Tipo->idEnfermadad; ?>  <?php echo $Tipo->sintomaEnfermadad4; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
-                                </option>       
-                            <?php endforeach; ?>
-                        </select> 
-                        </div>
+                
                            
                     </div>
                     <div class="col-md-3">
@@ -156,7 +124,7 @@ dialog {
                             <option  value="0">Seleccion </opcion>
                             <?php foreach ($this->model->Listar() as $Tipo): ?>
                                 <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                    <?php echo $Tipo->idEnfermadad; ?>  <?php echo $Tipo->sintomaEnfermadad5; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                      <?php echo $Tipo->sintomaEnfermadad5; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
                                 </option>       
                             <?php endforeach; ?>
                         </select> 
@@ -167,7 +135,7 @@ dialog {
                             <option  value="0">Seleccion </opcion>
                             <?php foreach ($this->model->Listar() as $Tipo): ?>
                                 <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                    <?php echo $Tipo->idEnfermadad; ?>  <?php echo $Tipo->sintomaEnfermadad6; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                      <?php echo $Tipo->sintomaEnfermadad6; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
                                 </option>       
                             <?php endforeach; ?>
                         </select> 
@@ -179,7 +147,7 @@ dialog {
                             <option  value="0">Seleccion </opcion>
                             <?php foreach ($this->model->Listar() as $Tipo): ?>
                                 <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                    <?php echo $Tipo->idEnfermadad; ?>  <?php echo $Tipo->sintomaEnfermadad7; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                      <?php echo $Tipo->sintomaEnfermadad7; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
                                 </option>       
                             <?php endforeach; ?>
                         </select> 
@@ -190,7 +158,7 @@ dialog {
                             <option  value="0">Seleccion </opcion>
                             <?php foreach ($this->model->Listar() as $Tipo): ?>
                                 <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                    <?php echo $Tipo->idEnfermadad; ?>  <?php echo $Tipo->sintomaEnfermadad8; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                    <?php echo $Tipo->sintomaEnfermadad8; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
                                 </option>       
                             <?php endforeach; ?>
                         </select> 
@@ -201,7 +169,7 @@ dialog {
                             <option  value="0">Seleccion </opcion>
                             <?php foreach ($this->model->Listar() as $Tipo): ?>
                                 <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                    <?php echo $Tipo->idEnfermadad; ?>  <?php echo $Tipo->sintomaEnfermadad8; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                    <?php echo $Tipo->sintomaEnfermadad8; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
                                 </option>       
                             <?php endforeach; ?>
                         </select>
@@ -215,7 +183,7 @@ dialog {
                             <option  value="0">Seleccion </opcion>
                             <?php foreach ($this->model->Listar() as $Tipo): ?>
                                 <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                    <?php echo $Tipo->idEnfermadad; ?>  <?php echo $Tipo->sintomaEnfermadad10; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                      <?php echo $Tipo->sintomaEnfermadad10; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
                                 </option>       
                             <?php endforeach; ?>
                         </select>
@@ -226,7 +194,7 @@ dialog {
                             <option  value="0">Seleccion </opcion>
                             <?php foreach ($this->model->Listar() as $Tipo): ?>
                                 <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                    <?php echo $Tipo->idEnfermadad; ?>  <?php echo $Tipo->sintomaEnfermadad11; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                     <?php echo $Tipo->sintomaEnfermadad11; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
                                 </option>       
                             <?php endforeach; ?>
                         </select>
@@ -238,7 +206,7 @@ dialog {
                             <option  value="0">Seleccion </opcion>
                             <?php foreach ($this->model->Listar() as $Tipo): ?>
                                 <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                    <?php echo $Tipo->idEnfermadad; ?>  <?php echo $Tipo->sintomaEnfermadad12; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                    <?php echo $Tipo->sintomaEnfermadad1; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
                                 </option>       
                             <?php endforeach; ?>
                         </select>
