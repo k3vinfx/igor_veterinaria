@@ -30,7 +30,7 @@ class neurona
     {
         try {
             $result = array();
-            $stm = $this->pdo->prepare("SELECT CONCAT_WS('', 
+            $stm = $this->pdo->prepare("SELECT idEnfermadad , CONCAT_WS('', 
             IF(sintomaEnfermadad1 <> '', CONCAT( sintomaEnfermadad1 ), ''), 
             IF(sintomaEnfermadad2 <> '', CONCAT('/', sintomaEnfermadad2), ''), 
             IF(sintomaEnfermadad3 <> '', CONCAT('/', sintomaEnfermadad3), ''), 
@@ -51,6 +51,39 @@ class neurona
             die($e->getMessage());
         }
     }
+
+    
+    public function Listar_Neurona()
+    {
+        try {
+            $result = array();
+            $stm = $this->pdo->prepare(" SELECT * FROM `pesos_rnn` WHERE FK_idEnfermedad = '1'");
+            $stm->execute();
+            return $stm->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function getListar_Neurona_x($valor)
+    {
+        try
+        {         
+            $result = array();
+            $stm = $this->pdo->prepare("SELECT Pesos_id, inPeso_01, inPeso_02, inPeso_03, inPeso_04,
+             inPeso_05, inPeso_06, inPeso_07, inPeso_08, inPeso_09, inPeso_10, inPeso_11, inPeso_12,
+              outPeso_01, outPeso_02, outPeso_03, outPeso_04, outPeso_05, outPeso_06, outPeso_07,
+               outPeso_08, estado, FK_idEnfermedad  FROM pesos_rnn WHERE FK_idEnfermedad =?");
+        $stm->execute(array($valor));
+        return $stm->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $e)
+        {
+            die($e->getMessage());
+        }
+     }
+
+    
+
     public function ListarTipoMascota()
     {
         try {
@@ -62,7 +95,6 @@ class neurona
             die($e->getMessage());
         }
     }
-
 
 
     public function Actualizar_Estado_0($data)

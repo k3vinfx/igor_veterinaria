@@ -340,7 +340,7 @@ dialog {
                             <select class="custom-select selevt" name="entrada_1" id="entrada_1">
                             <option value="0">Seleccione</option>
                             <?php
-                            for ($i = 20; $i <= 95; $i += 5) {
+                            for ($i = 0; $i <= 95; $i += 5) {
                                 $valor = $i / 100; // Divide por 100 para obtener el valor decimal
                                 $valor_formateado = number_format($valor, 2); // Formatea el valor con dos decimales
                                 echo "<option value=\"$valor_formateado\">$valor_formateado</option>";
