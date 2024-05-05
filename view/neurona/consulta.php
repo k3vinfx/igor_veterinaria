@@ -84,56 +84,58 @@ dialog {
                                     <?php  if ($r->estado==0){echo "Inactivo";?> 
 
                             <!-- Modal para Registro de Propietario -->
-  <div class="modal fade" id="RegistroMVC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nueva Red </h5>
-                <button type="button" class="close" data-dismiss="dialog" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="frm-proprietario" action="?c=neurona&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
-                    <!-- Formulario para propietario -->
-                    <div class="row">
-                        <div class="col-md-12">  
-                            <div class="form-group">
-                                <label id="lb_entrada_1">Sintomas</label>
-                                <select class="custom-select selevt" name="sintomas" id="sintomas" >
-                                    <option  value="0">Seleccion</option>
-                                    <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
-                                        <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                            <?php echo $Tipo->nuevaconsulta; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
-                                        </option>       
-                                    <?php endforeach; ?>
-                                </select>                 
+                            <div class="modal fade" id="RegistroMVC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="dialog" role="document">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Nueva Red </h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form id="frm-proprietario" action="?c=neurona&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
+                                                    <!-- Formulario para propietario -->
+                                                    <div class="row">
+                                                        <div class="col-md-12">  
+                                                            <div class="form-group">
+                                                                <label id="lb_entrada_1">Sintomas</label>
+                                                                <select class="custom-select selevt" name="sintomas" id="sintomas" >
+                                                                    <option  value="0">Seleccion</option>
+                                                                    <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
+                                                                        <option  value="<?php echo $Tipo->idEnfermadad; ?>">
+                                                                            <?php echo $Tipo->nuevaconsulta; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                                                        </option>       
+                                                                    <?php endforeach; ?>
+                                                                </select>                 
+                                                            </div>
+                                                        </div>
+                                                    </div> <!-- Fin de la primera fila -->
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Tratamiento 1</label>
+                                                                <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="tratamientos">Tratamiento 2</label>
+                                                                <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2">
+                                                            </div> 
+                                                        </div> 
+                                                    </div> <!-- Fin de la segunda fila -->
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" name="salir" id="salir" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                <button type="submit" form="frm-proprietario" class="btn btn-primary">Guardar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div> <!-- Fin de la primera fila -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="enfermedades">Tratamiento 1</label>
-                                <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" >
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="tratamientos">Tratamiento 2</label>
-                                <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2">
-                            </div> 
-                        </div> 
-                    </div> <!-- Fin de la segunda fila -->
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" name="salir" id="salir" class="btn btn-secondary">Cerrar..</button>
-                <button type="submit" form="frm-proprietario" class="btn btn-primary">Guardar</button>
-            </div>
-        </div>
-    </div>
-</div>
 
                                 <button type="button" id="btnEntrenar" name="btnEntrenar" class="btn btn-danger btnEntrenar"
 
