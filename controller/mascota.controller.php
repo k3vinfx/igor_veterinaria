@@ -53,8 +53,37 @@ class MascotaController{
 
         $this->model->Actualizar($pvd);
 
-       // header('Location: index.php?c=alternativa');
+        header('Location: index.php?c=mascota');
     }
+
+    public function Estado_Cambio(){
+        $pvd = new mascota();
+        $aux_1 = trim($_REQUEST['estado']); 
+
+        $pvd->valor_1 = $_REQUEST['id']; 
+        if($aux_1==0){
+            $this->model->Actualizar_Estado_1($pvd);
+       
+        }
+        if($aux_1==1){
+            $this->model->Actualizar_Estado_0($pvd);
+        
+       }
+
+       
+       // $this->model->Actualizar_Estado_1($pvd);
+    
+       // echo json_encode($respuesta);
+        echo json_encode($aux_1);
+
+        header('Location: index.php?c=mascota');
+
+       // echo json_encode($pvd);
+
+      //  header('Location: index.php?c=mascota');
+    }
+    
+
 
 
 

@@ -4,9 +4,9 @@
 	<!-- Sidebar - Brand -->
 	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
 	
-			<img src="assets/img/logo-negativo.png" width="75px">
+			<img src="assets/img/logox.png" width="75px">
 
-		<div class="sidebar-brand-text mx-3">MENU PRINCIPAL</div>
+		<div class="sidebar-brand-text mx-3">MENU</div>
 	</a>
 
 	<!-- Divider -->
@@ -23,13 +23,13 @@
 	<!-- Nav Item - Pages Collapse Menu -->
 	<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-			<i class="fas fa-fw fa-cog"></i>
-			<span>Mascotas y Dueños</span>
+			<i class="fas fa-fw fa-address-card"></i>
+			<span>Mascotas & Dueños</span>
 		</a>
 		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 			  	<a class="collapse-item" href="index.php?c=mascota">Registro de Mascotas</a>
-			    <a class="collapse-item" href="index.php?c=propietario">Registro de Dueños</a>
+			    <a class="collapse-item" href="index.php?c=dueno">Registro de Dueños</a>
 			</div>	
 		</div>
 	</li>
@@ -37,43 +37,62 @@
 	<!-- Nav Item - Productos Collapse Menu -->
 	<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-			<i class="fas fa-fw fa-wrench"></i>
-			<span>Alternativas -Turisticas</span>
+			<i class="fas fa-fw fa-history"></i>
+			<span>Antecedentes & Historial</span>
 		</a>
 		<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
-				<a class="collapse-item" href="?c=alternativa&a=Nuevo">Nuevo Alternativa</a>
-				<a class="collapse-item" href="index.php?c=alternativa">Listado de Alternativas</a>
+			    <a class="collapse-item" href="?c=antecedentes&a=Start">Antecedentes Clinicos</a>
+				<a class="collapse-item" href="?c=historial&a=Start">Historial Clinico</a>
 			</div>
 		</div>
 	</li>
 
-	<!-- Nav Item - Clientes Collapse Menu -->
 	<li class="nav-item">
-		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClientes" aria-expanded="true" aria-controls="collapseUtilities">
-			<i class="fas fa-users"></i>
-			<span>R.N.N.</span>
+		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseConsulta" aria-expanded="true" aria-controls="collapseUtilities">
+			<i class="fas fa-book-medical"></i>
+			<span>Tratamientos & Enfermedades</span>
 		</a>
-		<div id="collapseClientes" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+		<div id="collapseConsulta" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
-			<a class="collapse-item" href="?c=principal&a=Nuevo">Nuevo tipo de RRN</a>
-			<a class="collapse-item" href="index.php?c=principal">Listado de RNN</a>
-			</div>
-		</div>
-	</li>
-	<!-- Nav Item - Utilities Collapse Menu -->
-	<li class="nav-item">
-		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategorias" aria-expanded="true" aria-controls="collapseUtilities">
-			<i class="fas fa-hospital"></i>
-			<span>Categorias - Entradas</span>
-		</a>
-		<div id="collapseCategorias" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-			<div class="bg-white py-2 collapse-inner rounded">
-			<a class="collapse-item" href="?c=categorias&a=Nuevo">Nuevo tipo de Categorias</a>
-			<a class="collapse-item" href="?c=categorias&a=Listar">Listado de Categorias</a>
+			<a class="collapse-item" href="?c=neurona&a=Consulta">Consulta de Enfermedad</a>
+			<a class="collapse-item" href="?c=categorias&a=Listar">Resultados del Tratamiento</a>
 		 </div>		
 		</div>
 	</li>
+
+
+
+	<!-- Nav Item - Utilities Collapse Menu -->
+	<li class="nav-item">
+		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategorias" aria-expanded="true" aria-controls="collapseUtilities">
+			<i class="fas fa-capsules"></i>
+			<span>Categorias & R.N.N.</span>
+		</a>
+		<div id="collapseCategorias" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+			<div class="bg-white py-2 collapse-inner rounded">
+			<a class="collapse-item" href="?c=categorias&a=Nuevo">Registro Categorias</a>
+			</div>		
+		</div>
+	</li>
+
+		<!-- Nav Item - Clientes Collapse Menu -->
+		<li class="nav-item">
+		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClientes" aria-expanded="true" aria-controls="collapseUtilities">
+			<i class="fas fa-layer-group"></i>
+			<span>Entrenamiento & R.N.N.</span>
+		</a>
+		<div id="collapseClientes" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+			<div class="bg-white py-2 collapse-inner rounded">
+			<a class="collapse-item" href="?c=neurona&a=Start">Nuevo Entrenamiento </a>
+			<a class="collapse-item" href="index.php?c=principal">Listado de Enfermedades</a>
+			</div>
+		</div>
+	</li>
+
+
+
+
 
 	<!--<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInquietudes" aria-expanded="true" aria-controls="collapseUtilities">
@@ -86,17 +105,7 @@
 			</div>		
 		</div>
 	</li>-->
-	<li class="nav-item">
-		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClientesx" aria-expanded="true" aria-controls="collapseUtilities">
-			<i class="fas fa-hospital"></i>
-			<span>Clientes</span>
-		</a>
-		<div id="collapseClientesx" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-			<div class="bg-white py-2 collapse-inner rounded">
-			<a class="collapse-item" href="?c=clientes&a=Index">Listado de Clientes</a>
-			</div>		
-		</div>
-	</li>
+	
 	<!--<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseResena" aria-expanded="true" aria-controls="collapseUtilities">
 			<i class="fas fa-hospital"></i>

@@ -11,7 +11,8 @@ class mascota
 	{
 		try
 		{
-			$this->pdo = Database::Conectar();
+			$this->pdo = Database::Conectar()
+			;
 		}
 		catch(Exception $e)
 		{
@@ -24,7 +25,9 @@ class mascota
 		{
 
 			$result = array();
-			$stm = $this->pdo->prepare("SELECT * FROM mascotadatos");
+			$stm = $this->pdo->prepare("SELECT mas.idMascota, mas.nombreMascota, mas.especieMascota, mas.razaMascota, mas.fechaNaciemientoMasctoa, 
+			mas.sexoMascota, mas.colorMascota, mas.TamanoMascota , CONCAT(d.nombresDueno,' ',d.apellidosDueno,  ' ', ', CI:',' ',d.ciDueno) as nombresDueno ,mas.estado
+			FROM mascotadatos mas inner join dueno d on mas.FK_idDueno = d.idDueno ;");
 			$stm->execute();
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e)
@@ -33,6 +36,20 @@ class mascota
 		}
 	}
 
+	public function MenuListaX()
+	{
+		try
+		{
+
+			$result = array();
+			$stm = $this->pdo->prepare("SELECT * FROM dueno");
+			$stm->execute();
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 	
 
 	public function Registrar(mascota $data)
@@ -107,5 +124,47 @@ class mascota
 		}
 	}
 
+	public function Actualizar_Estado_0($data)
+	{
+		try
+		{
+			$sql = "UPDATE mascotadatos SET
+			estado        = ?
+			WHERE idMascota  = ?";
+			$valor_2=0;
+			$this->pdo->prepare($sql)
+			     ->execute(
+				    array( 
+						$valor_2,
+                        $data->valor_1
+					)
+				);
+		} catch (Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+
+	public function Actualizar_Estado_1($data)
+	{
+		try
+		{
+			$sql = "UPDATE mascotadatos SET
+			estado        = ?
+			WHERE idMascota  = ?";
+			$valor_2=1;
+			$this->pdo->prepare($sql)
+			     ->execute(
+				    array( 
+						$valor_2,
+                        $data->valor_1
+						
+					)
+				);
+		} catch (Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 
 }

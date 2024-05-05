@@ -1,6 +1,6 @@
 <?php
 
-class clientes
+class clinicos
 {
 
   private $pdo;

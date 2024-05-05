@@ -5,6 +5,7 @@ if (empty($_SESSION['active'])) {
 }
 include "includes/functions.php";
 include "../conexion.php";
+
 // datos Empresa
 $dni = '';
 $nombre_empresa = '';
@@ -48,11 +49,14 @@ if ($result_data > 0) {
 
 	<!-- Custom styles for this template-->
 	<link href="css/sb-admin-2.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-modal-size@1.0.1/css/bootstrap-modal-size.min.css" rel="stylesheet"> </link>
 	<link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
 
 </head>
 
 <body id="page-top">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-modal-size@1.0.1/css/bootstrap-modal-size.min.css" rel="stylesheet"> </link>
+	
 	<?php
 	include "../conexion.php";
 	$query_data = mysqli_query($conexion, "CALL data();");

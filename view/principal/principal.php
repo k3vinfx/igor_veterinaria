@@ -46,9 +46,9 @@
      
 
             <td>
-                <a href="?c=principal&a=Crud&idMascota=<?php echo $r->Neurona_Id; ?>"class="btn btn-success"><i class='fas fa-edit'></i></a>
+                <a href="?c=principal&a=Crud&idMascota=<?php echo $r->idMascota; ?>"class="btn btn-success"><i class='fas fa-edit'></i></a>
          
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=producto&a=Eliminar&idProducto=<?php echo $r->Neurona_Id; ?>" class="btn btn-danger"><i class='fas fa-trash-alt'></i></a>
+                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=producto&a=Eliminar&idProducto=<?php echo $r->idMascota; ?>" class="btn btn-danger"><i class='fas fa-trash-alt'></i></a>
             </td>
         </tr>
     <?php endforeach; ?>

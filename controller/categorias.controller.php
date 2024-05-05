@@ -23,7 +23,7 @@ class CategoriasController{
         require_once 'view/categorias/nuevo.php';
         require_once 'view/footerx.php';
     }
-
+ 
 
     public function abrirEditar(){
         // $pvd = new categorias();
@@ -94,9 +94,13 @@ class CategoriasController{
         // var_dump($_POST);die;
         //Captura de los datos del formulario (vista).
         $data = [
-            'nombre'        => trim($_POST['nombre']),
-            'descripcion'   => trim($_POST['descripcion']),
-            'estado'        => trim($_POST['estado'])
+            'peso'          => trim($_POST['peso']),
+            'altura'        => trim($_POST['altura']),
+            'alergico'      => trim($_POST['alergico']),
+            'tipoSangre'    => trim($_POST['tipoSangre']),
+            'enfermedades'  => trim($_POST['enfermedades']),
+            'tratamientos'  => trim($_POST['tratamientos']),
+            'extra'         => trim($_POST['extra']),
         ];
 
         //Registro al modelo categorias.

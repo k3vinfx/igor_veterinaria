@@ -1,6 +1,6 @@
 <?php
 
-class Propietario
+class Dueno
 {
     private $pdo;
 
@@ -13,11 +13,27 @@ class Propietario
         }
     }
 
+    
+  public function MenuTipo()
+  {
+    try
+    {
+      $result = array();
+      $stm = $this->pdo->prepare("SELECT * FROM mascotadatos");
+      $stm->execute();
+      return $stm->fetchAll(PDO::FETCH_OBJ);
+    } catch (Exception $e)
+    {
+      die($e->getMessage());
+    }
+  }
+
+
     public function Listar()
     {
         try {
             $result = array();
-            $stm = $this->pdo->prepare("SELECT * FROM propietariosdatos WHERE estado = 1");
+            $stm = $this->pdo->prepare("SELECT * FROM dueno ");
             $stm->execute();
             return $stm->fetchAll(PDO::FETCH_OBJ);
         } catch (Exception $e) {
@@ -25,7 +41,7 @@ class Propietario
         }
     }
 
-    public function correoId(Propietario $data)
+    public function correoId(Dueno $data)
     {
         try {
             $stm = $this->pdo->prepare("SELECT correoelectronicoPropietario FROM propietariosdatos WHERE idPropietario = ? AND estado = 1");
@@ -35,6 +51,50 @@ class Propietario
             die($e->getMessage());
         }
     }
+
+    public function Actualizar_Estado_0($data)
+	{
+		try
+		{
+			$sql = "UPDATE dueno SET
+			estadoDueno        = ?
+			WHERE idDueno  = ?";
+			$valor_2=0;
+			$this->pdo->prepare($sql)
+			     ->execute(
+				    array( 
+						$valor_2,
+                        $data->valor_1
+					)
+				);
+		} catch (Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+
+	public function Actualizar_Estado_1($data)
+	{
+		try
+		{
+			$sql = "UPDATE dueno SET
+		    estadoDueno        = ?
+			WHERE idDueno  = ?";
+			$valor_2=1;
+			$this->pdo->prepare($sql)
+			     ->execute(
+				    array( 
+						$valor_2,
+                        $data->valor_1
+						
+					)
+				);
+		} catch (Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+
 
     public function MenuTipoRecomendacionGet($valor)
 	{
@@ -54,18 +114,18 @@ class Propietario
 	}
     
 
-    public function Registrar(Propietario $data)
+    public function Registrar(Dueno $data)
     {
         try {
-            $sql = "INSERT INTO propietariosdatos (nombresPropietario, apellidosPropietario, direccionPropietario, zonaPropietario, telefonofijoPropietario, telefonomovilPropietario, correoelectronicoPropietario, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO dueno (nombresDueno, apellidosDueno, direccionDueno,ciDueno,  zonaDueno, celularDueno, correoDueno, estadoDueno) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
             $this->pdo->prepare($sql)
                 ->execute(array(
                     $data->nombres,
                     $data->apellidos,
                     $data->direccion,
+                    $data->ci,
                     $data->zona,
-                    $data->telefonoFijo,
                     $data->telefonoMovil,
                     $data->correoElectronico,
                     1 // Estado activo por defecto
@@ -78,15 +138,15 @@ class Propietario
     public function Actualizar($data)
     {
         try {
-            $sql = "UPDATE propietariosdatos SET 
-            nombresPropietario = ?, 
-            apellidosPropietario = ?,
-             direccionPropietario = ?, 
-             zonaPropietario = ?, 
-             telefonofijoPropietario = ?, 
-             telefonomovilPropietario = ?, 
-             correoelectronicoPropietario = ? 
-             WHERE idPropietario = ?";
+            $sql = "UPDATE dueno SET 
+            nombresDueno = ?, 
+            apellidosDueno = ?,
+            direccionDueno = ?, 
+            zonaDueno = ?, 
+            ciDueno = ?, 
+            celularDueno = ?, 
+            correoDueno = ? 
+             WHERE idDueno = ?";
 
             $this->pdo->prepare($sql)
                 ->execute(array(
@@ -94,10 +154,10 @@ class Propietario
                     $data->apellidos,
                     $data->direccion,
                     $data->zona,
-                    $data->telefonoFijo,
+                    $data->ci,
                     $data->telefonoMovil,
                     $data->correoElectronico,
-                    $data->idPropietario
+                    $data->idDueno
                 ));
         } catch (Exception $e) {
             die($e->getMessage());

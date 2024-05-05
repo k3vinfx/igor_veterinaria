@@ -57,7 +57,7 @@ if ($row_empresa > 0) {
   <!-- <link href="sistema/css/sb-admin-2.min.css" rel="stylesheet">-->
 	<!-- Custom styles for this template-->
 
-
+	
 	<link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -66,7 +66,8 @@ if ($row_empresa > 0) {
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-   
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-modal-size@1.0.1/css/bootstrap-modal-size.min.css" rel="stylesheet"> </link>
+	
 </head>
 
 <body id="page-top">
@@ -103,7 +104,7 @@ if ($row_empresa > 0) {
 						<i class="fa fa-bars"></i>
 					</button>
 					<div class="input-group">
-						<h6>Sistema de Red Neuronal Recurrentes de Alternativas Turisticas  / Usuario :  <?php echo $_SESSION['session_email']?></h6>
+						<h6>BACK OFFICE  / Usuario :  <?php echo $_SESSION['session_email']?></h6>
 			
 		
 			

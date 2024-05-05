@@ -34,7 +34,7 @@ class PrincipalController{
         require_once 'view/footerx.php';
     }
 
-    public function Crud(){
+   /* public function Crud(){
         $pvd = new principal();
 
         if(isset($_REQUEST['Neurona_Id'])){
@@ -66,7 +66,7 @@ class PrincipalController{
         require_once 'view/principal/header.php';
         require_once 'view/principal/principal-nuevo.php';
         require_once 'view/footerx.php';
-    }
+    }*/
     public function NuevoPreparado(){
         $pvd = new principal();
         $recomendaciones = [];
@@ -92,44 +92,7 @@ class PrincipalController{
         require_once 'view/principal/principal-nuevo.php';
         require_once 'view/footerx.php';
     }
-    public function EntrenarXIN($valor) {
-        $pvd = new principal();
-    
-        $alert = '<div class="alert alert-primary" role="alert">
-            Registrado Exitosamente
-        </div>';
-    
-        // Acceder al valor $valor pasado por la URL
-      
-    
-        if (isset($_REQUEST['Neurona_Id'])) {
-            $pvd = $this->model->Obtener($valor);
-        }
-    
-        require_once 'view/principal/header.php';      
-        require_once 'view/principal/principal-editar-entrenamiento.php';
-        require_once 'view/footerx.php';
-    }
-    
-    public function EntrenarXERROR($valor) {
-        $pvd = new principal();
-    
-        $alert = '<div class="alert alert-secondary" role="alert">
-            Registro Actualizado Correctamente
-        </div>';
-    
-        // Acceder al valor $valor pasado por la URL
-      
-    
-        if (isset($_REQUEST['Neurona_Id'])) {
-            $pvd = $this->model->Obtener($valor);
-        }
-    
-        require_once 'view/principal/header.php';      
-        require_once 'view/principal/principal-editar-entrenamiento.php';
-        require_once 'view/footerx.php';
-    }
-
+  
     public function Guardar(){
 
         $pvd = new principal();
@@ -154,9 +117,9 @@ class PrincipalController{
         //"Location:" No solamente envía el encabezado al navegador, sino que
         //también devuelve el código de status (302) REDIRECT al
         //navegador
-        $valor_actual = $_POST['Neurona_Id']; 
-        header('Location: index.php?c=principal&a=NuevoIN');
-        $valor_actual = $_POST['Neurona_Id']; 
+       // $valor_actual = $_POST['Neurona_Id']; 
+       // header('Location: index.php?c=principal&a=NuevoIN');
+      //  $valor_actual = $_POST['Neurona_Id']; 
 
 
     }

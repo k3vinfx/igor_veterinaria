@@ -15,7 +15,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-6">
-        <h1 class="h3 mb-0 text-gray-800">Datos de la Mascota..MOTITA.</h1>
+        <h1 class="h3 mb-0 text-gray-800">Datos de la Mascota..</h1>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#RegistroMascota">
             Nuevo
         </button>
@@ -38,6 +38,10 @@
                             <th>Sexo</th>
                             <th>Color</th>
                             <th>Tamano</th>
+
+                            <th>Dueño</th>
+                            
+                            <th>Estado</th>
                             <th>Acciones</th>
 
                         </tr>
@@ -67,14 +71,22 @@
                                 <td>
                                     <?php echo $r->colorMascota; ?>
                                 </td>
+                            
                                 <td>
                                     <?php echo $r->TamanoMascota; ?>
                                 </td>
+                                <td>
+                                    <?php echo $r->nombresDueno; ?>
+                                </td>
+                                <td>
+                                    <?php  if ($r->estado==0){echo "Inactivo";}else{
+                                        echo "Activo";
+                                    }?>
+                                </td>
 
                                 <td>
-                                 
+                                
                                         <button type="button" id="btnEditar" name="btnEditar" class="btn btn-success btnEditar"
-
                                          data-id="<?php echo $r->idMascota; ?>"
                                          data-nombre="<?php echo $r->nombreMascota; ?>"
                                          data-especie="<?php echo $r->especieMascota; ?>"
@@ -83,12 +95,21 @@
                                          data-sexo="<?php echo $r->sexoMascota; ?>"
                                          data-color="<?php echo $r->colorMascota; ?>"
                                          data-tamano="<?php echo $r->TamanoMascota; ?>"
+                                         data-dueno="<?php echo $r->nombresDueno; ?>"
                                          data-toggle="modal" data-target="#RegistroMascota">
                                        <i class='fas fa-edit'></i></button>
 
-                                    <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');"
-                                        href="?c=producto&a=Eliminar&idProducto=<?php echo $r->Neurona_Id; ?>"
-                                        class="btn btn-danger"><i class='fas fa-trash-alt'></i></a>
+                                       <button type="button" id="btnEliminar" name="btnEliminar" class="btn btn-danger btnEliminar"
+                                       
+                                       data-id="<?php echo $r->idMascota; ?>"
+                                         data-estado="<?php echo $r->estado; ?>"
+                                         >
+                                        
+                                       <i class='fas fa-trash-alt'></i></button>
+
+
+
+                                
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -98,8 +119,6 @@
 
         </div>
     </div>
-
-
 </div>
 
 
@@ -163,6 +182,28 @@
                             <input type="text" class="form-control" id="tamanoMascota" name="tamanoMascota" 
                                 placeholder="Tamaño de la mascota" required>
                         </div>
+                        <div class="form-group">
+                            <label for="sexoMascota">Macho o Hembra</label>
+                            <select class="form-control" id="sexoMascota" name="sexoMascota"  required>
+                                <option value="">Selecciona un sexo</option>
+                                <option value="M">Macho</option>
+                                <option value="F">Hembra</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                        <label id="lb_entrada_1">Seleciona un Dueño</label>
+                        <select class="custom-select selevt" name="duenoMascota" id="duenoMascota" >
+                        <option  value="0">Seleccion </opcion>
+                        <?php foreach ($this->model->MenuListaX() as $Tipo): ?>
+                            <option  value="<?php echo $Tipo->idDueno; ?>">
+                                <?php echo $Tipo->nombresDueno; ?>  <?php echo $Tipo->apellidosDueno; ?> , CI: <?php echo $Tipo->ciDueno; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                            </option>       
+                        <?php endforeach; ?>
+                        </select>                 
+                        </div>             
+
+
+
                     </div>
                 </form>
 
@@ -191,8 +232,8 @@
         });
 
         $('.btnEditar').on('click', function () {
-            alert("hola perras");
-console.log("holae perrras");
+          
+
 
         // Obtén los datos de los atributos personalizados del botón clickeado
         var id = $(this).data('id');
@@ -203,6 +244,8 @@ console.log("holae perrras");
         var sexo = $(this).data('sexo');
         var color = $(this).data('color');
         var tamano = $(this).data('tamano');
+        var dueno = $(this).data('dueno');
+
 
         // Llena el formulario en el modal con los datos obtenidos
         $('#frm-principal-mascota #nombreMascota').val(nombre);
@@ -213,9 +256,53 @@ console.log("holae perrras");
         $('#frm-principal-mascota #colorMascota').val(color);
         $('#frm-principal-mascota #tamanoMascota').val(tamano);
 
+        console.log("id mascota:",dueno);
+        $('#frm-principal-mascota #duenoMascota').val($(this).data('dueno')).trigger('change');
+
+
         // Cambia la acción del formulario para que sea editar en lugar de crear una nueva mascota
         $('#frm-principal-mascota').attr('action', '?c=mascota&a=Editar&id=' + id);
     });
+    
+    $('.btnEliminar').on('click', function () {
+
+
+        // Obtén los datos de los atributos personalizados del botón clickeado
+        var idx = $(this).data('id');
+        var estadox = $(this).data('estado');
+
+
+
+             // Haces la solicitud AJAX al servidor
+        $.ajax({
+            url: '?c=mascota&a=Estado_Cambio', // La URL donde tu servidor procesa la solicitud
+            type: 'GET', // Puede ser 'GET' o 'POST', dependiendo de cómo quieras enviar los datos
+            data: { id: idx,
+                    estado: estadox }, // Datos que quieres enviar al servidor
+            success: function(response) {
+                 // Asegúrate de que la respuesta es un objeto y no una cadena
+                var data = response;
+              //  if (typeof response === "string") {
+                    // Si la respuesta es una cadena, conviértela en un objeto JSON
+                //    data = JSON.parse(response);
+              //  }
+               
+                             // Verifica que el valor no sea undefined
+     
+                    console.log("respuesta."+data);
+                    window.location.href = 'index.php?c=mascota';
+
+            },
+            error: function(xhr, status, error) {
+                // Manejar el error
+                console.error("Hubo un error al obtener la información:", error);
+            }
+        });
+
+        // Cambia la acción del formulario para que sea editar en lugar de crear una nueva mascota
+      
+    });
+
 
        
 

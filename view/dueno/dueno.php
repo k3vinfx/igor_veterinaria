@@ -28,43 +28,54 @@
                             <th>Apellidos</th>
                             <th>Dirección</th>
                             <th>Zona</th>
-                            <th>Teléfono Fijo</th>
+                            <th>Ci</th>
                             <th>Teléfono Móvil</th>
                             <th>Correo Electrónico</th>
+                            <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($this->model->Listar() as $r): ?>
                         <tr>
-                            <td><?php echo $r->idPropietario; ?></td>
-                            <td><?php echo $r->nombresPropietario; ?></td>
-                            <td><?php echo $r->apellidosPropietario; ?></td>
-                            <td><?php echo $r->direccionPropietario; ?></td>
-                            <td><?php echo $r->zonaPropietario; ?></td>
-                            <td><?php echo $r->telefonofijoPropietario; ?></td>
-                            <td><?php echo $r->telefonomovilPropietario; ?></td>
-                            <td><?php echo $r->correoelectronicoPropietario; ?></td>
-                            
+                            <td><?php echo $r->idDueno; ?></td>
+                            <td><?php echo $r->nombresDueno; ?></td>
+                            <td><?php echo $r->apellidosDueno; ?></td>
+                            <td><?php echo $r->direccionDueno; ?></td>
+                            <td><?php echo $r->zonaDueno; ?></td>
+                            <td><?php echo $r->ciDueno; ?></td>
+                            <td><?php echo $r->celularDueno; ?></td>
+                            <td><?php echo $r->correoDueno; ?></td>
+                            <td>
+                                    <?php  if ($r->estadoDueno==0){echo "Inactivo";}else{
+                                        echo "Activo";
+                                    }?>
+                                </td>
                             <td>
                                  
                                  <button type="button" id="btnEditar" name="btnEditar" class="btn btn-success btnEditar"
 
-                                  data-id="<?php echo $r->idPropietario; ?>"
-                                  data-nombre="<?php echo $r->nombresPropietario; ?>"
-                                  data-apellidos="<?php echo $r->apellidosPropietario; ?>"
-                                  data-direccion="<?php echo $r->direccionPropietario; ?>"
-                                  data-zona="<?php echo $r->zonaPropietario; ?>"
-                                  data-telefonoFijo="<?php echo $r->telefonofijoPropietario; ?>"
-                                  data-telefonoMovil="<?php echo $r->telefonomovilPropietario; ?>"
+                                  data-id="<?php echo $r->idDueno; ?>"
+                                  data-nombres="<?php echo $r->nombresDueno; ?>"
+                                  data-apellidos="<?php echo $r->apellidosDueno; ?>"
+                                  data-direccion="<?php echo $r->direccionDueno; ?>"
+                                  data-zona="<?php echo $r->zonaDueno; ?>"
+                                  data-celular="<?php echo $r->celularDueno; ?>"
+                                  data-movil="<?php echo $r->celularDueno; ?>"
                                   
-                                  data-correoelectronico="<?php echo $r->correoelectronicoPropietario; ?>"
+                                  data-correoelectronico="<?php echo $r->correoDueno; ?>"
                                   data-toggle="modal" data-target="#RegistroPropietario">
                                 <i class='fas fa-edit'></i></button>
 
-                             <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');"
-                                 href="?c=producto&a=Eliminar&idProducto=<?php echo $r->Neurona_Id; ?>"
-                                 class="btn btn-danger"><i class='fas fa-trash-alt'></i></a>
+                                <button type="button" id="btnEliminar" name="btnEliminar" class="btn btn-danger btnEliminar"
+                                       
+                                       data-id="<?php echo $r->idDueno; ?>"
+                                         data-estado="<?php echo $r->estadoDueno; ?>"
+                                         >
+                                        
+                                  <i class='fas fa-trash-alt'></i></button>
+
+
                          </td>
                         </tr>
                         <?php endforeach; ?>
@@ -86,38 +97,43 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="frm-proprietario" action="?c=propietario&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
+                <form id="frm-proprietario" action="?c=dueno&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
                     <!-- Formulario para propietario -->
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="nombresPropietario">Nombres</label>
-                            <input type="text" class="form-control" id="nombresPropietario" name="nombresPropietario" placeholder="Nombres del propietario" required>
+                            <input type="text" class="form-control" id="nombresDueno" name="nombresDueno" placeholder="Nombres del propietario" required>
                         </div>
                         <div class="form-group">
                             <label for="apellidosPropietario">Apellidos</label>
-                            <input type="text" class="form-control" id="apellidosPropietario" name="apellidosPropietario" placeholder="Apellidos del propietario" required>
+                            <input type="text" class="form-control" id="apellidosDueno" name="apellidosDueno" placeholder="Apellidos del propietario" required>
                         </div>
                         <div class="form-group">
                             <label for="direccionPropietario">Dirección</label>
-                            <input type="text" class="form-control" id="direccionPropietario" name="direccionPropietario" placeholder="Dirección del propietario" required>
+                            <input type="text" class="form-control" id="direccionDueno" name="direccionDueno" placeholder="Dirección del propietario" required>
                         </div>
+
+                        <div class="form-group">
+                            <label for="ciPropietario">C.I.</label>
+                            <input type="text" class="form-control" id="ciPropietario" name="ciPropietario" placeholder="Carnet de Identidad" required>
+                        </div>
+
+                        
                     </div>
+
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="zonaPropietario">Zona</label>
-                            <input type="text" class="form-control" id="zonaPropietario" name="zonaPropietario" placeholder="Zona del propietario" required>
+                            <input type="text" class="form-control" id="zonaDueno" name="zonaDueno" placeholder="Zona del propietario" required>
                         </div>
-                        <div class="form-group">
-                            <label for="telefonofijoPropietario">Teléfono Fijo</label>
-                            <input type="text" class="form-control" id="telefonofijoPropietario" name="telefonofijoPropietario" placeholder="Teléfono fijo" required>
-                        </div>
+                  
                         <div class="form-group">
                             <label for="telefonomovilPropietario">Teléfono Móvil</label>
-                            <input type="text" class="form-control" id="telefonomovilPropietario" name="telefonomovilPropietario" placeholder="Teléfono móvil" required>
+                            <input type="text" class="form-control" id="celularDueno" name="celularDueno" placeholder="Teléfono móvil" required>
                         </div>
                         <div class="form-group">
                             <label for="correoelectronicoPropietario">Correo Electrónico</label>
-                            <input type="text" class="form-control" id="correoelectronicoPropietario" name="correoelectronicoPropietario" placeholder="Correo electrónico" required>
+                            <input type="text" class="form-control" id="correoDueno" name="correoDueno" placeholder="Correo electrónico" required>
                         </div>
                     </div>
                 </form>
@@ -142,8 +158,8 @@ $(document).ready(function () {
            console.log("El id:", id);
 
         // Haces la solicitud AJAX al servidor
-        $.ajax({
-            url: '?c=propietario&a=correo', // La URL donde tu servidor procesa la solicitud
+     /*   $.ajax({
+            url: '?c=dueno&a=correo', // La URL donde tu servidor procesa la solicitud
             type: 'GET', // Puede ser 'GET' o 'POST', dependiendo de cómo quieras enviar los datos
             data: { idPropietario: id }, // Datos que quieres enviar al servidor
             success: function(response) {
@@ -171,30 +187,69 @@ $(document).ready(function () {
                 // Manejar el error
                 console.error("Hubo un error al obtener la información:", error);
             }
-        });
+        });*/
 
-         var nombre = $(this).data('nombre');
+         var nombre = $(this).data('nombres');
         var apellidos = $(this).data('apellidos');
         var direccion = $(this).data('direccion');
         var zona = $(this).data('zona');
-        var telefonofijo = $(this).data('telefonofijo');
-        var telefonomovil = $(this).data('telefonomovil');                  
-        var correoelectronico = $(this).data('correoelectronicoPropietario');
+        var ci = $(this).data('ci');
+        var telefonomovil = $(this).data('movil');                  
+        var correoelectronico = $(this).data('correoelectronico');
 
 
-        $('#frm-proprietario #nombresPropietario').val(nombre);
-        $('#frm-proprietario #apellidosPropietario').val(apellidos);
-        $('#frm-proprietario #direccionPropietario').val(direccion);
-        $('#frm-proprietario #zonaPropietario').val(zona);
-        $('#frm-proprietario #telefonofijoPropietario').val(telefonofijo);
-        $('#frm-proprietario #telefonomovilPropietario').val(telefonomovil);
-        $('#frm-proprietario #correoelectronicoPropietario').val(correoelectronico);
+        $('#frm-proprietario #nombresDueno').val(nombre);
+        $('#frm-proprietario #apellidosDueno').val(apellidos);
+        $('#frm-proprietario #direccionDueno').val(direccion);
+        $('#frm-proprietario #zonaDueno').val(zona);
+        $('#frm-proprietario #celularDueno').val(telefonomovil);
+        $('#frm-proprietario #correoDueno').val(correoelectronico);
      
 
 
         // Cambia la acción del formulario para que sea editar en lugar de crear una nueva mascota
-        $('#frm-proprietario').attr('action', '?c=propietario&a=Editar&id=' + id);
+        $('#frm-proprietario').attr('action', '?c=dueno&a=Editar&id=' + id);
     
     });
+    $('.btnEliminar').on('click', function () {
+
+
+// Obtén los datos de los atributos personalizados del botón clickeado
+var idx = $(this).data('id');
+var estadox = $(this).data('estado');
+
+
+
+     // Haces la solicitud AJAX al servidor
+        $.ajax({
+            url: '?c=Dueno&a=Estado_Cambio', // La URL donde tu servidor procesa la solicitud
+            type: 'GET', // Puede ser 'GET' o 'POST', dependiendo de cómo quieras enviar los datos
+            data: { id: idx,
+                    estado: estadox }, // Datos que quieres enviar al servidor
+            success: function(response) {
+                // Asegúrate de que la respuesta es un objeto y no una cadena
+                var data = response;
+            //  if (typeof response === "string") {
+                    // Si la respuesta es una cadena, conviértela en un objeto JSON
+                //    data = JSON.parse(response);
+            //  }
+            
+                            // Verifica que el valor no sea undefined
+
+                    console.log("respuesta."+data);
+                    window.location.href = 'index.php?c=Dueno';
+
+            },
+            error: function(xhr, status, error) {
+                // Manejar el error
+                console.error("Hubo un error al obtener la información:", error);
+            }
+        });
+
+        // Cambia la acción del formulario para que sea editar en lugar de crear una nueva mascota
+
+        });
+
+
 });
 </script>

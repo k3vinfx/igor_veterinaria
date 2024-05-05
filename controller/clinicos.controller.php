@@ -1,12 +1,12 @@
 <?php
-require_once 'model/clientes.php';
+require_once 'model/clinicos.php';
 
-class ClientesController{
+class ClinicosController{
 
     private $model;
 
     public function __CONSTRUCT(){
-        $this->model = new clientes();
+        $this->model = new clinicos();
     }
 
     //Llamado plantilla principal

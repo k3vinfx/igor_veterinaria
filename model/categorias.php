@@ -173,18 +173,30 @@ class categorias
     try
     {
           
-          $sql = "INSERT INTO categoria 
-          (Categoria_nombre,
-          Categoria_descripcion,
-          Categoria_estado)
-              VALUES (?, ?, ?)";
+          $sql = "INSERT INTO antecedentes_mascota 
+          (pesoAntecedentes,
+          alturaAntecedentes,
+          alergicoAntecedentes,
+          grupoSanguineoAntecedentes,
+          enfermedadesPadecidasAntecedentes,
+          tratamientosCuidadosAntecedentes,
+          cirugiasAntecedentes,
+          observacionExtraAntecedentes,
+          estado,
+          FK_idMascota
+          )
+              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
       $this->pdo->prepare($sql)
            ->execute(
           array(
-            $data['nombre'],
-            $data['descripcion'],
-            $data['estado']
+            $data['peso'],
+            $data['altura'],
+            $data['alergico'],
+            $data['tipoSangre'],
+            $data['enfermedades'],
+            $data['tratamientos'],
+            $data['extra']
           )
 
           
@@ -196,4 +208,6 @@ class categorias
       // die($e->getMessage());
     }
   }
+
+  
 }
