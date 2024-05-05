@@ -30,7 +30,21 @@ class neurona
     {
         try {
             $result = array();
-            $stm = $this->pdo->prepare("SELECT * FROM enfermadad_rnn;");
+            $stm = $this->pdo->prepare("SELECT CONCAT_WS('', 
+            IF(sintomaEnfermadad1 <> '', CONCAT( sintomaEnfermadad1 ), ''), 
+            IF(sintomaEnfermadad2 <> '', CONCAT('/', sintomaEnfermadad2), ''), 
+            IF(sintomaEnfermadad3 <> '', CONCAT('/', sintomaEnfermadad3), ''), 
+            IF(sintomaEnfermadad4 <> '', CONCAT('/', sintomaEnfermadad4), ''), 
+            IF(sintomaEnfermadad5 <> '', CONCAT('/', sintomaEnfermadad5), ''), 
+            IF(sintomaEnfermadad6 <> '', CONCAT('/', sintomaEnfermadad6), ''), 
+            IF(sintomaEnfermadad7 <> '', CONCAT('/', sintomaEnfermadad7), ''), 
+            IF(sintomaEnfermadad8 <> '', CONCAT('/', sintomaEnfermadad8), ''), 
+            IF(sintomaEnfermadad9 <> '', CONCAT('/', sintomaEnfermadad9), ''), 
+            IF(sintomaEnfermadad10 <> '', CONCAT('/', sintomaEnfermadad10), ''), 
+            IF(sintomaEnfermadad11 <> '', CONCAT('/', sintomaEnfermadad11), ''), 
+            IF(sintomaEnfermadad12 <> '', CONCAT('/', sintomaEnfermadad12), '')
+        ) AS nuevaconsulta 
+        FROM enfermadad_rnn;");
             $stm->execute();
             return $stm->fetchAll(PDO::FETCH_OBJ);
         } catch (Exception $e) {

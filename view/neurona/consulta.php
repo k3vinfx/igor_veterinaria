@@ -107,9 +107,9 @@ dialog {
                         <label id="lb_entrada_1">Sintomas</label>
                             <select class="custom-select selevt" name="sintoma1" id="sintoma1" >
                             <option  value="0">Seleccion </opcion>
-                            <?php foreach ($this->model->Listar() as $Tipo): ?>
+                            <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
                                 <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                    <?php echo $Tipo->sintomaEnfermadad1; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                    <?php echo $Tipo->nuevaconsulta; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
                                 </option>       
                             <?php endforeach; ?>
                         </select>                 
