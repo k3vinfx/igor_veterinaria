@@ -10,8 +10,7 @@ class Database
 
     public static function Conectar()
     {
-        $pdo = new PDO('mysql:host=u838621046_k3vinfx;dbname=u838621046_vet_01;charset=utf8', 'u838621046_k3vinfx	', 'kevsFX007@');
-        //Filtrando posibles errores de conexión.
+        $pdo = new PDO('mysql:host=localhost;dbname=u838621046_vet_01;charset=utf8', 'u838621046_k3vinfx', 'kevsFX007@');    //Filtrando posibles errores de conexión.
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
     }
