@@ -94,34 +94,41 @@ dialog {
                 </button>
             </div>
             <div class="modal-body">
-                <form id="frm-proprietario" action="?c=neurona&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
-                    <!-- Formulario para propietario -->
-                    <div class="col-md-6">  
-                            <div class="form-group">
-                                <label id="lb_entrada_1">Sintomas</label>
-                                    <select class="custom-select selevt" name="sintoma1" id="sintoma1" >
-                                    <option  value="0">Seleccion </opcion>
-                                    <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
-                                        <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                            <?php echo $Tipo->nuevaconsulta; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
-                                        </option>       
-                                    <?php endforeach; ?>
-                                   </select>                 
-                            </div>
-                    </div>
+            <form id="frm-proprietario" action="?c=neurona&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
+        <!-- Formulario para propietario -->
+        <div class="row">
+            <div class="col-md-6">  
+                <div class="form-group">
+                    <label id="lb_entrada_1">Sintomas</label>
+                    <select class="custom-select selevt" name="sintoma1" id="sintoma1" >
+                        <option  value="0">Seleccion</option>
+                        <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
+                            <option  value="<?php echo $Tipo->idEnfermadad; ?>">
+                                <?php echo $Tipo->nuevaconsulta; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                            </option>       
+                        <?php endforeach; ?>
+                    </select>                 
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="enfermedades">Tratamiento 1</label>
+                    <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" required>
+                </div>
+                <div class="form-group">
+                    <label for="tratamientos">Tratamiento 2</label>
+                    <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2">
+                </div> 
+            </div>
+        </div> <!-- Fin de la primera fila -->
+        
+     
+            <!-- Aquí puedes agregar más filas si es necesario -->
+        </div>
+        
+    </form>
 
-              
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="enfermedades">Tratamiento 1</label>
-                            <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="tratamientos">Tratamiento 2</label>
-                            <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2" >
-                        </div> 
-                    </div>
-                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" name="salir" id="salir" class="btn btn-secondary">Cerrar..</button>
