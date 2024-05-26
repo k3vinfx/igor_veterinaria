@@ -217,8 +217,10 @@ dialog {
 
                                         data-toggle="modal" data-target="#RegistroMVC_IA">
                                          >                                  
-                                  <i class='fas fa-brain'>  Entrenar <?php }
-                                  else{
+                                  <i class='fas fa-brain'>  Entrenar 
+
+                                        <?php 
+                                    } else{
                                         echo "Activo / Entrenado:", $r->contador; 
                                         if ($r->contador>1 && $r->contador<101 ){
                                             echo "/100";
@@ -227,7 +229,7 @@ dialog {
                                             echo "/200";
                                         }
                                      
-                                        ?> </i></button> 
+                                        ?>  </i></button> 
 
 
                                   <button type="button" id="btnEntrenar" name="btnEntrenar" class="btn btn-success btnEntrenar"
