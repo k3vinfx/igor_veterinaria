@@ -59,6 +59,19 @@ dialog {
             Nuevo
         </button>
     </div>
+    <div class="container">
+                                                    <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <select>
+                                                        <option value="" disabled selected>Choose your option</option>
+                                                        <option value="1">A Really Freakin Long MLS Name That Will Not Display in the Container1</option>
+                                                        <option value="2">Option 2</option>
+                                                        <option value="3">Option 3</option>
+                                                        </select>
+                                                        <label>Materialize Select</label>
+                                                    </div>
+                                                    </div>
+                                                    </div>
 
     <div class="row">
         <div class="col-lg-12">
@@ -171,6 +184,7 @@ dialog {
                                                         </select>
                                                         <label>Materialize Multiple Select</label>
                                                     </div>
+
                                                     <div class="container">
                                                     <div class="row">
                                                     <div class="input-field col s6">
