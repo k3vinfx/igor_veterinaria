@@ -136,8 +136,8 @@ dialog {
                                                      <div class="row">
                                                       
                                                             <div class="input-field col s12">
-                                                                <label >Sintoma 1</label>
-                                                                <select class="custom-select selevt" name="sintomas" id="sintomas" > 
+                                                             
+                                                                <select name="sintomas" id="sintomas" > 
                                                                 <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
                                                                         <option  value="<?php echo $Tipo->idEnfermadad; ?>">
