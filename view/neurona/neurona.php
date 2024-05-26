@@ -220,6 +220,8 @@ dialog {
                                   <i class='fas fa-brain'>  Entrenar I.A. </i></button> <?php }
                                   else{
                                         echo "Activo /"?>
+
+                                        
                                   <button type="button" id="btnEntrenar" name="btnEntrenar" class="btn btn-success btnEntrenar"
                                     
                                     data-id="<?php echo $r->idEnfermadad; ?>"
@@ -879,10 +881,12 @@ $(document).ready(function () {
         $('#frm-proprietariox #sintoma7').prop("disabled",true);
         $('#frm-proprietariox #sintoma8').prop("disabled",true);
         $('#frm-proprietariox #sintoma9').prop("disabled",true);
-        
+
         $('#frm-proprietariox #sintoma10').prop("disabled",true);
         $('#frm-proprietariox #sintoma11').prop("disabled",true);
         $('#frm-proprietariox #sintoma12').prop("disabled",true);
+
+
 
     });
    // Acciones para el botón de editar

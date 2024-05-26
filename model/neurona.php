@@ -18,7 +18,11 @@ class neurona
     {
         try {
             $result = array();
-            $stm = $this->pdo->prepare("SELECT * FROM enfermadad_rnn;");
+            $stm = $this->pdo->prepare("SELECT efe.*,
+            (
+            SELECT sum(1) FROM pesos_rnn pr WHERE pr.FK_idEnfermedad = efe.idEnfermadad 
+            ) as contador
+            FROM enfermadad_rnn efe;");
             $stm->execute();
             return $stm->fetchAll(PDO::FETCH_OBJ);
         } catch (Exception $e) {
