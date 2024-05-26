@@ -763,7 +763,7 @@ dialog {
 
 <script>
 $(document).ready(function () {
-    $('select').material_select();
+  
     var entrenamiento = [];
 var net = new brain.NeuralNetwork();
 

@@ -10,15 +10,15 @@ class NeuronaController{
     }
 
      public function Index(){
-        require_once 'view/principal/header.php';
+       // require_once 'view/principal/header.php';
         require_once 'view/neurona/neurona.php';
-        require_once 'view/footerx.php';
+       // require_once 'view/footerx.php';
     }
     // Llamado plantilla principal
     public function Start(){
-        require_once 'view/principal/header.php';
+      //  require_once 'view/principal/header.php';
         require_once 'view/neurona/neurona.php';
-        require_once 'view/footerx.php';
+      //  require_once 'view/footerx.php';
     }
     public function getMascotaAux(){
         $pvd = new neurona();
@@ -33,9 +33,9 @@ class NeuronaController{
     }
     // Llamado plantilla consulta
     public function Consulta(){
-        require_once 'view/principal/header.php';
+      //  require_once 'view/principal/header.php';
         require_once 'view/neurona/consulta.php';
-        require_once 'view/footerx.php';
+//require_once 'view/footerx.php';
     }
  
 
