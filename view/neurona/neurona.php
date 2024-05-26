@@ -806,7 +806,7 @@ $(document).ready(function () {
          
   
         for (let i = 1; i <= 12; i++) {
-            $('#sintomas' + i).prop('disabled', true);
+            $('#sintoma' + i).prop('disabled', true);
         }
         if (sintoma1==""){
             $( "#entrada_1" ).prop( "disabled", true );
