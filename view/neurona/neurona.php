@@ -219,9 +219,9 @@ dialog {
                                          >                                  
                                   <i class='fas fa-brain'>  Entrenar I.A. </i></button> <?php }
                                   else{
-                                        echo "Activo /"?>
+                                        echo "Activo / Cantidada de Veces entrenado: ", $r->contador;?>
 
-                                        
+
                                   <button type="button" id="btnEntrenar" name="btnEntrenar" class="btn btn-success btnEntrenar"
                                     
                                     data-id="<?php echo $r->idEnfermadad; ?>"
