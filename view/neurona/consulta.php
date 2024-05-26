@@ -38,6 +38,7 @@ dialog {
 }
 
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
 <div class="container-fluid">
@@ -100,7 +101,7 @@ dialog {
                                                     <!-- Formulario para propietario -->
 
                                                     <div class="row">
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-8">
                                                             <div class="form-group">
                                                                <label id="lb_entrada_1">Dueño de la Mascota</label>
                                                                <select class="custom-select selevt" name="duenos" id="duenos" >
@@ -113,7 +114,7 @@ dialog {
                                                                 </select>     
                                                            </div>
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-8">
                                                             <div class="form-group">
                                                             <label id="lb_entrada_1">Selecione a la Mascota</label>
                                                                 <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
