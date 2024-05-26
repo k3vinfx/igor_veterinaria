@@ -864,17 +864,18 @@ $(document).ready(function () {
         if (sintoma10!=null){
 
         }else {
-            $( "#entrada_10" ).prop( "disabled", true );
+            $( "#entrada_10" ).prop( "disabled", false );
         }
         if (sintoma11!=null){
 
         }else {
-            $( "#entrada_11" ).prop( "disabled", true );
+            $( "#entrada_11" ).prop( "disabled", false );
         }
         if (sintoma12!=null){
 
         }else {
-            $( "#entrada_12" ).prop( "disabled", true );
+            console.log("entrada 12 valores");
+            $( "#entrada_12" ).prop( "disabled", false );
         }
 
 
