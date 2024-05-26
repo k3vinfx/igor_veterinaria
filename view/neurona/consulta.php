@@ -134,7 +134,7 @@ dialog {
                                              
                                                      <div class="row">
                                                         <div class="input-field col s12">
-                                                            <div class="form-group">
+                                                       
                                                                 <label for="enfermedades">Sintomas</label>
                                                               
                                                                 <select name="sintomas" id="sintomas" > 
@@ -146,32 +146,14 @@ dialog {
                                                                     <?php endforeach; ?>
                                                                 </select>       
                                                         
-                                                            </div>
+                                                         
                                                         </div>                                                                                 
                                                     </div>
 
 
 
                                         
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Tratamiento 1</label>
-                                                                <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" >
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="tratamientos">Tratamiento 2</label>
-                                                                <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2">
-                                                            </div> 
-                                                        </div> 
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="tratamientos">result</label>
-                                                                <text type="text" class="form-control" id="resultx" name="resultx" placeholder="Tratamiento 2">
-                                                            </div> 
-                                                        </div> 
+                                                 
                                                     </div> <!-- Fin de la segunda fila -->
                                                 </form>
                                             </div>
