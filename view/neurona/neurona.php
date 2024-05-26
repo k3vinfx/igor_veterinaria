@@ -856,25 +856,18 @@ $(document).ready(function () {
         }else {
             $( "#entrada_8" ).prop( "disabled", true );
         }
-        if (sintoma9!=null){
-
+        if (sintoma9==null){
+            console.log("entrada 9 valores1");
+            $( "#entrada_9" ).prop( "disabled", false );
         }else {
-            $( "#entrada_9" ).prop( "disabled", true );
+            console.log("entrada 9 valores2");
+            $( "#entrada_9" ).prop( "disabled", false );
         }
-        if (sintoma10!=null){
-
+       if (sintoma12==null){
+            console.log("entrada 12 valores1");
+            $( "#entrada_12" ).prop( "disabled", false );
         }else {
-            $( "#entrada_10" ).prop( "disabled", false );
-        }
-        if (sintoma11!=null){
-
-        }else {
-            $( "#entrada_11" ).prop( "disabled", false );
-        }
-        if (sintoma12!=null){
-
-        }else {
-            console.log("entrada 12 valores");
+            console.log("entrada 12 valores2");
             $( "#entrada_12" ).prop( "disabled", false );
         }
 
