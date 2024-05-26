@@ -751,7 +751,7 @@ $(document).ready(function () {
 
     var entrenamiento = [];
 var net = new brain.NeuralNetwork();
-$('select').formSelect();
+
 // Función para manejar el evento de hacer clic en el botón de buscar
 $('#buscarIa').click(function() {
     const inputValues = [];
