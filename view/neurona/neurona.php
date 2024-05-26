@@ -220,10 +220,10 @@ dialog {
                                   <i class='fas fa-brain'>  Entrenar I.A. </i></button> <?php }
                                   else{
                                         echo "Activo / Entrenado:", $r->contador; 
-                                        if ($r->estado>1 && $r->estado<101 ){
+                                        if ($r->contador>1 && $r->contador<101 ){
                                             echo "/100";
                                         }
-                                        if ($r->estado>100 && $r->estado<201 ){
+                                        if ($r->contador>100 && $r->contador<201 ){
                                             echo "/200";
                                         }
                                      
