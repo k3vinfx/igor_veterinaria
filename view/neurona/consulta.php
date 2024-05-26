@@ -113,9 +113,9 @@ dialog {
                                                             </div>
                                                         </div>
                                                         
-                                                    </div> <!-- Fin de la primera fila -->
-                                                    <div class="row">
-                                                        <div class="col-md-5">  
+                                                      <!-- Fin de la primera fila -->
+                                                      <div class="row">
+                                                         <div class="col-md-5">  
                                                             <div class="form-group">
                                                                 <label id="lb_entrada_1">Selecione a la Mascota</label>
                                                                 <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
@@ -123,7 +123,7 @@ dialog {
                                                             </div>
                                                         </div>
                                                     </div> <!-- Fin de la primera fila -->
-
+                                                    </div> 
                                                      <div class="row">
                                                         <div class="col-md-3">
                                                             <div class="form-group">
