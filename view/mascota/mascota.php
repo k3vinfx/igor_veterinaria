@@ -177,11 +177,7 @@
                             <input type="text" class="form-control" id="colorMascota"  name="colorMascota"placeholder="Color de la mascota"
                                 required>
                         </div>
-                        <div class="form-group">
-                            <label for="tamanoMascota">Tamaño</label>
-                            <input type="text" class="form-control" id="tamanoMascota" name="tamanoMascota" 
-                                placeholder="Tamaño de la mascota" required>
-                        </div>
+                 
 
                         <div class="form-group">
                             <label for="sexoMascota">Tamaño</label>
