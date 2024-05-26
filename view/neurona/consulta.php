@@ -106,8 +106,10 @@ dialog {
 
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <div class="form-group">
+                                                         
                                                                <label id="lb_entrada_1">Dueño de la Mascota</label>
+
+
                                                                <select class="custom-select selevt" name="duenos" id="duenos" >
                                                                     <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
@@ -116,7 +118,7 @@ dialog {
                                                                         </option>       
                                                                     <?php endforeach; ?>
                                                                 </select>     
-                                                           </div>
+                                                     
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
@@ -132,9 +134,9 @@ dialog {
                                                <!-- Fin de la primera fila -->
                                              
                                                      <div class="row">
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Sintoma 1</label>
+                                                      
+                                                            <div class="input-field col s12">
+                                                                <label >Sintoma 1</label>
                                                                 <select class="custom-select selevt" name="sintomas" id="sintomas" > 
                                                                 <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
@@ -144,7 +146,7 @@ dialog {
                                                                     <?php endforeach; ?>
                                                                 </select>       
                                                             </div>
-                                                        </div>                                                                                 
+                                                                                                                                 
                                                     </div>
 
 
@@ -745,7 +747,7 @@ dialog {
 
 <script>
 $(document).ready(function () {
-
+    $('select').formSelect();
     var entrenamiento = [];
 var net = new brain.NeuralNetwork();
 
