@@ -39,6 +39,18 @@ dialog {
 
 </style>
 
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+    
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
 
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-6">
@@ -103,7 +115,7 @@ dialog {
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                <label id="lb_entrada_1">Dueño de la Mascota</label>
-                                                               <select class="custom-select selevt" name="duenos" id="duenos" >
+                                                               <select name="duenos" id="duenos" >
                                                                     <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
                                                                         <option  value="<?php echo $Tipo->idDueno; ?>">
@@ -116,7 +128,7 @@ dialog {
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                             <label id="lb_entrada_1">Selecione a la Mascota</label>
-                                                                <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
+                                                                <select name="Id_macota" id="Id_macota" >
                                                                      <option value="<?php echo $Tipo->idMascota; ?>"><?php echo $pvd->nombreMascota; ?></opcion>  
                                                                  </select>   
                                                             </div> 
@@ -134,7 +146,7 @@ dialog {
                                                         <div class="col-md-5">  
                                                             <div class="form-group">
                                                                 <label id="lb_entrada_1">Dueño de la Mascota</label>
-                                                                <select class="custom-select selevt" name="duenos" id="duenos" >
+                                                                <select name="duenos" id="duenos" >
                                                                     <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
                                                                         <option  value="<?php echo $Tipo->idDueno; ?>">
@@ -771,6 +783,14 @@ dialog {
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/brain.js@2.0.0-beta.18/dist/browser.js"></script>
+
+<script type="text/javascript">
+          document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+        });
+    </script>
+
 
 <script>
 $(document).ready(function () {
