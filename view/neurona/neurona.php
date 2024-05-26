@@ -665,45 +665,45 @@ dialog {
                         </div>
                         <div class="form-group">
                             <label for="enfermedades">Sintoma 4</label>
-                            <input type="text" class="form-control" id="sintoma4" name="sintoma4" placeholder="Sintoma de la enfermedad" >
+                            <input type="text" class="form-control" id="sintoma4x" name="sintoma4x" placeholder="Sintoma de la enfermedad" >
                         </div>                         
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                             <label for="enfermedades">Sintoma 5</label>
-                            <input type="text" class="form-control" id="sintoma5" name="sintoma5" placeholder="Sintoma de la enfermedad" >
+                            <input type="text" class="form-control" id="sintoma5x" name="sintoma5x" placeholder="Sintoma de la enfermedad" >
                         </div>
                         <div class="form-group">
                             <label for="tratamientos">Sintoma 6</label>
-                            <input type="text" class="form-control" id="sintoma6" name="sintoma6" placeholder="Sintoma de la enfermedad" >
+                            <input type="text" class="form-control" id="sintoma6x" name="sintoma6x" placeholder="Sintoma de la enfermedad" >
                         </div>
     
                         <div class="form-group">
                             <label for="cirugias">Sintoma 7</label>
-                            <input type="text" class="form-control" id="sintoma7" name="sintoma7" placeholder="Sintoma de la enfermedad" >
+                            <input type="text" class="form-control" id="sintoma7x" name="sintoma7x" placeholder="Sintoma de la enfermedad" >
                         </div>
                         <div class="form-group">
                             <label for="extras">Sintoma 8</label>
-                            <input type="text" class="form-control" id="sintoma8" name="sintoma8" placeholder="Sintoma de la enfermedad" >
+                            <input type="text" class="form-control" id="sintoma8x" name="sintoma8x" placeholder="Sintoma de la enfermedad" >
                         </div>  
                         <div class="form-group">
                             <label for="extras">Sintoma 9</label>
-                            <input type="text" class="form-control" id="sintoma9" name="sintoma9" placeholder="Sintoma de la enfermedad" >
+                            <input type="text" class="form-control" id="sintoma9x" name="sintoma9x" placeholder="Sintoma de la enfermedad" >
                         </div>                     
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                             <label for="enfermedades">Sintoma 10</label>
-                            <input type="text" class="form-control" id="sintoma10" name="sintoma10" placeholder="Sintoma de la enfermedad" >
+                            <input type="text" class="form-control" id="sintoma10x" name="sintoma10x" placeholder="Sintoma de la enfermedad" >
                         </div>
                         <div class="form-group">
                             <label for="tratamientos">Sintoma 11</label>
-                            <input type="text" class="form-control" id="sintoma11" name="sintoma11" placeholder="Sintoma de la enfermedad" >
+                            <input type="text" class="form-control" id="sintoma11x" name="sintoma11x" placeholder="Sintoma de la enfermedad" >
                         </div>
     
                         <div class="form-group">
                             <label for="cirugias">Sintoma 12</label>
-                            <input type="text" class="form-control" id="sintoma12" name="sintoma12" placeholder="Sintoma de la enfermedad" >
+                            <input type="text" class="form-control" id="sintoma12x" name="sintoma12x" placeholder="Sintoma de la enfermedad" >
                         </div>
                         <div class="form-group">
                             <label for="extras">Examinación</label>
@@ -872,6 +872,17 @@ $(document).ready(function () {
 
         $('#frm-proprietariox #sintoma1').prop("disabled",true);
         $('#frm-proprietariox #sintoma2').prop("disabled",true);
+        $('#frm-proprietariox #sintoma3').prop("disabled",true);
+        $('#frm-proprietariox #sintoma4').prop("disabled",true);
+        $('#frm-proprietariox #sintoma5').prop("disabled",true);
+        $('#frm-proprietariox #sintoma6').prop("disabled",true);
+        $('#frm-proprietariox #sintoma7').prop("disabled",true);
+        $('#frm-proprietariox #sintoma8').prop("disabled",true);
+        $('#frm-proprietariox #sintoma9').prop("disabled",true);
+        
+        $('#frm-proprietariox #sintoma10').prop("disabled",true);
+        $('#frm-proprietariox #sintoma11').prop("disabled",true);
+        $('#frm-proprietariox #sintoma12').prop("disabled",true);
 
     });
    // Acciones para el botón de editar
