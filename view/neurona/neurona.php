@@ -217,13 +217,11 @@ dialog {
 
                                         data-toggle="modal" data-target="#RegistroMVC_IA">
                                          >                                  
-                                  <i class='fas fa-brain'></i>Entrenar I.A.</button> <?php }
+                                  <i class='fas fa-brain'>  Entrenar I.A. </i></button> <?php }
                                   else{
                                         echo "Activo /"?>
                                   <button type="button" id="btnEntrenar" name="btnEntrenar" class="btn btn-success btnEntrenar"
-
-
-                                       
+                                    
                                     data-id="<?php echo $r->idEnfermadad; ?>"
                                     data-nombre="<?php echo $r->nombreEnfermadad; ?>"
                                     data-sintoma1="<?php echo $r->sintomaEnfermadad1; ?>"
@@ -811,13 +809,19 @@ $(document).ready(function () {
         var sintoma8 = $(this).data('sintoma8');
         var sintoma9 = $(this).data('sintoma9');
         var sintoma10 = $(this).data('sintoma10');
+
         var sintoma11 = $(this).data('sintoma11');                  
         var sintoma12 = $(this).data('sintoma12');
         var examinacion = $(this).data('examinacion');
         var enfermedad = $(this).data('enfermedad');   
         var tratamiento1 = $(this).data('tratamiento1');               
         var tratamiento2 = $(this).data('tratamiento2');
-
+         
+        if (sintoma10!=null){
+            console.log("son pendejos");
+        }else {
+            console.log("son webadas");
+        }
      
     // Establecer el valor del título del modal
        $('#nombrex').text(nombre);
