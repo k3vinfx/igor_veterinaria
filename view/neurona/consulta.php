@@ -137,7 +137,7 @@ dialog {
 
 
                                                     <div class="row">
-                                                        <div class="col-md-12">  
+                                                        <div class="col-md-5">  
                                                             <div class="form-group">
                                                                 <label id="lb_entrada_1">Dueño de la Mascota</label>
                                                                 <select  name="duenos" id="duenos" >
@@ -152,8 +152,24 @@ dialog {
 
                                                         </div>
                                                    </div>   
-                                                      <!-- Fin de la primera fila -->
-                                             
+                                   <!-- Fin de la primera fila -->
+                                         
+                                                     <div class="row">
+                                                        <div class="col-md-12">
+                                                           
+                                                                <label for="enfermedades">Sintoma 1</label>
+                                                                <select  name="sintomas" id="sintomas" > 
+                                                                <option  value="0">Seleccion</option>
+                                                                    <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
+                                                                        <option  value="<?php echo $Tipo->idEnfermadad; ?>">
+                                                                            <?php echo $Tipo->nuevaconsulta; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                                                        </option>       
+                                                                    <?php endforeach; ?>
+                                                                </select>       
+                                                        
+                                                        </div>                                                                                 
+                                                    </div>
+
 
 
                                         
