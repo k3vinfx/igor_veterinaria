@@ -221,10 +221,10 @@ dialog {
                                   else{
                                         echo "Activo / Entrenado:", $r->contador; 
                                         if ($r->estado>1 && $r->estado<101 ){
-                                            "/100";
+                                            echo "/100";
                                         }
                                         if ($r->estado>100 && $r->estado<201 ){
-                                            "/200";
+                                            echo "/200";
                                         }
                                      
                                         ?>
