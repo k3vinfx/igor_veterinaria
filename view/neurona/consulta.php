@@ -48,6 +48,7 @@ dialog {
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, options);
+    $('select').material_select();
   });
   </script>
 
@@ -170,7 +171,19 @@ dialog {
                                                         </select>
                                                         <label>Materialize Multiple Select</label>
                                                     </div>
-
+                                                    <div class="container">
+                                                    <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <select>
+                                                        <option value="" disabled selected>Choose your option</option>
+                                                        <option value="1">A Really Freakin Long MLS Name That Will Not Display in the Container1</option>
+                                                        <option value="2">Option 2</option>
+                                                        <option value="3">Option 3</option>
+                                                        </select>
+                                                        <label>Materialize Select</label>
+                                                    </div>
+                                                    </div>
+                                                    </div>
 
                                         
                                                     
@@ -750,7 +763,7 @@ dialog {
 
 <script>
 $(document).ready(function () {
-
+    $('select').material_select();
     var entrenamiento = [];
 var net = new brain.NeuralNetwork();
 
