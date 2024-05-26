@@ -653,15 +653,15 @@ dialog {
                         </div>
                         <div class="form-group">
                             <label for="alturaPropietario">Sintoma 1</label>
-                            <input type="text" class="form-control" id="sintoma1" name="sintoma1" placeholder="Sintoma de la enfermedad" required>
+                            <input type="text" class="form-control" id="sintoma1x" name="sintoma1x" placeholder="Sintoma de la enfermedad" required>
                         </div>
                         <div class="form-group">
                             <label for="alergicoPropietario">Sintoma 2</label>
-                            <input type="text" class="form-control" id="sintoma2" name="sintoma2" placeholder="Sintoma de la enfermedad" >
+                            <input type="text" class="form-control" id="sintoma2x" name="sintoma2x" placeholder="Sintoma de la enfermedad" >
                         </div>
                         <div class="form-group">
                             <label for="tipoSangrePropietario">Sintoma 3</label>
-                            <input type="text" class="form-control" id="sintoma3" name="sintoma3" placeholder="Sintoma de la enfermedad" >
+                            <input type="text" class="form-control" id="sintoma3x" name="sintoma3x" placeholder="Sintoma de la enfermedad" >
                         </div>
                         <div class="form-group">
                             <label for="enfermedades">Sintoma 4</label>
