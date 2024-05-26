@@ -139,7 +139,7 @@ dialog {
 
                                                <!-- Fin de la primera fila -->
                                              
-                                                     <div class="row">
+                                     
                                                       
                                                             <div class="input-field col s12">
                                                              
@@ -153,8 +153,7 @@ dialog {
                                                                 </select>       
                                                             </div>
                                                                                                                                  
-                                                    </div>
-
+                                               
 
 
                                         
@@ -757,7 +756,7 @@ dialog {
     var instances = M.FormSelect.init(elems, options);
   });
   </script>
-  
+
 <script>
 $(document).ready(function () {
 
