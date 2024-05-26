@@ -29,6 +29,17 @@ class neurona
             die($e->getMessage());
         }
     }
+    public function Listar_Due()
+    {
+        try {
+            $result = array();
+            $stm = $this->pdo->prepare("SELECT idDueno, CONCAT(nombresDueno ,' ', apellidosDueno,' / CI:',ciDueno )as duenos  FROM dueno ");
+            $stm->execute();
+            return $stm->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 
     public function Listar_Sin()
     {

@@ -90,7 +90,7 @@ dialog {
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Nueva Consulta </h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Nueva Consulta</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -101,7 +101,22 @@ dialog {
                                                     <div class="row">
                                                         <div class="col-md-12">  
                                                             <div class="form-group">
-                                                                <label id="lb_entrada_1">Sintomas</label>
+                                                                <label id="lb_entrada_1">Dueño de la Mascota</label>
+                                                                <select class="custom-select selevt" name="sintomas" id="sintomas" >
+                                                                    <option  value="0">Seleccion</option>
+                                                                    <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
+                                                                        <option  value="<?php echo $Tipo->idDueno; ?>">
+                                                                            <?php echo $Tipo->duenos; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                                                        </option>       
+                                                                    <?php endforeach; ?>
+                                                                </select>                 
+                                                            </div>
+                                                        </div>
+                                                    </div> <!-- Fin de la primera fila -->
+                                                    <div class="row">
+                                                        <div class="col-md-12">  
+                                                            <div class="form-group">
+                                                                <label id="lb_entrada_1">Selecione a la Mascota</label>
                                                                 <select class="custom-select selevt" name="sintomas" id="sintomas" >
                                                                     <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
@@ -113,6 +128,7 @@ dialog {
                                                             </div>
                                                         </div>
                                                     </div> <!-- Fin de la primera fila -->
+
                                                     <div class="row">
                                                         <div class="col-md-3">
                                                             <div class="form-group">
@@ -1105,9 +1121,6 @@ console.log("afuera2:", entrenamiento);
 // Obtén los datos de los atributos personalizados del botón clickeado
     var idx = $(this).data('id');
     var estadox = $(this).data('estado');
-
-
-
      // Haces la solicitud AJAX al servidor
         $.ajax({
             url: '?c=neurona&a=Estado_Cambio', // La URL donde tu servidor procesa la solicitud
@@ -1120,9 +1133,8 @@ console.log("afuera2:", entrenamiento);
             //  if (typeof response === "string") {
                     // Si la respuesta es una cadena, conviértela en un objeto JSON
                 //    data = JSON.parse(response);
-            //  }
-            
-                            // Verifica que el valor no sea undefined
+            //  }           
+                         // Verifica que el valor no sea undefined
 
                     console.log("respuesta."+data);
                     window.location.href = 'index.php?c=Dueno';
