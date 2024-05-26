@@ -102,7 +102,7 @@ dialog {
                                                         <div class="col-md-12">  
                                                             <div class="form-group">
                                                                 <label id="lb_entrada_1">Dueño de la Mascota</label>
-                                                                <select class="custom-select selevt" name="sintomas" id="sintomas" >
+                                                                <select class="custom-select selevt" name="duenos" id="duenos" >
                                                                     <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
                                                                         <option  value="<?php echo $Tipo->idDueno; ?>">
@@ -117,14 +117,8 @@ dialog {
                                                         <div class="col-md-12">  
                                                             <div class="form-group">
                                                                 <label id="lb_entrada_1">Selecione a la Mascota</label>
-                                                                <select class="custom-select selevt" name="sintomas" id="sintomas" >
-                                                                    <option  value="0">Seleccion</option>
-                                                                    <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
-                                                                        <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                                                            <?php echo $Tipo->nuevaconsulta; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
-                                                                        </option>       
-                                                                    <?php endforeach; ?>
-                                                                </select>                 
+                                                                <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
+                                                                     <option value="0"><?php echo $pvd->Nombre_Mascota; ?></opcion>                                                                               </select>                                                 
                                                             </div>
                                                         </div>
                                                     </div> <!-- Fin de la primera fila -->
@@ -985,6 +979,45 @@ console.log("afuera2:", entrenamiento);
         location.reload(); 
      
     });
+
+    $("#duenos").on("change", function () {
+
+        var valorSeleccionado = $("#duenos").val();           
+        console.log('Respuesta del servidor:', valorSeleccionado);
+
+        // Realizar una solicitud AJAX para obtener los datos al cargar la página
+        $.ajax({
+            url: '?c=neurona&a=NuevoPreparado&X=' + valorSeleccionado,
+            method: 'POST',
+            dataType: 'json',
+            success: function (data) {
+                // Limpia el select actual
+
+
+                // Agrega una opción predeterminada
+                    console.log('Respuesta del servidor:', data);
+                // Llena el select con los datos obtenidos
+
+                $.each(data, function (key, value) {
+                    $('#Id_macota').append('<option value="' + value.Recomendacion_id + '">' + value.Recomendacion_titulo + '</option>');
+                });
+
+                },
+            error: function (xhr, status, error) {
+                console.log('Error al obtener los datos:');
+                console.log('XHR:', xhr);
+                console.log('Status:', status);
+                console.log('Error:', error);
+            }
+        });
+
+        // Agregar el evento change para manejar futuros cambios en entrada_X
+        $("#duenos").change(function () {
+            var valorSeleccionado = $(this).val();
+            // Resto del código AJAX para manejar cambios en entrada_X
+        });
+    });
+   
 
   
     $('.btnEntrenar').on('click', function () {
