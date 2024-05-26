@@ -41,7 +41,7 @@ dialog {
 
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-6">
-        <h1 class="h3 mb-0 text-gray-800">Consulta a la I.A.</h1>
+        <h1 class="h3 mb-0 text-gray-800">Consulta I.A.</h1>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#RegistroMVC">
             Nuevo
         </button>
@@ -89,7 +89,7 @@ dialog {
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Nueva Red </h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Nueva Consulta </h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>

@@ -39,158 +39,158 @@ dialog {
 
 </style>
 
-<div class="container-fluid">
-    <div class="d-sm-flex align-items-center justify-content-between mb-6">
-        <h1 class="h3 mb-0 text-gray-800">Red Neuronal Recurrente</h1>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#RegistroMVC">
-            Nuevo
-        </button>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered" id="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>Id</th>
-                            <th>Entrenado</th>
-                            <th>Nombre Enfermadad</th>
-                            <th>Sintoma 1</th>
-                            <th>Sintoma 2</th>
-                            <th>Sintoma 3</th>
-                            <th>Sintoma 4</th>
-                            <th>Sintoma 5</th>
-                            <th>Sintoma 6</th>
-                            <th>Sintoma 7</th>
-                            <th>Sintoma 8</th>
-                            <th>Sintoma 9</th>
-                            <th>Sintoma 10</th>
-                            <th>Sintoma 11</th>
-                            <th>Sintoma 12</th>
-                            <th>Examinaminación </th>
-                            <th>Diagnostico</th>
-                            <th>Tratamiento 1</th>
-                            <th>Tratamiento 2</th>
-                          
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($this->model->Listar() as $r): ?>
-                              <tr>
-                                    <td><?php echo $r->idEnfermadad; ?></td>
-                                    <td>
-                                    <?php  if ($r->estado==0){echo "Inactivo";?> 
-
-                            <!-- Modal para Registro de Propietario -->
-<div class="modal fade" id="RegistroMVC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nueva Red </h5>
-                <button type="button" class="close" data-dismiss="dialog" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="frm-proprietario" action="?c=neurona&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
-                    <!-- Formulario para propietario -->
-                    <div class="col-md-3">
-
-
-                    <div class="form-group">
-                            <label for="pesoPropietario">Nombre Enfermedad</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de la Enfermedad" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="alturaPropietario">Sintoma 1</label>
-                            <input type="text" class="form-control" id="sintoma1" name="sintoma1" placeholder="Sintoma de la enfermedad" required>                       
-                        </div>
-                        <div class="form-group">
-                            <label for="alergicoPropietario">Sintoma 2</label>
-                            <input type="text" class="form-control" id="sintoma2" name="sintoma2" placeholder="Sintoma de la enfermedad" >
-                        </div>
-                        <div class="form-group">
-                            <label for="tipoSangrePropietario">Sintoma 3</label>
-                            <input type="text" class="form-control" id="sintoma3" name="sintoma3" placeholder="Sintoma de la enfermedad" >
-                        </div>
-                        <div class="form-group">
-                            <label for="enfermedades">Sintoma 4</label>
-                            <input type="text" class="form-control" id="sintoma4" name="sintoma4" placeholder="Sintoma de la enfermedad" >
-                        </div>
-                           
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                            <label for="enfermedades">Sintoma 5</label>
-                            <input type="text" class="form-control" id="sintoma5" name="sintoma5" placeholder="Sintoma de la enfermedad" >
-                        </div>
-                        <div class="form-group">
-                            <label for="tratamientos">Sintoma 6</label>
-                            <input type="text" class="form-control" id="sintoma6" name="sintoma6" placeholder="Sintoma de la enfermedad" >
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="cirugias">Sintoma 7</label>
-                            <input type="text" class="form-control" id="sintoma7" name="sintoma7" placeholder="Sintoma de la enfermedad" >
-                        </div>
-                        <div class="form-group">
-                            <label for="extras">Sintoma 8</label>
-                            <input type="text" class="form-control" id="sintoma8" name="sintoma8" placeholder="Sintoma de la enfermedad" >
-                        </div>  
-                        <div class="form-group">
-                            <label for="extras">Sintoma 9</label>
-                            <input type="text" class="form-control" id="sintoma9" name="sintoma9" placeholder="Sintoma de la enfermedad" >
-                        </div>                     
+                <div class="container-fluid">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-6">
+                        <h1 class="h3 mb-0 text-gray-800">NUEVO ENTRENAMIENTO</h1>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#RegistroMVC">
+                            Nuevo
+                        </button>
                     </div>
 
-                    <div class="col-md-3">
-                      <div class="form-group">
-                            <label for="enfermedades">Sintoma 10</label>
-                            <input type="text" class="form-control" id="sintoma10" name="sintoma10" placeholder="Sintoma de la enfermedad" >
-                        </div>
-                        <div class="form-group">
-                            <label for="tratamientos">Sintoma 11</label>
-                            <input type="text" class="form-control" id="sintoma11" name="sintoma11" placeholder="Sintoma de la enfermedad" >
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="cirugias">Sintoma 12</label>
-                            <input type="text" class="form-control" id="sintoma12" name="sintoma12" placeholder="Sintoma de la enfermedad" >
-                        </div>
-                        <div class="form-group">
-                            <label for="extras">Examinación</label>
-                            <input type="text" class="form-control" id="examinacion" name="examinacion" placeholder="Examinación de la Enfermedad" required>
-                        </div>  
-                        <div class="form-group">
-                            <label for="extras">Diagnostico</label>
-                            <input type="text" class="form-control" id="diagnostico" name="diagnostico" placeholder="Enfermedad Diasnosticada" required >
-                        </div>  
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                            <label for="enfermedades">Tratamiento 1</label>
-                            <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="tratamientos">Tratamiento 2</label>
-                            <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2" >
-                        </div>
-    
-                        
-                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered" id="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Entrenado</th>
+                                            <th>Nombre Enfermadad</th>
+                                            <th>Sintoma 1</th>
+                                            <th>Sintoma 2</th>
+                                            <th>Sintoma 3</th>
+                                            <th>Sintoma 4</th>
+                                            <th>Sintoma 5</th>
+                                            <th>Sintoma 6</th>
+                                            <th>Sintoma 7</th>
+                                            <th>Sintoma 8</th>
+                                            <th>Sintoma 9</th>
+                                            <th>Sintoma 10</th>
+                                            <th>Sintoma 11</th>
+                                            <th>Sintoma 12</th>
+                                            <th>Examinaminación </th>
+                                            <th>Diagnostico</th>
+                                            <th>Tratamiento 1</th>
+                                            <th>Tratamiento 2</th>
+                                        
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($this->model->Listar() as $r): ?>
+                                            <tr>
+                                                    <td><?php echo $r->idEnfermadad; ?></td>
+                                                    <td>
+                                                    <?php  if ($r->estado==0){echo "Inactivo";?> 
+
+                                            <!-- Modal para Registro de Propietario -->
+                <div class="modal fade" id="RegistroMVC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Nueva Red </h5>
+                                <button type="button" class="close" data-dismiss="dialog" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="frm-proprietario" action="?c=neurona&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
+                                    <!-- Formulario para propietario -->
+                                    <div class="col-md-3">
 
 
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" name="salir" id="salir" class="btn btn-secondary">Cerrar..</button>
-                <button type="submit" form="frm-proprietario" class="btn btn-primary">Guardar</button>
-            </div>
-        </div>
-    </div>
-</div>
+                                    <div class="form-group">
+                                            <label for="pesoPropietario">Nombre Enfermedad</label>
+                                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de la Enfermedad" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="alturaPropietario">Sintoma 1</label>
+                                            <input type="text" class="form-control" id="sintoma1" name="sintoma1" placeholder="Sintoma de la enfermedad" required>                       
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="alergicoPropietario">Sintoma 2</label>
+                                            <input type="text" class="form-control" id="sintoma2" name="sintoma2" placeholder="Sintoma de la enfermedad" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tipoSangrePropietario">Sintoma 3</label>
+                                            <input type="text" class="form-control" id="sintoma3" name="sintoma3" placeholder="Sintoma de la enfermedad" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="enfermedades">Sintoma 4</label>
+                                            <input type="text" class="form-control" id="sintoma4" name="sintoma4" placeholder="Sintoma de la enfermedad" >
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-md-3">
+                                    <div class="form-group">
+                                            <label for="enfermedades">Sintoma 5</label>
+                                            <input type="text" class="form-control" id="sintoma5" name="sintoma5" placeholder="Sintoma de la enfermedad" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tratamientos">Sintoma 6</label>
+                                            <input type="text" class="form-control" id="sintoma6" name="sintoma6" placeholder="Sintoma de la enfermedad" >
+                                        </div>
+                    
+                                        <div class="form-group">
+                                            <label for="cirugias">Sintoma 7</label>
+                                            <input type="text" class="form-control" id="sintoma7" name="sintoma7" placeholder="Sintoma de la enfermedad" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="extras">Sintoma 8</label>
+                                            <input type="text" class="form-control" id="sintoma8" name="sintoma8" placeholder="Sintoma de la enfermedad" >
+                                        </div>  
+                                        <div class="form-group">
+                                            <label for="extras">Sintoma 9</label>
+                                            <input type="text" class="form-control" id="sintoma9" name="sintoma9" placeholder="Sintoma de la enfermedad" >
+                                        </div>                     
+                                    </div>
+
+                                    <div class="col-md-3">
+                                    <div class="form-group">
+                                            <label for="enfermedades">Sintoma 10</label>
+                                            <input type="text" class="form-control" id="sintoma10" name="sintoma10" placeholder="Sintoma de la enfermedad" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tratamientos">Sintoma 11</label>
+                                            <input type="text" class="form-control" id="sintoma11" name="sintoma11" placeholder="Sintoma de la enfermedad" >
+                                        </div>
+                    
+                                        <div class="form-group">
+                                            <label for="cirugias">Sintoma 12</label>
+                                            <input type="text" class="form-control" id="sintoma12" name="sintoma12" placeholder="Sintoma de la enfermedad" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="extras">Examinación</label>
+                                            <input type="text" class="form-control" id="examinacion" name="examinacion" placeholder="Examinación de la Enfermedad" required>
+                                        </div>  
+                                        <div class="form-group">
+                                            <label for="extras">Diagnostico</label>
+                                            <input type="text" class="form-control" id="diagnostico" name="diagnostico" placeholder="Enfermedad Diasnosticada" required >
+                                        </div>  
+                                    </div>
+                                    <div class="col-md-3">
+                                    <div class="form-group">
+                                            <label for="enfermedades">Tratamiento 1</label>
+                                            <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tratamientos">Tratamiento 2</label>
+                                            <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2" >
+                                        </div>
+                    
+                                        
+                                    </div>
+
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" name="salir" id="salir" class="btn btn-secondary">Cerrar..</button>
+                                <button type="submit" form="frm-proprietario" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                                 <button type="button" id="btnEntrenar" name="btnEntrenar" class="btn btn-danger btnEntrenar"
 
 
