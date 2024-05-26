@@ -805,10 +805,9 @@ $(document).ready(function () {
         var tratamiento2 = $(this).data('tratamiento2');
          
   
-        for (let i = 1; i <= 12; i++) {
-            $('#sintoma' + i).prop('disabled', true);
-        }
+  
         if (sintoma1==""){
+            $("sintoma1").prop('disabled', true);
             $( "#sintoma1" ).prop( "disabled", true );
             $( "#entrada_1" ).prop( "disabled", true );
         }
