@@ -809,9 +809,11 @@ $(document).ready(function () {
             $('#sintoma' + i).prop('disabled', true);
         }
         if (sintoma1==""){
+            $( "#sintoma1" ).prop( "disabled", true );
             $( "#entrada_1" ).prop( "disabled", true );
         }
         if (sintoma2==""){
+            $( "#sintoma2" ).prop( "disabled", true );
             $( "#entrada_2" ).prop( "disabled", true );
         }
         if (sintoma3==""){
