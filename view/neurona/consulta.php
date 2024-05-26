@@ -113,9 +113,9 @@ dialog {
 
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <div class="form-group">
+                                                        
                                                                <label id="lb_entrada_1">Dueño de la Mascota</label>
-                                                               <select class="custom-select selevt" name="duenos" id="duenos" >
+                                                               <select name="duenos" id="duenos" >
                                                                     <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
                                                                         <option  value="<?php echo $Tipo->idDueno; ?>">
@@ -123,35 +123,20 @@ dialog {
                                                                         </option>       
                                                                     <?php endforeach; ?>
                                                                 </select>     
-                                                           </div>
+                                                           
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <div class="form-group">
+                                                           
                                                             <label id="lb_entrada_1">Selecione a la Mascota</label>
-                                                                <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
+                                                                <select name="Id_macota" id="Id_macota" >
                                                                      <option value="<?php echo $Tipo->idMascota; ?>"><?php echo $pvd->nombreMascota; ?></opcion>  
                                                                  </select>   
-                                                            </div> 
+                                                          
                                                         </div> 
                                                     </div> 
 
 
-                                                    <div class="row">
-                                                        <div class="col-md-5">  
-                                                            <div class="form-group">
-                                                                <label id="lb_entrada_1">Dueño de la Mascota</label>
-                                                                <select  name="duenos" id="duenos" >
-                                                                    <option  value="0">Seleccion</option>
-                                                                    <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
-                                                                        <option  value="<?php echo $Tipo->idDueno; ?>">
-                                                                            <?php echo $Tipo->duenos; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
-                                                                        </option>       
-                                                                    <?php endforeach; ?>
-                                                                </select>                 
-                                                            </div>
-
-                                                        </div>
-                                                   </div>   
+                                                   
                                    <!-- Fin de la primera fila -->
                                          
                                                      <div class="row">
