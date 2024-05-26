@@ -182,6 +182,18 @@
                             <input type="text" class="form-control" id="tamanoMascota" name="tamanoMascota" 
                                 placeholder="Tamaño de la mascota" required>
                         </div>
+
+                        <div class="form-group">
+                            <label for="sexoMascota">Tamaño</label>
+                            <select class="form-control" id="tamanoMascota" name="tamanoMascota"  required>
+                                <option value="">Selecciona el tamaño</option>
+                                <option value="1">Raza Pequeña</option>
+                                <option value="2">Raza Mediana</option>
+                                <option value="3">Raza Grande</option>
+                                <option value="4">Raza Grande Superior</option>
+                            </select>
+                        </div>
+
                         <div class="form-group">
                             <label for="sexoMascota">Macho o Hembra</label>
                             <select class="form-control" id="sexoMascota" name="sexoMascota"  required>
