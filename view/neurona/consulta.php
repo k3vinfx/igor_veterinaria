@@ -142,8 +142,7 @@ dialog {
                                      
                                                       
                                                             <div class="input-field col s12">
-                                                             
-                                                                <select name="sintomas" id="sintomas" > 
+                                                              <select name="sintomas" id="sintomas" > 
                                                                 <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
                                                                         <option  value="<?php echo $Tipo->idEnfermadad; ?>">
@@ -157,26 +156,7 @@ dialog {
 
 
                                         
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Tratamiento 1</label>
-                                                                <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" >
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="tratamientos">Tratamiento 2</label>
-                                                                <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2">
-                                                            </div> 
-                                                        </div> 
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="tratamientos">result</label>
-                                                                <text type="text" class="form-control" id="resultx" name="resultx" placeholder="Tratamiento 2">
-                                                            </div> 
-                                                        </div> 
-                                                    </div> <!-- Fin de la segunda fila -->
+                                                    
                                                 </form>
                                             </div>
                                             <div class="modal-footer">
