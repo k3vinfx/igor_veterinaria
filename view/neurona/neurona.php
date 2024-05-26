@@ -810,8 +810,6 @@ $(document).ready(function () {
         }
         if (sintoma1==""){
             $( "#entrada_1" ).prop( "disabled", true );
-        }else {
-            sintoma7
         }
         if (sintoma2==""){
             $( "#entrada_2" ).prop( "disabled", true );
