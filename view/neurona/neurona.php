@@ -807,13 +807,10 @@ $(document).ready(function () {
   
   
         if (sintoma1==""){
-            $("sintoma1").prop('disabled', true);
-            $( "#sintoma1" ).prop( "disabled", true );
-            $( "#entrada_1" ).prop( "disabled", true );
+           $( "#entrada_1" ).prop( "disabled", true );
         }
         if (sintoma2==""){
-            $( "#sintoma2" ).prop( "disabled", true );
-            $( "#entrada_2" ).prop( "disabled", true );
+           $( "#entrada_2" ).prop( "disabled", true );
         }
         if (sintoma3==""){
             $( "#entrada_3" ).prop( "disabled", true );
@@ -871,6 +868,10 @@ $(document).ready(function () {
         $('#frm-proprietariox #diagnostico').val(enfermedad);
         $('#frm-proprietariox #tratamiento1').val(tratamiento1);
         $('#frm-proprietariox #tratamiento2').val(tratamiento2);
+
+
+        $('#frm-proprietariox #sintoma1').prop("disabled",true);
+        $('#frm-proprietariox #sintoma2').prop("disabled",true);
 
     });
    // Acciones para el botón de editar
