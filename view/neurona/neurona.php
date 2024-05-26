@@ -809,7 +809,6 @@ $(document).ready(function () {
         var sintoma8 = $(this).data('sintoma8');
         var sintoma9 = $(this).data('sintoma9');
         var sintoma10 = $(this).data('sintoma10');
-
         var sintoma11 = $(this).data('sintoma11');                  
         var sintoma12 = $(this).data('sintoma12');
         var examinacion = $(this).data('examinacion');
@@ -817,12 +816,69 @@ $(document).ready(function () {
         var tratamiento1 = $(this).data('tratamiento1');               
         var tratamiento2 = $(this).data('tratamiento2');
          
-        if (sintoma10!=null){
-            console.log("son pendejos");
+        if (sintoma1!=null){
+
         }else {
-            console.log("son webadas");
+           $( "#entrada_1" ).prop( "disabled", true );
         }
-     
+        if (sintoma2!=null){
+
+        }else {
+            $( "#entrada_2" ).prop( "disabled", true );
+        }
+        if (sintoma3!=null){
+
+        }else {
+            $( "#entrada_3" ).prop( "disabled", true );
+        }
+        if (sintoma4!=null){
+
+        }else {
+            $( "#entrada_4" ).prop( "disabled", true );
+        }
+        if (sintoma5!=null){
+
+        }else {
+            $( "#entrada_5" ).prop( "disabled", true );
+        }
+        if (sintoma6!=null){
+
+        }else {
+            $( "#entrada_6" ).prop( "disabled", true );
+        }
+        if (sintoma7!=null){
+
+        }else {
+           $( "#entrada_7" ).prop( "disabled", true );
+        }
+        if (sintoma8!=null){
+
+        }else {
+            $( "#entrada_8" ).prop( "disabled", true );
+        }
+        if (sintoma9!=null){
+
+        }else {
+            $( "#entrada_9" ).prop( "disabled", true );
+        }
+        if (sintoma10!=null){
+
+        }else {
+            $( "#entrada_10" ).prop( "disabled", true );
+        }
+        if (sintoma11!=null){
+
+        }else {
+            $( "#entrada_11" ).prop( "disabled", true );
+        }
+        if (sintoma12!=null){
+
+        }else {
+            $( "#entrada_12" ).prop( "disabled", true );
+        }
+
+
+
     // Establecer el valor del título del modal
        $('#nombrex').text(nombre);
         $('#frm-proprietariox #idFK').val(id);
