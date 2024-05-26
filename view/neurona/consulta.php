@@ -999,7 +999,7 @@ console.log("afuera2:", entrenamiento);
                 // Llena el select con los datos obtenidos
 
                 $.each(data, function (key, value) {
-                    $('#Id_macota').append('<option value="' + value.Recomendacion_id + '">' + value.Recomendacion_titulo + '</option>');
+                    $('#Id_macota').append('<option value="' + value.idMascota + '">' + value.nombreMascota + '</option>');
                 });
 
                 },
