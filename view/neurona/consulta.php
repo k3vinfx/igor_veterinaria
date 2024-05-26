@@ -112,7 +112,7 @@ dialog {
                                                     <!-- Formulario para propietario -->
 
                                                     <div class="row">
-                                                        <div class="col-md-6">
+                                                        <div class="input-field col s12">
                                                         
                                                                <label id="lb_entrada_1">Dueño de la Mascota</label>
                                                                <select name="duenos" id="duenos" >
@@ -125,7 +125,7 @@ dialog {
                                                                 </select>     
                                                            
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="input-field col s12">
                                                            
                                                             <label id="lb_entrada_1">Selecione a la Mascota</label>
                                                                 <select name="Id_macota" id="Id_macota" >
@@ -140,7 +140,7 @@ dialog {
                                    <!-- Fin de la primera fila -->
                                          
                                                      <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="input-field col s12">
                                                            
                                                                 <label for="enfermedades">Sintoma 1</label>
                                                                 <select  name="sintomas" id="sintomas" > 
