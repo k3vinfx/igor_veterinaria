@@ -27,7 +27,7 @@ class mascota
 			$result = array();
 			$stm = $this->pdo->prepare("SELECT mas.idMascota, mas.nombreMascota, mas.especieMascota, mas.razaMascota, mas.fechaNaciemientoMasctoa, 
 			mas.sexoMascota, mas.colorMascota, mas.TamanoMascota , CONCAT(d.nombresDueno,' ',d.apellidosDueno,  ' ', ', CI:',' ',d.ciDueno) as nombresDueno ,mas.estado
-			FROM mvc_vet.mascotadatos mas inner join mvc_vet.dueno d on mas.FK_idDueno = d.idDueno ;");
+			FROM mascotadatos mas inner join dueno d on mas.FK_idDueno = d.idDueno ;");
 			$stm->execute();
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e)
