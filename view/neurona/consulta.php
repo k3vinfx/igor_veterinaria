@@ -38,13 +38,12 @@ dialog {
 }
 
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-     
+  
 
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-6">
@@ -106,7 +105,7 @@ dialog {
                                                     <!-- Formulario para propietario -->
 
                                                     <div class="row">
-                                                        <div class="col-md-8">
+                                                        <div class="col-md-6">
                                                             <div class="form-group">
                                                                <label id="lb_entrada_1">Dueño de la Mascota</label>
                                                                <select class="custom-select selevt" name="duenos" id="duenos" >
@@ -119,7 +118,7 @@ dialog {
                                                                 </select>     
                                                            </div>
                                                         </div>
-                                                        <div class="col-md-8">
+                                                        <div class="col-md-6">
                                                             <div class="form-group">
                                                             <label id="lb_entrada_1">Selecione a la Mascota</label>
                                                                 <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
@@ -133,11 +132,10 @@ dialog {
                                                <!-- Fin de la primera fila -->
                                              
                                                      <div class="row">
-                                                        <div class="input-field col s12">
-                                                       
-                                                                <label for="enfermedades">Sintomas</label>
-                                                              
-                                                                <select name="sintomas" id="sintomas" > 
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Sintoma 1</label>
+                                                                <select class="custom-select selevt" name="sintomas" id="sintomas" > 
                                                                 <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
                                                                         <option  value="<?php echo $Tipo->idEnfermadad; ?>">
@@ -145,15 +143,32 @@ dialog {
                                                                         </option>       
                                                                     <?php endforeach; ?>
                                                                 </select>       
-                                                        
-                                                         
+                                                            </div>
                                                         </div>                                                                                 
                                                     </div>
 
 
 
                                         
-                                                 
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Tratamiento 1</label>
+                                                                <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="tratamientos">Tratamiento 2</label>
+                                                                <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2">
+                                                            </div> 
+                                                        </div> 
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="tratamientos">result</label>
+                                                                <text type="text" class="form-control" id="resultx" name="resultx" placeholder="Tratamiento 2">
+                                                            </div> 
+                                                        </div> 
                                                     </div> <!-- Fin de la segunda fila -->
                                                 </form>
                                             </div>
