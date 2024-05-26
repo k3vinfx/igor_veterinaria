@@ -619,14 +619,9 @@ dialog {
                                 echo "<option value=\"$valor_formateado\">$valor_formateado</option>";
                             }
                             ?>
-                            </select>
-                       
-                        </div>
-    
-                        
-                    </div>
-
-
+                            </select>                      
+                        </div>                       
+                   </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -652,7 +647,6 @@ dialog {
                     <!-- Formulario para propietario -->
                     <div class="col-md-3">
 
-
                     <div class="form-group">
                             <label for="pesoPropietario">Nombre Enfermedad</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de la Enfermedad" required>
@@ -672,8 +666,7 @@ dialog {
                         <div class="form-group">
                             <label for="enfermedades">Sintoma 4</label>
                             <input type="text" class="form-control" id="sintoma4" name="sintoma4" placeholder="Sintoma de la enfermedad" >
-                        </div>
-                           
+                        </div>                         
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
@@ -698,7 +691,6 @@ dialog {
                             <input type="text" class="form-control" id="sintoma9" name="sintoma9" placeholder="Sintoma de la enfermedad" >
                         </div>                     
                     </div>
-
                     <div class="col-md-3">
                       <div class="form-group">
                             <label for="enfermedades">Sintoma 10</label>
@@ -730,12 +722,8 @@ dialog {
                         <div class="form-group">
                             <label for="tratamientos">Tratamiento 2</label>
                             <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2" >
-                        </div>
-    
-                        
+                        </div>                        
                     </div>
-
-
                 </form>
             </div>
             <div class="modal-footer">
@@ -817,23 +805,46 @@ $(document).ready(function () {
         var tratamiento2 = $(this).data('tratamiento2');
          
         if (sintoma1=""){
-            console.log("entrada 1 valores1");
             $( "#entrada_1" ).prop( "disabled", true );
         }
         if (sintoma2=""){
-            console.log("entrada 2 valores1");
             $( "#entrada_2" ).prop( "disabled", true );
         }
         if (sintoma3=""){
-            console.log("entrada 3 valores1");
             $( "#entrada_3" ).prop( "disabled", true );
         }
-        if (sintoma12==""){
-            console.log("entrada 12 valores12");
+        if (sintoma4=""){
+            $( "#entrada_4" ).prop( "disabled", true );
+        }
+        if (sintoma5=""){
+            $( "#entrada_5" ).prop( "disabled", true );
+        }
+        if (sintoma6=""){
+            $( "#entrada_6" ).prop( "disabled", true );
+        }
+        if (sintoma7=""){
+            $( "#entrada_7" ).prop( "disabled", true );
+        }
+        if (sintoma8=""){
+            $( "#entrada_8" ).prop( "disabled", true );
+        }
+        if (sintoma9=""){
+            $( "#entrada_9" ).prop( "disabled", true );
+        }
+        if (sintoma10=""){
+            $( "#entrada_10" ).prop( "disabled", true );
+        }
+        if (sintoma11=""){
+            $( "#entrada_11" ).prop( "disabled", true );
+        }
+        if (sintoma12=""){
             $( "#entrada_12" ).prop( "disabled", true );
         }
 
 
+
+
+    
     // Establecer el valor del título del modal
        $('#nombrex').text(nombre);
         $('#frm-proprietariox #idFK').val(id);
