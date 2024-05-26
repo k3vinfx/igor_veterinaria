@@ -51,7 +51,7 @@ dialog {
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-
+    
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-6">
         <h1 class="h3 mb-0 text-gray-800">Consulta I.A.</h1>
@@ -115,7 +115,7 @@ dialog {
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                <label id="lb_entrada_1">Dueño de la Mascota</label>
-                                                               <select name="duenos" id="duenos" >
+                                                               <select class="custom-select selevt" name="duenos" id="duenos" >
                                                                     <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
                                                                         <option  value="<?php echo $Tipo->idDueno; ?>">
@@ -128,25 +128,19 @@ dialog {
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                             <label id="lb_entrada_1">Selecione a la Mascota</label>
-                                                                <select name="Id_macota" id="Id_macota" >
+                                                                <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
                                                                      <option value="<?php echo $Tipo->idMascota; ?>"><?php echo $pvd->nombreMascota; ?></opcion>  
                                                                  </select>   
-                                                            </div> 
-                                                        </div> 
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="tratamientos">result</label>
-                                                                <text type="text" class="form-control" id="resultx" name="resultx" placeholder="Tratamiento 2">
                                                             </div> 
                                                         </div> 
                                                     </div> 
 
 
                                                     <div class="row">
-                                                        <div class="col-md-5">  
+                                                        <div class="col-md-12">  
                                                             <div class="form-group">
                                                                 <label id="lb_entrada_1">Dueño de la Mascota</label>
-                                                                <select name="duenos" id="duenos" >
+                                                                <select  name="duenos" id="duenos" >
                                                                     <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
                                                                         <option  value="<?php echo $Tipo->idDueno; ?>">
@@ -156,38 +150,10 @@ dialog {
                                                                 </select>                 
                                                             </div>
 
-
-
                                                         </div>
-                                                        
+                                                   </div>   
                                                       <!-- Fin de la primera fila -->
-                                                      <div class="row">
-                                                         <div class="col-md-5">  
-                                                            <div class="form-group">
-                                                                <label id="lb_entrada_1">Selecione a la Mascota</label>
-                                                                <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
-                                                                     <option value="<?php echo $Tipo->idMascota; ?>"><?php echo $pvd->nombreMascota; ?></opcion>  
-                                                                 </select>                                                 
-                                                            </div>
-                                                        </div>
-                                                    </div> <!-- Fin de la primera fila -->
-                                                    </div> 
-                                                     <div class="row">
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Sintoma 1</label>
-                                                                <select class="custom-select selevt" name="sintomas" id="sintomas" > 
-                                                                <option  value="0">Seleccion</option>
-                                                                    <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
-                                                                        <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                                                            <?php echo $Tipo->nuevaconsulta; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
-                                                                        </option>       
-                                                                    <?php endforeach; ?>
-                                                                </select>       
-                                                            </div>
-                                                        </div>                                                                                 
-                                                    </div>
-
+                                             
 
 
                                         
