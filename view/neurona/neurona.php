@@ -804,8 +804,14 @@ $(document).ready(function () {
         var tratamiento1 = $(this).data('tratamiento1');               
         var tratamiento2 = $(this).data('tratamiento2');
          
+  
+        for (let i = 1; i <= 12; i++) {
+            $('#sintomas' + i).prop('disabled', true);
+        }
         if (sintoma1==""){
             $( "#entrada_1" ).prop( "disabled", true );
+        }else {
+            sintoma7
         }
         if (sintoma2==""){
             $( "#entrada_2" ).prop( "disabled", true );
