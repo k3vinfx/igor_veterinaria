@@ -983,7 +983,7 @@ console.log("afuera2:", entrenamiento);
     $("#duenos").on("change", function () {
 
         var valorSeleccionado = $("#duenos").val();           
-        console.log('Respuesta del servidor:', valorSeleccionado);
+        console.log('Respuesta del servidor1:', valorSeleccionado);
 
         // Realizar una solicitud AJAX para obtener los datos al cargar la página
         $.ajax({
@@ -995,7 +995,7 @@ console.log("afuera2:", entrenamiento);
 
 
                 // Agrega una opción predeterminada
-                    console.log('Respuesta del servidor:', data);
+                    console.log('Respuesta del servidor2:', data);
                 // Llena el select con los datos obtenidos
 
                 $.each(data, function (key, value) {
