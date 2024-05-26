@@ -38,19 +38,7 @@ dialog {
 }
 
 </style>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
-    $('select').material_select();
-  });
-  </script>
 
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-6">
@@ -59,19 +47,6 @@ dialog {
             Nuevo
         </button>
     </div>
-    <div class="container">
-                                                    <div class="row">
-                                                    <div class="input-field col s6">
-                                                        <select>
-                                                        <option value="" disabled selected>Choose your option</option>
-                                                        <option value="1">A Really Freakin Long MLS Name That Will Not Display in the Container1</option>
-                                                        <option value="2">Option 2</option>
-                                                        <option value="3">Option 3</option>
-                                                        </select>
-                                                        <label>Materialize Select</label>
-                                                    </div>
-                                                    </div>
-                                                    </div>
 
     <div class="row">
         <div class="col-lg-12">
@@ -126,10 +101,8 @@ dialog {
 
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                         
+                                                            <div class="form-group">
                                                                <label id="lb_entrada_1">Dueño de la Mascota</label>
-
-
                                                                <select class="custom-select selevt" name="duenos" id="duenos" >
                                                                     <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
@@ -138,7 +111,7 @@ dialog {
                                                                         </option>       
                                                                     <?php endforeach; ?>
                                                                 </select>     
-                                                     
+                                                           </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
@@ -148,15 +121,50 @@ dialog {
                                                                  </select>   
                                                             </div> 
                                                         </div> 
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="tratamientos">result</label>
+                                                                <text type="text" class="form-control" id="resultx" name="resultx" placeholder="Tratamiento 2">
+                                                            </div> 
+                                                        </div> 
                                                     </div> 
 
 
-                                               <!-- Fin de la primera fila -->
-                                             
-                                     
-                                                      
-                                                            <div class="input-field col s12">
-                                                              <select name="sintomas" id="sintomas" > 
+                                                    <div class="row">
+                                                        <div class="col-md-5">  
+                                                            <div class="form-group">
+                                                                <label id="lb_entrada_1">Dueño de la Mascota</label>
+                                                                <select class="custom-select selevt" name="duenos" id="duenos" >
+                                                                    <option  value="0">Seleccion</option>
+                                                                    <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
+                                                                        <option  value="<?php echo $Tipo->idDueno; ?>">
+                                                                            <?php echo $Tipo->duenos; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                                                        </option>       
+                                                                    <?php endforeach; ?>
+                                                                </select>                 
+                                                            </div>
+
+
+
+                                                        </div>
+                                                        
+                                                      <!-- Fin de la primera fila -->
+                                                      <div class="row">
+                                                         <div class="col-md-5">  
+                                                            <div class="form-group">
+                                                                <label id="lb_entrada_1">Selecione a la Mascota</label>
+                                                                <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
+                                                                     <option value="<?php echo $Tipo->idMascota; ?>"><?php echo $pvd->nombreMascota; ?></opcion>  
+                                                                 </select>                                                 
+                                                            </div>
+                                                        </div>
+                                                    </div> <!-- Fin de la primera fila -->
+                                                    </div> 
+                                                     <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Sintoma 1</label>
+                                                                <select class="custom-select selevt" name="sintomas" id="sintomas" > 
                                                                 <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
                                                                         <option  value="<?php echo $Tipo->idEnfermadad; ?>">
@@ -165,42 +173,32 @@ dialog {
                                                                     <?php endforeach; ?>
                                                                 </select>       
                                                             </div>
-                                                            <div class="input-field col s12">
-    <select>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
-    <label>Materialize Select</label>
-  </div>
-                                                            
-                                                            <div class="input-field col s12">
-                                                        <select multiple>
-                                                        <option value="" disabled selected>Choose your option</option>
-                                                        <option value="1">Option 1</option>
-                                                        <option value="2">Option 2</option>
-                                                        <option value="3">Option 3</option>
-                                                        </select>
-                                                        <label>Materialize Multiple Select</label>
+                                                        </div>                                                                                 
                                                     </div>
 
-                                                    <div class="container">
-                                                    <div class="row">
-                                                    <div class="input-field col s6">
-                                                        <select>
-                                                        <option value="" disabled selected>Choose your option</option>
-                                                        <option value="1">A Really Freakin Long MLS Name That Will Not Display in the Container1</option>
-                                                        <option value="2">Option 2</option>
-                                                        <option value="3">Option 3</option>
-                                                        </select>
-                                                        <label>Materialize Select</label>
-                                                    </div>
-                                                    </div>
-                                                    </div>
+
 
                                         
-                                                    
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Tratamiento 1</label>
+                                                                <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" >
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="tratamientos">Tratamiento 2</label>
+                                                                <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2">
+                                                            </div> 
+                                                        </div> 
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="tratamientos">result</label>
+                                                                <text type="text" class="form-control" id="resultx" name="resultx" placeholder="Tratamiento 2">
+                                                            </div> 
+                                                        </div> 
+                                                    </div> <!-- Fin de la segunda fila -->
                                                 </form>
                                             </div>
                                             <div class="modal-footer">
@@ -774,10 +772,9 @@ dialog {
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/brain.js@2.0.0-beta.18/dist/browser.js"></script>
 
-
 <script>
 $(document).ready(function () {
-  
+
     var entrenamiento = [];
 var net = new brain.NeuralNetwork();
 
