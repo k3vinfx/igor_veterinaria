@@ -131,7 +131,8 @@ dialog {
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label for="enfermedades">Sintomas</label>
-                                                                <select class="custom-select selevt" name="sintomas" id="sintomas" > 
+                                                                <div class="input-field col s12">
+                                                                <select name="sintomas" id="sintomas" > 
                                                                 <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
                                                                         <option  value="<?php echo $Tipo->idEnfermadad; ?>">
@@ -139,6 +140,7 @@ dialog {
                                                                         </option>       
                                                                     <?php endforeach; ?>
                                                                 </select>       
+                                                               </div>
                                                             </div>
                                                         </div>                                                                                 
                                                     </div>
@@ -744,7 +746,7 @@ $(document).ready(function () {
 
     var entrenamiento = [];
 var net = new brain.NeuralNetwork();
-
+$('select').formSelect();
 // Función para manejar el evento de hacer clic en el botón de buscar
 $('#buscarIa').click(function() {
     const inputValues = [];
