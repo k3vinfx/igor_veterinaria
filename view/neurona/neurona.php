@@ -804,40 +804,40 @@ $(document).ready(function () {
         var tratamiento1 = $(this).data('tratamiento1');               
         var tratamiento2 = $(this).data('tratamiento2');
          
-        if (sintoma1=""){
+        if (sintoma1==""){
             $( "#entrada_1" ).prop( "disabled", true );
         }
-        if (sintoma2=""){
+        if (sintoma2==""){
             $( "#entrada_2" ).prop( "disabled", true );
         }
-        if (sintoma3=""){
+        if (sintoma3==""){
             $( "#entrada_3" ).prop( "disabled", true );
         }
-        if (sintoma4=""){
+        if (sintoma4==""){
             $( "#entrada_4" ).prop( "disabled", true );
         }
-        if (sintoma5=""){
+        if (sintoma5==""){
             $( "#entrada_5" ).prop( "disabled", true );
         }
-        if (sintoma6=""){
+        if (sintoma6==""){
             $( "#entrada_6" ).prop( "disabled", true );
         }
-        if (sintoma7=""){
+        if (sintoma7==""){
             $( "#entrada_7" ).prop( "disabled", true );
         }
-        if (sintoma8=""){
+        if (sintoma8==""){
             $( "#entrada_8" ).prop( "disabled", true );
         }
-        if (sintoma9=""){
+        if (sintoma9==""){
             $( "#entrada_9" ).prop( "disabled", true );
         }
-        if (sintoma10=""){
+        if (sintoma10==""){
             $( "#entrada_10" ).prop( "disabled", true );
         }
-        if (sintoma11=""){
+        if (sintoma11==""){
             $( "#entrada_11" ).prop( "disabled", true );
         }
-        if (sintoma12=""){
+        if (sintoma12==""){
             $( "#entrada_12" ).prop( "disabled", true );
         }
 
