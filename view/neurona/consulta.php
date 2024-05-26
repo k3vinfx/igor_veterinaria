@@ -114,7 +114,7 @@ dialog {
                                                     <div class="row">
                                                         <div class="input-field col s12">
                                                         
-                                                               <label id="lb_entrada_1">Dueño de la Mascota</label>
+                                                       
                                                                <select name="duenos" id="duenos" >
                                                                     <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
@@ -127,7 +127,7 @@ dialog {
                                                         </div>
                                                         <div class="input-field col s12">
                                                            
-                                                            <label id="lb_entrada_1">Selecione a la Mascota</label>
+                                               
                                                                 <select name="Id_macota" id="Id_macota" >
                                                                      <option value="<?php echo $Tipo->idMascota; ?>"><?php echo $pvd->nombreMascota; ?></opcion>  
                                                                  </select>   
@@ -142,7 +142,6 @@ dialog {
                                                      <div class="row">
                                                         <div class="input-field col s12">
                                                            
-                                                                <label for="enfermedades">Sintoma 1</label>
                                                                 <select  name="sintomas" id="sintomas" > 
                                                                 <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
