@@ -133,10 +133,10 @@ dialog {
                                                <!-- Fin de la primera fila -->
                                              
                                                      <div class="row">
-                                                        <div class="col-md-12">
+                                                        <div class="input-field col s12">
                                                             <div class="form-group">
                                                                 <label for="enfermedades">Sintomas</label>
-                                                                <div class="input-field col s12">
+                                                              
                                                                 <select name="sintomas" id="sintomas" > 
                                                                 <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
@@ -145,7 +145,7 @@ dialog {
                                                                         </option>       
                                                                     <?php endforeach; ?>
                                                                 </select>       
-                                                               </div>
+                                                        
                                                             </div>
                                                         </div>                                                                                 
                                                     </div>
