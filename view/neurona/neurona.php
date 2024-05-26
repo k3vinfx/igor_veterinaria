@@ -185,7 +185,7 @@ dialog {
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" name="salir" id="salir" class="btn btn-secondary">Cerrar..</button>
+                                <button type="button" name="salirf" id="salirf" class="btn btn-secondary">Cerrar..</button>
                                 <button type="submit" form="frm-proprietario" class="btn btn-primary">Guardar</button>
                             </div>
                         </div>
@@ -637,7 +637,7 @@ dialog {
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" name="salir" id="salir" class="btn btn-secondary">Cerrar..</button>
+                <button type="button" name="saliru" id="saliru" class="btn btn-secondary">Cerrar..</button>
                 <button type="submit" form="frm-proprietariox" class="btn btn-primary">Guardar</button>
             </div>
         </div>
@@ -739,7 +739,7 @@ dialog {
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" name="salir" id="salir" class="btn btn-secondary">Cerrar..</button>
+                <button type="button" name="salirx" id="salirx" class="btn btn-secondary">Cerrar..</button>
                 <button type="submit" form="frm-proprietario" class="btn btn-primary">Guardar</button>
             </div>
         </div>
@@ -757,6 +757,21 @@ $(document).ready(function () {
     });
 
     $("#salir").on("click", function(){
+        // Ocultar el modal
+        location.reload(); 
+     
+    });
+    $("#salirx").on("click", function(){
+        // Ocultar el modal
+        location.reload(); 
+     
+    });
+    $("#salirf").on("click", function(){
+        // Ocultar el modal
+        location.reload(); 
+     
+    });
+    $("#saliru").on("click", function(){
         // Ocultar el modal
         location.reload(); 
      
