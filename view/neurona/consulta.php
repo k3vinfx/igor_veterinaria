@@ -118,7 +118,7 @@ dialog {
                                                             <div class="form-group">
                                                                 <label id="lb_entrada_1">Selecione a la Mascota</label>
                                                                 <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
-                                                                     <option value="0"><?php echo $pvd->Nombre_Mascota; ?></opcion>                                                                               </select>                                                 
+                                                                     <option value="<?php echo $Tipo->idTipoMacota; ?>"><?php echo $pvd->tipoMascota; ?></opcion>                                                                               </select>                                                 
                                                             </div>
                                                         </div>
                                                     </div> <!-- Fin de la primera fila -->
@@ -999,7 +999,7 @@ console.log("afuera2:", entrenamiento);
                 // Llena el select con los datos obtenidos
 
                 $.each(data, function (key, value) {
-                    $('#Id_macota').append('<option value="' + value.idMascota + '">' + value.nombreMascota + '</option>');
+                    $('#Id_macota').append('<option value="' + value.idTipoMacota + '">' + value.tipoMascota + '</option>');
                 });
 
                 },

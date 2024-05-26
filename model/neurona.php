@@ -92,7 +92,7 @@ class neurona
             die($e->getMessage());
         }
      }
-     
+
 
     public function getListar_Neurona_x($valor)
     {
@@ -117,7 +117,7 @@ class neurona
     {
         try {
             $result = array();
-            $stm = $this->pdo->prepare("SELECT idTipoMacota, CONCAT(nombreTipoMacota ,'-', rangoEdadTipoMacota,'-',razaTipoMacota,'-',sexoTipoMacota,'-',tamTipoMacota) AS TIPO_MASCOTA  FROM tipo_mascota;");
+            $stm = $this->pdo->prepare("SELECT idTipoMacota, CONCAT(nombreTipoMacota ,'-', rangoEdadTipoMacota,'-',razaTipoMacota,'-',sexoTipoMacota,'-',tamTipoMacota) AS tipoMascota  FROM tipo_mascota;");
             $stm->execute();
             return $stm->fetchAll(PDO::FETCH_OBJ);
         } catch (Exception $e) {
