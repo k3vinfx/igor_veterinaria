@@ -38,11 +38,11 @@
 	<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
 			<i class="fas fa-fw fa-history"></i>
-			<span>Antecedentes & Historial</span>
+			<span>Ficha Clinica & Historial</span>
 		</a>
 		<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
-			    <a class="collapse-item" href="?c=antecedentes&a=Start">Antecedentes Clinicos</a>
+			    <a class="collapse-item" href="?c=antecedentes&a=Start">Ficha Clinica</a>
 				<a class="collapse-item" href="?c=historial&a=Start">Historial Clinico</a>
 			</div>
 		</div>

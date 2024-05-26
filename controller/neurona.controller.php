@@ -137,5 +137,18 @@ class NeuronaController{
        header('Location: index.php?c=neurona&a=Start'); // redirecciona a la pagina de listar
     }
 
+    public function ListadoNeurona(){
+        $recomendaciones = [];
+
+        if(isset($_REQUEST['X'])){
+            $recomendaciones = $this->model->getListar_Neurona_x($_REQUEST['X']);
+        }
+    
+        header('Content-Type: application/json');
+        echo json_encode($recomendaciones);
+       
+    }
+
+
 
 }
