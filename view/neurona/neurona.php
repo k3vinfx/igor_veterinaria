@@ -816,61 +816,22 @@ $(document).ready(function () {
         var tratamiento1 = $(this).data('tratamiento1');               
         var tratamiento2 = $(this).data('tratamiento2');
          
-        if (sintoma1!=null){
-
-        }else {
-           $( "#entrada_1" ).prop( "disabled", true );
+        if (sintoma1=""){
+            console.log("entrada 1 valores1");
+            $( "#entrada_1" ).prop( "disabled", true );
         }
-        if (sintoma2!=null){
-
-        }else {
+        if (sintoma2=""){
+            console.log("entrada 2 valores1");
             $( "#entrada_2" ).prop( "disabled", true );
         }
-        if (sintoma3!=null){
-
-        }else {
+        if (sintoma3=""){
+            console.log("entrada 3 valores1");
             $( "#entrada_3" ).prop( "disabled", true );
         }
-        if (sintoma4!=null){
-
-        }else {
-            $( "#entrada_4" ).prop( "disabled", true );
-        }
-        if (sintoma5!=null){
-
-        }else {
-            $( "#entrada_5" ).prop( "disabled", true );
-        }
-        if (sintoma6!=null){
-
-        }else {
-            $( "#entrada_6" ).prop( "disabled", true );
-        }
-        if (sintoma7!=null){
-
-        }else {
-           $( "#entrada_7" ).prop( "disabled", true );
-        }
-        if (sintoma8!=null){
-
-        }else {
-            $( "#entrada_8" ).prop( "disabled", true );
-        }
-        if (sintoma9==null){
-            console.log("entrada 9 valores1");
-            $( "#entrada_9" ).prop( "disabled", true );
-        }else {
-            console.log("entrada 9 valores2");
-            $( "#entrada_9" ).prop( "disabled", true );
-        }
-       if (sintoma12==null){
-            console.log("entrada 12 valores1");
-            $( "#entrada_12" ).prop( "disabled", true );
-        }else {
-            console.log("entrada 12 valores2");
+        if (sintoma12==""){
+            console.log("entrada 12 valores12");
             $( "#entrada_12" ).prop( "disabled", true );
         }
-
 
 
     // Establecer el valor del título del modal
