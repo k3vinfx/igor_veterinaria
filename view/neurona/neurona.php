@@ -746,7 +746,7 @@ dialog {
     </div>
 </div>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script> 
 <script>
 $(document).ready(function () {
 
@@ -858,17 +858,17 @@ $(document).ready(function () {
         }
         if (sintoma9==null){
             console.log("entrada 9 valores1");
-            $( "#entrada_9" ).prop( "disabled", false );
+            $( "#entrada_9" ).prop( "disabled", true );
         }else {
             console.log("entrada 9 valores2");
-            $( "#entrada_9" ).prop( "disabled", false );
+            $( "#entrada_9" ).prop( "disabled", true );
         }
        if (sintoma12==null){
             console.log("entrada 12 valores1");
-            $( "#entrada_12" ).prop( "disabled", false );
+            $( "#entrada_12" ).prop( "disabled", true );
         }else {
             console.log("entrada 12 valores2");
-            $( "#entrada_12" ).prop( "disabled", false );
+            $( "#entrada_12" ).prop( "disabled", true );
         }
 
 
