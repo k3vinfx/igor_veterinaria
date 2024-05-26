@@ -73,7 +73,14 @@
                                 </td>
                             
                                 <td>
-                                    <?php echo $r->TamanoMascota; ?>
+
+                                <?php  if ($r->TamanoMascota==1){echo "Raza Pequeña";}
+                                       if ($r->TamanoMascota==2){echo "Raza Mediana";}
+                                       if ($r->TamanoMascota==3){echo "Raza Grande";}
+                                       if ($r->TamanoMascota==4){echo "Raza Grande Superior";}
+                                        ?>
+
+                                    <?php echo $r->TamanoMascota;  ?>
                                 </td>
                                 <td>
                                     <?php echo $r->nombresDueno; ?>
