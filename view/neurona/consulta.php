@@ -44,6 +44,12 @@ dialog {
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+  </script>
 
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-6">
@@ -746,8 +752,15 @@ dialog {
 <script src="https://unpkg.com/brain.js@2.0.0-beta.18/dist/browser.js"></script>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+  </script>
+  
+<script>
 $(document).ready(function () {
-    $('select').formSelect();
+
     var entrenamiento = [];
 var net = new brain.NeuralNetwork();
 
