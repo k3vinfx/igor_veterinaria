@@ -39,19 +39,7 @@ dialog {
 
 </style>
 
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
-    
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
-    
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-6">
         <h1 class="h3 mb-0 text-gray-800">Consulta I.A.</h1>
@@ -110,53 +98,196 @@ dialog {
                                             <div class="modal-body">
                                                 <form id="frm-proprietario" action="?c=neurona&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
                                                     <!-- Formulario para propietario -->
-
                                                     <div class="row">
-                                                        <div class="input-field col s12">
-                                                        
-                                                       
-                                                               <select name="duenos" id="duenos" >
+                                                        <div class="col-md-12">  
+                                                            <div class="form-group">
+                                                                <label id="lb_entrada_1">Dueño de la Mascota</label>
+                                                                <select class="custom-select selevt" name="duenos" id="duenos" >
                                                                     <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
                                                                         <option  value="<?php echo $Tipo->idDueno; ?>">
                                                                             <?php echo $Tipo->duenos; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
                                                                         </option>       
                                                                     <?php endforeach; ?>
-                                                                </select>     
-                                                           
+                                                                </select>                 
+                                                            </div>
                                                         </div>
-                                                        <div class="input-field col s12">
-                                                           
-                                               
-                                                                <select name="Id_macota" id="Id_macota" >
-                                                                     <option value="<?php echo $Tipo->idMascota; ?>"><?php echo $pvd->nombreMascota; ?></opcion>  
-                                                                 </select>   
-                                                          
-                                                        </div> 
-                                                    </div> 
+                                                    </div> <!-- Fin de la primera fila -->
+                                                    <div class="row">
+                                                        <div class="col-md-12">  
+                                                            <div class="form-group">
+                                                                <label id="lb_entrada_1">Selecione a la Mascota</label>
+                                                                <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
+                                                                     <option value="0"><?php echo $pvd->Nombre_Mascota; ?></opcion>                                                                               </select>                                                 
+                                                            </div>
+                                                        </div>
+                                                    </div> <!-- Fin de la primera fila -->
 
-
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Sintoma 1</label>
+                                                                   <select class="custom-select selevt" name="entrada_1" id="entrada_1">
+                                                                   <option value="0">Seleccione</option>  
+                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
+                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
+                                                                    <option value="2">Medio</option>  <!-- 0.50-->
+                                                                    <option value="3">Alto</option>  <!-- 0.75-->
+                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                                           
+                                                                   </select> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Sintoma 2</label>
+                                                                   <select class="custom-select selevt" name="entrada_2" id="entrada_2">
+                                                                   <option value="0">Seleccione</option>  
+                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
+                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
+                                                                    <option value="2">Medio</option>  <!-- 0.50-->
+                                                                    <option value="3">Alto</option>  <!-- 0.75-->
+                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                                          
+                                                                   </select> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Sintoma 3</label>
+                                                                   <select class="custom-select selevt" name="entrada_3" id="entrada_3">
+                                                                   <option value="0">Seleccione</option>  
+                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
+                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
+                                                                    <option value="2">Medio</option>  <!-- 0.50-->
+                                                                    <option value="3">Alto</option>  <!-- 0.75-->
+                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                                 
+                                                                   </select> 
+                                                            </div>
+                                                        </div>   
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Sintoma 4</label>
+                                                                   <select class="custom-select selevt" name="entrada_4" id="entrada_4">
+                                                                    <option value="0">Seleccione</option>  
+                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
+                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
+                                                                    <option value="2">Medio</option>  <!-- 0.50-->
+                                                                    <option value="3">Alto</option>  <!-- 0.75-->
+                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                                
+                                                                   </select> 
+                                                            </div>
+                                                        </div>                                                                                    
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Sintoma 5</label>
+                                                                   <select class="custom-select selevt" name="entrada_5" id="entrada_5">
+                                                                   <option value="0">Seleccione</option>  
+                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
+                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
+                                                                    <option value="2">Medio</option>  <!-- 0.50-->
+                                                                    <option value="3">Alto</option>  <!-- 0.75-->
+                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                                   
+                                                                   </select> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Sintoma 6</label>
+                                                                   <select class="custom-select selevt" name="entrada_6" id="entrada_6">
+                                                                   <option value="0">Seleccione</option>  
+                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
+                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
+                                                                    <option value="2">Medio</option>  <!-- 0.50-->
+                                                                    <option value="3">Alto</option>  <!-- 0.75-->
+                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                                    
+                                                                   </select> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Sintoma 7</label>
+                                                                   <select class="custom-select selevt" name="entrada_7" id="entrada_7">
+                                                                   <option value="0">Seleccione</option>  
+                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
+                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
+                                                                    <option value="2">Medio</option>  <!-- 0.50-->
+                                                                    <option value="3">Alto</option>  <!-- 0.75-->
+                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                        
+                                                                   </select> 
+                                                            </div>
+                                                        </div>   
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Sintoma 8</label>
+                                                                   <select class="custom-select selevt" name="entrada_8" id="entrada_8">
+                                                                   <option value="0">Seleccione</option>  
+                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
+                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
+                                                                    <option value="2">Medio</option>  <!-- 0.50-->
+                                                                    <option value="3">Alto</option>  <!-- 0.75-->
+                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                
+                                                                   </select> 
+                                                            </div>
+                                                        </div>                                                                                    
+                                                    </div>
                                                    
-                                   <!-- Fin de la primera fila -->
-                                         
-                                                     <div class="row">
-                                                        <div class="input-field col s12">
-                                                           
-                                                                <select  name="sintomas" id="sintomas" > 
-                                                                <option  value="0">Seleccion</option>
-                                                                    <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
-                                                                        <option  value="<?php echo $Tipo->idEnfermadad; ?>">
-                                                                            <?php echo $Tipo->nuevaconsulta; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
-                                                                        </option>       
-                                                                    <?php endforeach; ?>
-                                                                </select>       
-                                                        
-                                                        </div>                                                                                 
+
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Sintoma 9</label>
+                                                                   <select class="custom-select selevt" name="entrada_9" id="entrada_9">
+                                                                   <option value="0">Seleccione</option>  
+                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
+                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
+                                                                    <option value="2">Medio</option>  <!-- 0.50-->
+                                                                    <option value="3">Alto</option>  <!-- 0.75-->
+                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                                       
+                                                                   </select> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Sintoma 10</label>
+                                                                   <select class="custom-select selevt" name="entrada_10" id="entrada_10">
+                                                                   <option value="0">Seleccione</option>  
+                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
+                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
+                                                                    <option value="2">Medio</option>  <!-- 0.50-->
+                                                                    <option value="3">Alto</option>  <!-- 0.75-->
+                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                                      
+                                                                   </select> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Sintoma 11</label>
+                                                                   <select class="custom-select selevt" name="entrada_11" id="entrada_11">
+                                                                   <option value="0">Seleccione</option>  
+                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
+                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
+                                                                    <option value="2">Medio</option>  <!-- 0.50-->
+                                                                    <option value="3">Alto</option>  <!-- 0.75-->
+                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                              
+                                                                   </select> 
+                                                            </div>
+                                                        </div>   
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Sintoma 12</label>
+                                                                   <select class="custom-select selevt" name="entrada_12" id="entrada_12">
+                                                                    <option value="0">Seleccione</option>  
+                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
+                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
+                                                                    <option value="2">Medio</option>  <!-- 0.50-->
+                                                                    <option value="3">Alto</option>  <!-- 0.75-->
+                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                                   
+                                                                   </select> 
+                                                            </div>
+                                                        </div>                                                                                    
                                                     </div>
 
-
-
-                                        
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
@@ -750,14 +881,6 @@ dialog {
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/brain.js@2.0.0-beta.18/dist/browser.js"></script>
 
-<script type="text/javascript">
-          document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('select');
-            var instances = M.FormSelect.init(elems);
-        });
-    </script>
-
-
 <script>
 $(document).ready(function () {
 
@@ -860,7 +983,7 @@ console.log("afuera2:", entrenamiento);
     $("#duenos").on("change", function () {
 
         var valorSeleccionado = $("#duenos").val();           
-        console.log('Respuesta del servidor1:', valorSeleccionado);
+        console.log('Respuesta del servidor:', valorSeleccionado);
 
         // Realizar una solicitud AJAX para obtener los datos al cargar la página
         $.ajax({
@@ -872,11 +995,11 @@ console.log("afuera2:", entrenamiento);
 
 
                 // Agrega una opción predeterminada
-                    console.log('Respuesta del servidor2:', data);
+                    console.log('Respuesta del servidor:', data);
                 // Llena el select con los datos obtenidos
 
                 $.each(data, function (key, value) {
-                    $('#Id_macota').append('<option value="' + value.idMascota + '">' + value.nombreMascota + '</option>');
+                    $('#Id_macota').append('<option value="' + value.Recomendacion_id + '">' + value.Recomendacion_titulo + '</option>');
                 });
 
                 },
