@@ -130,7 +130,7 @@ dialog {
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label for="enfermedades">Sintomas</label>
-                                                                <select class="custom-select selevt" name="sintomas" id="sintomas" > 
+                                                                <select  class="custom-select" size="3" name="sintomas" id="sintomas" > 
                                                                 <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
                                                                         <option  value="<?php echo $Tipo->idEnfermadad; ?>">
@@ -143,117 +143,9 @@ dialog {
                                                     </div>
 
 
-
-
-
-                                                    <div class="row">
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Sintoma 1</label>
-                                                                   <select class="custom-select selevt" name="entrada_1" id="entrada_1">
-                                                                   <option value="0">Seleccione</option>  
-                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
-                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
-                                                                    <option value="2">Medio</option>  <!-- 0.50-->
-                                                                    <option value="3">Alto</option>  <!-- 0.75-->
-                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                                           
-                                                                   </select> 
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Sintoma 2</label>
-                                                                   <select class="custom-select selevt" name="entrada_2" id="entrada_2">
-                                                                   <option value="0">Seleccione</option>  
-                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
-                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
-                                                                    <option value="2">Medio</option>  <!-- 0.50-->
-                                                                    <option value="3">Alto</option>  <!-- 0.75-->
-                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                                          
-                                                                   </select> 
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Sintoma 3</label>
-                                                                   <select class="custom-select selevt" name="entrada_3" id="entrada_3">
-                                                                   <option value="0">Seleccione</option>  
-                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
-                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
-                                                                    <option value="2">Medio</option>  <!-- 0.50-->
-                                                                    <option value="3">Alto</option>  <!-- 0.75-->
-                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                                 
-                                                                   </select> 
-                                                            </div>
-                                                        </div>   
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Sintoma 4</label>
-                                                                   <select class="custom-select selevt" name="entrada_4" id="entrada_4">
-                                                                    <option value="0">Seleccione</option>  
-                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
-                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
-                                                                    <option value="2">Medio</option>  <!-- 0.50-->
-                                                                    <option value="3">Alto</option>  <!-- 0.75-->
-                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                                
-                                                                   </select> 
-                                                            </div>
-                                                        </div>                                                                                    
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Sintoma 5</label>
-                                                                   <select class="custom-select selevt" name="entrada_5" id="entrada_5">
-                                                                   <option value="0">Seleccione</option>  
-                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
-                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
-                                                                    <option value="2">Medio</option>  <!-- 0.50-->
-                                                                    <option value="3">Alto</option>  <!-- 0.75-->
-                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                                   
-                                                                   </select> 
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Sintoma 6</label>
-                                                                   <select class="custom-select selevt" name="entrada_6" id="entrada_6">
-                                                                   <option value="0">Seleccione</option>  
-                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
-                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
-                                                                    <option value="2">Medio</option>  <!-- 0.50-->
-                                                                    <option value="3">Alto</option>  <!-- 0.75-->
-                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                                    
-                                                                   </select> 
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Sintoma 7</label>
-                                                                   <select class="custom-select selevt" name="entrada_7" id="entrada_7">
-                                                                   <option value="0">Seleccione</option>  
-                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
-                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
-                                                                    <option value="2">Medio</option>  <!-- 0.50-->
-                                                                    <option value="3">Alto</option>  <!-- 0.75-->
-                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                                                                                        
-                                                                   </select> 
-                                                            </div>
-                                                        </div>   
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Sintoma 8</label>
-                                                                   <select class="custom-select selevt" name="entrada_8" id="entrada_8">
-                                                                   <option value="0">Seleccione</option>  
-                                                                    <option value="0">Inexistente</option>  <!-- 0.00-->
-                                                                    <option value="1">Bajo</option>  <!-- 0.25-->
-                                                                    <option value="2">Medio</option>  <!-- 0.50-->
-                                                                    <option value="3">Alto</option>  <!-- 0.75-->
-                                                                    <option value="4">Muy Alto</option>  <!-- 0.95-->                
-                                                                   </select> 
-                                                            </div>
-                                                        </div>                                                                                    
-                                                    </div>
+                                                
+                                                  
+                                                    
                                                    
 
                                                     <div class="row">
@@ -312,24 +204,26 @@ dialog {
                                                     </div>
 
                                                     <div class="row">
+               
                                                         <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Tratamiento 1</label>
-                                                                <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" >
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="tratamientos">Tratamiento 2</label>
-                                                                <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2">
-                                                            </div> 
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                                    <label class="form-check-label" for="defaultCheck1">
+                                                                            Default checkbox 1
+                                                                    </label> 
+                                                                </div>
                                                         </div> 
                                                         <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="tratamientos">result</label>
-                                                                <text type="text" class="form-control" id="resultx" name="resultx" placeholder="Tratamiento 2">
-                                                            </div> 
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                                    <label class="form-check-label" for="defaultCheck1">
+                                                                            Default checkbox 2
+                                                                    </label> 
+                                                                </div>
                                                         </div> 
+                                                 
+
+
                                                     </div> <!-- Fin de la segunda fila -->
                                                 </form>
                                             </div>
@@ -957,10 +851,10 @@ function convertirDatosParaEntrenamiento(data) {
 
 function entrenarRedNeuronal() {
     net.train(entrenamiento, {
-        errorThresh: 0.0005, // Umbral de error
+        errorThresh: 0.05, // Umbral de error
         log: true, // Mostrar información de entrenamiento en la consola
         logPeriod: 10, // Mostrar información de entrenamiento cada 10 iteraciones
-        iterations: 1000, // Número de iteraciones de entrenamiento
+        iterations: 10, // Número de iteraciones de entrenamiento
         learningRate: 0.1 // Tasa de aprendizaje
     });
 
