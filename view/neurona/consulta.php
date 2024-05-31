@@ -838,7 +838,7 @@ function convertirDatosParaEntrenamiento(data) {
 
         return {
             input: entradas,
-            input: salidas
+            output: salidas
 
            // output: { promedio: promedioSalida }
         };
