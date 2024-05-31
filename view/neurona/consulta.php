@@ -701,51 +701,7 @@ dialog {
                     <div class="col-md-3">
 
 
-                    <div class="form-group">
-                            <label for="pesoPropietario">Nombre Enfermedad</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de la Enfermedad" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="alturaPropietario">Sintoma 1</label>
-                            <input type="text" class="form-control" id="sintoma1" name="sintoma1" placeholder="Sintoma de la enfermedad" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="alergicoPropietario">Sintoma 2</label>
-                            <input type="text" class="form-control" id="sintoma2" name="sintoma2" placeholder="Sintoma de la enfermedad" >
-                        </div>
-                        <div class="form-group">
-                            <label for="tipoSangrePropietario">Sintoma 3</label>
-                            <input type="text" class="form-control" id="sintoma3" name="sintoma3" placeholder="Sintoma de la enfermedad" >
-                        </div>
-                        <div class="form-group">
-                            <label for="enfermedades">Sintoma 4</label>
-                            <input type="text" class="form-control" id="sintoma4" name="sintoma4" placeholder="Sintoma de la enfermedad" >
-                        </div>
-                           
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                            <label for="enfermedades">Sintoma 5</label>
-                            <input type="text" class="form-control" id="sintoma5" name="sintoma5" placeholder="Sintoma de la enfermedad" >
-                        </div>
-                        <div class="form-group">
-                            <label for="tratamientos">Sintoma 6</label>
-                            <input type="text" class="form-control" id="sintoma6" name="sintoma6" placeholder="Sintoma de la enfermedad" >
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="cirugias">Sintoma 7</label>
-                            <input type="text" class="form-control" id="sintoma7" name="sintoma7" placeholder="Sintoma de la enfermedad" >
-                        </div>
-                        <div class="form-group">
-                            <label for="extras">Sintoma 8</label>
-                            <input type="text" class="form-control" id="sintoma8" name="sintoma8" placeholder="Sintoma de la enfermedad" >
-                        </div>  
-                        <div class="form-group">
-                            <label for="extras">Sintoma 9</label>
-                            <input type="text" class="form-control" id="sintoma9" name="sintoma9" placeholder="Sintoma de la enfermedad" >
-                        </div>                     
-                    </div>
+          
 
                     <div class="col-md-3">
                       <div class="form-group">
@@ -819,7 +775,7 @@ $('#buscarIa').click(function() {
     console.log('Resultado de la busqueda:', inputValues);
     console.log('Resultado de la predicción:', predictionResult);
 });
-function convertirDatosParaEntrenamiento(data) {
+function convertirDatosParaEntrenamientoxzz(data) {
     data.forEach(function(dato) {
         const input = {
             sintoma1: dato.inPeso_01,
@@ -849,16 +805,91 @@ function convertirDatosParaEntrenamiento(data) {
     });
 }
 
+function convertirDatosParaEntrenamiento(data) {
+    const datosParaEntrenamiento = data.map(item => {
+        const entradas = {
+            inPeso_01: parseFloat(item.inPeso_01),
+            inPeso_02: parseFloat(item.inPeso_02),
+            inPeso_03: parseFloat(item.inPeso_03),
+            inPeso_04: parseFloat(item.inPeso_04),
+            inPeso_05: parseFloat(item.inPeso_05),
+            inPeso_06: parseFloat(item.inPeso_06),
+            inPeso_07: parseFloat(item.inPeso_07),
+            inPeso_08: parseFloat(item.inPeso_08),
+            inPeso_09: parseFloat(item.inPeso_09),
+            inPeso_10: parseFloat(item.inPeso_10),
+            inPeso_11: parseFloat(item.inPeso_11),
+            inPeso_12: parseFloat(item.inPeso_12)
+        };
+
+        const salidas = [
+            parseFloat(item.outPeso_01),
+            parseFloat(item.outPeso_02),
+            parseFloat(item.outPeso_03),
+            parseFloat(item.outPeso_04),
+            parseFloat(item.outPeso_05),
+            parseFloat(item.outPeso_06),
+            parseFloat(item.outPeso_07),
+            parseFloat(item.outPeso_08)
+        ];
+
+        // Calculamos el promedio de las salidas
+        const promedioSalida = salidas.reduce((acc, peso) => acc + peso, 0) / salidas.length;
+
+        return {
+            input: entradas,
+            output: { promedio: promedioSalida }
+        };
+    });
+     console.log("datos para entrenar :",datosParaEntrenamiento );
+
+     entrenamiento= datosParaEntrenamiento;
+    return datosParaEntrenamiento;
+}
+
+
+function predecirResultados(datos) {
+    datos.forEach(item => {
+        const entradas = {
+            inPeso_01: parseFloat(item.inPeso_01),
+            inPeso_02: parseFloat(item.inPeso_02),
+            inPeso_03: parseFloat(item.inPeso_03),
+            inPeso_04: parseFloat(item.inPeso_04),
+            inPeso_05: parseFloat(item.inPeso_05),
+            inPeso_06: parseFloat(item.inPeso_06),
+            inPeso_07: parseFloat(item.inPeso_07),
+            inPeso_08: parseFloat(item.inPeso_08),
+            inPeso_09: parseFloat(item.inPeso_09),
+            inPeso_10: parseFloat(item.inPeso_10),
+            inPeso_11: parseFloat(item.inPeso_11),
+            inPeso_12: parseFloat(item.inPeso_12)
+        };
+
+        const resultado = net.run(entradas);
+        console.log("Resultado de la red neuronal para entradas:", entradas, "es:", resultado);
+    });
+}
+
+
 function entrenarRedNeuronal() {
+    net = new brain.NeuralNetwork();
     net.train(entrenamiento, {
+        iterations: 20, // Número de iteraciones de entrenamiento
         errorThresh: 0.05, // Umbral de error
         log: true, // Mostrar información de entrenamiento en la consola
         logPeriod: 10, // Mostrar información de entrenamiento cada 10 iteraciones
-        iterations: 10, // Número de iteraciones de entrenamiento
-        learningRate: 0.1 // Tasa de aprendizaje
+       // iterations: 10, // Número de iteraciones de entrenamiento
+        //learningRate: 0.1 // Tasa de aprendizaje
     });
-
+    console.log("Entrenamiento completado.");
 }
+
+
+function predecirResultado(entradas) {
+    const resultado = net.run(entradas);
+    console.log("Resultado de la red neuronal:", resultado);
+}
+
 // Función para manejar el evento de cambio en el select de sintomas
 $('#sintomas').change(function() {
     var aux = $('#sintomas').val();
@@ -872,10 +903,13 @@ $('#sintomas').change(function() {
             console.log("Respuesta del servidor:", data);
             
             // Convertir los datos recibidos en el formato adecuado para entrenar la red neuronal
-            convertirDatosParaEntrenamiento(data);
+            const datosParaEntrenamiento = convertirDatosParaEntrenamiento(data);
 
             // Entrenar la red neuronal
-            entrenarRedNeuronal();
+            entrenarRedNeuronal(datosParaEntrenamiento);
+
+            // Predecir los resultados usando la red neuronal entrenada
+            predecirResultados(data);
         },
         error: function(xhr, status, error) {
             console.error("Hubo un error al obtener la información:", error);
