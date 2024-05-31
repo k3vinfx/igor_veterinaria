@@ -924,7 +924,7 @@ $('#sintomas').change(function() {
             entrenarRedNeuronal(datosParaEntrenamiento);
 
             // Predecir los resultados usando la red neuronal entrenada
-            predecirResultados(datosParaEntrenamiento);
+            predecirResultados(data);
         },
         error: function(xhr, status, error) {
             console.error("Hubo un error al obtener la información:", error);
