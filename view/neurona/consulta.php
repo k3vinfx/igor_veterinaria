@@ -865,8 +865,21 @@ function predecirResultados(datos) {
             inPeso_12: parseFloat(item.inPeso_12)
         };
 
+        const salidasOriginales = {
+            outPeso_01: parseFloat(item.outPeso_01),
+            outPeso_02: parseFloat(item.outPeso_02),
+            outPeso_03: parseFloat(item.outPeso_03),
+            outPeso_04: parseFloat(item.outPeso_04),
+            outPeso_05: parseFloat(item.outPeso_05),
+            outPeso_06: parseFloat(item.outPeso_06),
+            outPeso_07: parseFloat(item.outPeso_07),
+            outPeso_08: parseFloat(item.outPeso_08)
+        };
+
         const resultado = net.run(entradas);
-        console.log("Resultado de la red neuronal para entradas:", entradas, "es:", resultado);
+        console.log("Entradas:", entradas);
+        console.log("Salidas originales:", salidasOriginales);
+        console.log("Resultado de la red neuronal:", resultado);
     });
 }
 
@@ -909,7 +922,7 @@ $('#sintomas').change(function() {
             entrenarRedNeuronal(datosParaEntrenamiento);
 
             // Predecir los resultados usando la red neuronal entrenada
-            predecirResultados(data);
+            predecirResultados(datosParaEntrenamiento);
         },
         error: function(xhr, status, error) {
             console.error("Hubo un error al obtener la información:", error);
