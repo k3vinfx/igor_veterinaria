@@ -123,6 +123,29 @@ dialog {
                                                         </div>
                                                     </div> <!-- Fin de la primera fila -->
 
+
+
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label for="enfermedades">Sintomas</label>
+                                                                <select class="custom-select selevt" name="sintomas" id="sintomas" > 
+                                                                <option  value="0">Seleccion</option>
+                                                                    <?php foreach ($this->model->Listar_Sin() as $Tipo): ?>
+                                                                        <option  value="<?php echo $Tipo->idEnfermadad; ?>">
+                                                                            <?php echo $Tipo->nuevaconsulta; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                                                                        </option>       
+                                                                    <?php endforeach; ?>
+                                                                </select>       
+                                                            </div>
+                                                        </div>                                                                                 
+                                                    </div>
+
+
+
+
+
                                                     <div class="row">
                                                         <div class="col-md-3">
                                                             <div class="form-group">
