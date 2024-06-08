@@ -115,7 +115,7 @@ dialog {
                                                             <div class="form-group">
                                                                 <label id="lb_entrada_1">Selecione a la Mascota</label>
                                                                 <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
-                                                                     <option value="0"><?php echo $pvd->Nombre_Mascota; ?></opcion>                                                                               </select>                                                 
+                                                                <option value="0"><?php echo $pvd->Nombre_Mascota; ?></opcion>                                                                               </select>                                                 
                                                             </div>
                                                         </div>
                                                     </div> <!-- Fin de la primera fila -->
@@ -182,7 +182,6 @@ dialog {
                             </div>
 
                                 <button type="button" id="btnEntrenar" name="btnEntrenar" class="btn btn-danger btnEntrenar"
-
 
                                        
                                         data-id="<?php echo $r->idEnfermadad; ?>"
@@ -816,8 +815,9 @@ function predecirResultado(entradas) {
     console.log("Resultado de la red neuronal:", resultado);
 }
 
+// KEVS-MASCOTA
 $('#Id_macota').change(function() {
-    var mascota = $(this).data('Id_macota');
+    var mascota = $("#Id_macota").val();      
     console.log("Id_macota:", mascota);
 });
 
