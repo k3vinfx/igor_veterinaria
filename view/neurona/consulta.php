@@ -291,7 +291,7 @@ dialog {
                                     data-estado="<?php echo $r->estado; ?>"
 
                                     data-toggle="modal" data-target="#RegistroMVC_IA">
-                                    >                                  
+                                                                      
                                     <i class='fas fa-brain'></i>Entrenar I.A.</button> 
                                         
                                         <?php  ;
@@ -339,7 +339,7 @@ dialog {
                                   data-tratamiento2="<?php echo $r->enfermedadTratamiento2; ?>"      
                                   
                                   data-toggle="modal" data-target="#RegistroMVC">
-                                <i class='fas fa-edit'></i></button>
+                               </button>
 
                                 <button type="button" id="btnEliminar" name="btnEliminar" class="btn btn-danger btnEliminar"
                                        
