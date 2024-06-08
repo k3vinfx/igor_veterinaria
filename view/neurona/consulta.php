@@ -292,7 +292,7 @@ dialog {
 
                                     data-toggle="modal" data-target="#RegistroMVC_IA">
                                     >                                  
-                                    <i class='fas fa-brain'></i>Entrenar I.A.</button> 
+                                    <i class='fas fa-edit'></i>Registrar</button> 
                                         
                                         <?php  ;
                                     }?>
