@@ -74,7 +74,7 @@ dialog {
                             <th>Tratamiento 1</th>
                             <th>Tratamiento 2</th>
                           
-                            <th>Acciones</th>
+        
                         </tr>
                     </thead>
                     <tbody>
@@ -339,14 +339,9 @@ dialog {
                                   data-tratamiento2="<?php echo $r->enfermedadTratamiento2; ?>"      
                                   
                                   data-toggle="modal" data-target="#RegistroMVC">
-                                <i class='fas fa-edit'></i></button>
+                                <</button>
 
-                                <button type="button" id="btnEliminar" name="btnEliminar" class="btn btn-danger btnEliminar"
-                                       
-                                       data-id="<?php echo $r->idEnfermadad; ?>"
-                                         data-estado="<?php echo $r->estado; ?>"
-                                         >                                  
-                                  <i class='fas fa-trash-alt'></i></button>
+                   
                          </td>
                         </tr>
                         <?php endforeach; ?>
