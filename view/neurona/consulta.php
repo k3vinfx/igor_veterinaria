@@ -262,7 +262,7 @@ dialog {
                                         data-estado="<?php echo $r->estado; ?>"
 
                                         data-toggle="modal" data-target="#RegistroMVC">
-                                         >                                  
+                                                                        
                                   <i class='fas fa-edit'></i>Registrar</button> <?php }
                                   else{
                                        ?>
