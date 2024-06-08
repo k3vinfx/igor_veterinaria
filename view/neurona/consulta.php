@@ -55,7 +55,7 @@ dialog {
                     <thead class="thead-dark">
                         <tr>
                             <th>Id</th>
-                            <th>Acciones</th>
+                            <th>Entrenado</th>
                             <th>Nombre Enfermadad</th>
                             <th>Sintoma 1</th>
                             <th>Sintoma 2</th>
@@ -74,7 +74,7 @@ dialog {
                             <th>Tratamiento 1</th>
                             <th>Tratamiento 2</th>
                           
-        
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -259,13 +259,13 @@ dialog {
                                         data-enfermedad="<?php echo $r->enfermedadDiasnosticada; ?>"
                                         data-tratamiento1="<?php echo $r->enfermedadTratamiento1; ?>" 
                                         data-tratamiento2="<?php echo $r->enfermedadTratamiento2; ?>"      
-                                        
+                                        data-estado="<?php echo $r->estado; ?>"
 
-                                        >
-                                                                        
-                                  <i class='fas fa-edit'></i>Registrar</button> <?php }
+                                        data-toggle="modal" data-target="#RegistroMVC_IA">
+                                         >                                  
+                                  <i class='fas fa-brain'></i>Entrenar I.A.</button> <?php }
                                   else{
-                                       ?>
+                                        echo "Activo /"?>
                                   <button type="button" id="btnEntrenar" name="btnEntrenar" class="btn btn-success btnEntrenar"
 
 
@@ -288,10 +288,11 @@ dialog {
                                     data-enfermedad="<?php echo $r->enfermedadDiasnosticada; ?>"
                                     data-tratamiento1="<?php echo $r->enfermedadTratamiento1; ?>" 
                                     data-tratamiento2="<?php echo $r->enfermedadTratamiento2; ?>"      
-                                   
-                                    >
-                                                                    
-                                    
+                                    data-estado="<?php echo $r->estado; ?>"
+
+                                    data-toggle="modal" data-target="#RegistroMVC_IA">
+                                    >                                  
+                                    <i class='fas fa-brain'></i>Entrenar I.A.</button> 
                                         
                                         <?php  ;
                                     }?>
@@ -337,10 +338,15 @@ dialog {
                                   data-tratamiento1="<?php echo $r->enfermedadTratamiento1; ?>" 
                                   data-tratamiento2="<?php echo $r->enfermedadTratamiento2; ?>"      
                                   
-                                 >
-                                </button>
+                                  data-toggle="modal" data-target="#RegistroMVC">
+                                <i class='fas fa-edit'></i></button>
 
-                   
+                                <button type="button" id="btnEliminar" name="btnEliminar" class="btn btn-danger btnEliminar"
+                                       
+                                       data-id="<?php echo $r->idEnfermadad; ?>"
+                                         data-estado="<?php echo $r->estado; ?>"
+                                         >                                  
+                                  <i class='fas fa-trash-alt'></i></button>
                          </td>
                         </tr>
                         <?php endforeach; ?>
