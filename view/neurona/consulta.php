@@ -261,9 +261,9 @@ dialog {
                                         data-tratamiento2="<?php echo $r->enfermedadTratamiento2; ?>"      
                                         data-estado="<?php echo $r->estado; ?>"
 
-                                        data-toggle="modal" data-target="#RegistroMVC">
-                                                                         
-                                  <i class='fas fa-brain'></i>Registrar</button> <?php }
+                                        data-toggle="modal" data-target="#RegistroMVC_IA">
+                                         >                                  
+                                  <i class='fas fa-brain'></i>Entrenar I.A.</button> <?php }
                                   else{
                                         echo "Activo /"?>
                                   <button type="button" id="btnEntrenar" name="btnEntrenar" class="btn btn-success btnEntrenar"
@@ -290,9 +290,9 @@ dialog {
                                     data-tratamiento2="<?php echo $r->enfermedadTratamiento2; ?>"      
                                     data-estado="<?php echo $r->estado; ?>"
 
-                                    data-toggle="modal" data-target="#RegistroMVC">
-                                                                      
-                                    <i class='fas fa-brain'></i>Registrar I.A.</button> 
+                                    data-toggle="modal" data-target="#RegistroMVC_IA">
+                                    >                                  
+                                    <i class='fas fa-brain'></i>Entrenar I.A.</button> 
                                         
                                         <?php  ;
                                     }?>
@@ -315,9 +315,39 @@ dialog {
                                     <td><?php echo $r->enfermedadTratamiento1; ?></td>
                                     <td><?php echo $r->enfermedadTratamiento2; ?></td>
                           
-                          
-                          
-                      
+                            <td>
+                                 
+                                 <button type="button" id="btnEditar" name="btnEditar" class="btn btn-success btnEditar"
+
+                                  data-id="<?php echo $r->idEnfermadad; ?>"
+                                  data-nombre="<?php echo $r->nombreEnfermadad; ?>"
+                                  data-sintoma1="<?php echo $r->sintomaEnfermadad1; ?>"
+                                  data-sintoma2="<?php echo $r->sintomaEnfermadad2; ?>"
+                                  data-sintoma3="<?php echo $r->sintomaEnfermadad3; ?>"
+                                  data-sintoma4="<?php echo $r->sintomaEnfermadad4; ?>"
+                                  data-sintoma5="<?php echo $r->sintomaEnfermadad5; ?>"
+                                  data-sintoma6="<?php echo $r->sintomaEnfermadad6; ?>" 
+                                  data-sintoma7="<?php echo $r->sintomaEnfermadad7; ?>"      
+                                  data-sintoma8="<?php echo $r->sintomaEnfermadad8; ?>"
+                                  data-sintoma9="<?php echo $r->sintomaEnfermadad9; ?>"
+                                  data-sintoma10="<?php echo $r->sintomaEnfermadad10; ?>"
+                                  data-sintoma11="<?php echo $r->sintomaEnfermadad11; ?>"
+                                  data-sintoma12="<?php echo $r->sintomaEnfermadad12; ?>"
+                                  data-examinacion="<?php echo $r->examinacionEnfermadad; ?>"
+                                  data-enfermedad="<?php echo $r->enfermedadDiasnosticada; ?>"
+                                  data-tratamiento1="<?php echo $r->enfermedadTratamiento1; ?>" 
+                                  data-tratamiento2="<?php echo $r->enfermedadTratamiento2; ?>"      
+                                  
+                                  data-toggle="modal" data-target="#RegistroMVC">
+                                <i class='fas fa-edit'></i></button>
+
+                                <button type="button" id="btnEliminar" name="btnEliminar" class="btn btn-danger btnEliminar"
+                                       
+                                       data-id="<?php echo $r->idEnfermadad; ?>"
+                                         data-estado="<?php echo $r->estado; ?>"
+                                         >                                  
+                                  <i class='fas fa-trash-alt'></i></button>
+                         </td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
