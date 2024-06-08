@@ -267,9 +267,7 @@ dialog {
                                   else{
                                         ?>
                                   <button type="button" id="btnEntrenar" name="btnEntrenar" class="btn btn-success btnEntrenar"
-
-
-                                       
+                                     
                                     data-id="<?php echo $r->idEnfermadad; ?>"
                                     data-nombre="<?php echo $r->nombreEnfermadad; ?>"
                                     data-sintoma1="<?php echo $r->sintomaEnfermadad1; ?>"
@@ -292,7 +290,7 @@ dialog {
 
                                     data-toggle="modal" data-target="#RegistroMVC">
                                                                       
-                                    <i class='fas fa-brain'></i>Registrar I.A.</button> 
+                                    <i class='fas fa-edit'></i>Registrar I.A.</button> 
                                         
                                         <?php  ;
                                     }?>
