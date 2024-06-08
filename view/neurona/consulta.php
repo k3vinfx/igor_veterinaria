@@ -55,7 +55,7 @@ dialog {
                     <thead class="thead-dark">
                         <tr>
                             <th>Id</th>
-                            <th>Entrenado</th>
+                            <th>Acciones</th>
                             <th>Nombre Enfermadad</th>
                             <th>Sintoma 1</th>
                             <th>Sintoma 2</th>
@@ -263,9 +263,9 @@ dialog {
 
                                         data-toggle="modal" data-target="#RegistroMVC_IA">
                                          >                                  
-                                  <i class='fas fa-brain'></i>Entrenar I.A.</button> <?php }
+                                  <i class='fas fa-edit'></i>Registrar</button> <?php }
                                   else{
-                                        echo "Activo /"?>
+                                       ?>
                                   <button type="button" id="btnEntrenar" name="btnEntrenar" class="btn btn-success btnEntrenar"
 
 
