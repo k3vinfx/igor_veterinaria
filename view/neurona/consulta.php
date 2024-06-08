@@ -261,9 +261,9 @@ dialog {
                                         data-tratamiento2="<?php echo $r->enfermedadTratamiento2; ?>"      
                                         data-estado="<?php echo $r->estado; ?>"
 
-                                        data-toggle="modal" data-target="#RegistroMVC_IA">
-                                         >                                  
-                                  <i class='fas fa-brain'></i>Entrenar I.A.</button> <?php }
+                                        data-toggle="modal" data-target="#RegistroMVC">
+                                                                         
+                                  <i class='fas fa-brain'></i>Registrar</button> <?php }
                                   else{
                                         echo "Activo /"?>
                                   <button type="button" id="btnEntrenar" name="btnEntrenar" class="btn btn-success btnEntrenar"
