@@ -288,10 +288,9 @@ dialog {
                                     data-enfermedad="<?php echo $r->enfermedadDiasnosticada; ?>"
                                     data-tratamiento1="<?php echo $r->enfermedadTratamiento1; ?>" 
                                     data-tratamiento2="<?php echo $r->enfermedadTratamiento2; ?>"      
-                                    data-estado="<?php echo $r->estado; ?>"
-
+                                    
                                     data-toggle="modal" data-target="#RegistroMVC_IA">
-                                    >                                  
+                                                                  
                                     <i class='fas fa-brain'></i>Entrenar I.A.</button> 
                                         
                                         <?php  ;
@@ -310,7 +309,7 @@ dialog {
                                     <td><?php echo $r->sintomaEnfermadad10; ?></td>
                                     <td><?php echo $r->sintomaEnfermadad11; ?></td>
                                     <td><?php echo $r->sintomaEnfermadad12; ?></td>
-                                    <td><?php echo $r->examinacionEnfermadad; ?></td>
+                                
                                     <td><?php echo $r->enfermedadDiasnosticada; ?></td>
                                     <td><?php echo $r->enfermedadTratamiento1; ?></td>
                                     <td><?php echo $r->enfermedadTratamiento2; ?></td>
