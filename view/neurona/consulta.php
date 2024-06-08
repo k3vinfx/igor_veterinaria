@@ -889,7 +889,7 @@ function predecirResultados(datos) {
 function entrenarRedNeuronal() {
     net = new brain.NeuralNetwork();
     net.train(entrenamiento, {
-        iterations: 20, // Número de iteraciones de entrenamiento
+        iterations: 1, // Número de iteraciones de entrenamiento
         errorThresh: 0.05, // Umbral de error
         log: true, // Mostrar información de entrenamiento en la consola
         logPeriod: 10, // Mostrar información de entrenamiento cada 10 iteraciones
