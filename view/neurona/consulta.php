@@ -265,7 +265,7 @@ dialog {
                                                                          
                                   <i class='fas fa-brain'></i>Registrar</button> <?php }
                                   else{
-                                        echo "Activo /"?>
+                                        ?>
                                   <button type="button" id="btnEntrenar" name="btnEntrenar" class="btn btn-success btnEntrenar"
 
 
