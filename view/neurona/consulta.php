@@ -69,7 +69,7 @@ dialog {
                             <th>Sintoma 10</th>
                             <th>Sintoma 11</th>
                             <th>Sintoma 12</th>
-                            <th>Examinaminación </th>
+                         
                             <th>Diagnostico</th>
                             <th>Tratamiento 1</th>
                             <th>Tratamiento 2</th>
