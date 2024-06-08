@@ -67,7 +67,6 @@ dialog {
                             <th>Sintoma 10</th>
                             <th>Sintoma 11</th>
                             <th>Sintoma 12</th>
-                         
                             <th>Diagnostico</th>
                             <th>Tratamiento 1</th>
                             <th>Tratamiento 2</th>
@@ -122,7 +121,7 @@ dialog {
                                                     </div> <!-- Fin de la primera fila -->
                   
                                                   <div class="row">
-                                                        <div class="col-md-3">
+                                                        <div class="col-md-3">fas fa-edit
                                                             <div class="form-group">
                                                                 <label for="enfermedades">Sintoma 9</label>
                                                                  
@@ -816,6 +815,11 @@ function predecirResultado(entradas) {
     const resultado = net.run(entradas);
     console.log("Resultado de la red neuronal:", resultado);
 }
+
+$('#Id_macota').change(function() {
+    var mascota = $(this).data('Id_macota');
+    console.log("Id_macota:", mascota);
+});
 
 // Función para manejar el evento de cambio en el select de sintomas
 $('#sintomas').change(function() {
