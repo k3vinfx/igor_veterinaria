@@ -338,8 +338,8 @@ dialog {
                                   data-tratamiento1="<?php echo $r->enfermedadTratamiento1; ?>" 
                                   data-tratamiento2="<?php echo $r->enfermedadTratamiento2; ?>"      
                                   
-                                  data-toggle="modal" data-target="#RegistroMVC">
-                                <</button>
+                                 >
+                                </button>
 
                    
                          </td>
