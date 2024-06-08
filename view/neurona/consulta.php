@@ -261,7 +261,7 @@ dialog {
                                         data-tratamiento2="<?php echo $r->enfermedadTratamiento2; ?>"      
                                         data-estado="<?php echo $r->estado; ?>"
 
-                                        data-toggle="modal" data-target="#RegistroMVC_IA">
+                                        data-toggle="modal" data-target="#RegistroMVC">
                                          >                                  
                                   <i class='fas fa-edit'></i>Registrar</button> <?php }
                                   else{
