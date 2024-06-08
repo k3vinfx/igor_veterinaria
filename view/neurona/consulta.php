@@ -74,7 +74,7 @@ dialog {
                             <th>Tratamiento 1</th>
                             <th>Tratamiento 2</th>
                           
-                      
+                       
                         </tr>
                     </thead>
                     <tbody>
@@ -315,10 +315,7 @@ dialog {
                                     <td><?php echo $r->enfermedadTratamiento1; ?></td>
                                     <td><?php echo $r->enfermedadTratamiento2; ?></td>
                           
-                            <td>
-                                 
-                                
-                         </td>
+                          
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
