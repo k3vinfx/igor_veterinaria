@@ -875,7 +875,7 @@ console.log("afuera2:", entrenamiento);
                var tipo_Mascota = data[0].TamanoMascota;
 
             // Agrega una opción predeterminada
-                tipo_Mascota= data.TamanoMascota;
+             
                 console.log('Respuesta del servidor Mascota:', tipo_Mascota);
             // Llena el select con los datos obtenidos
                         
