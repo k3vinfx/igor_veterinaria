@@ -864,7 +864,7 @@ console.log("afuera2:", entrenamiento);
 
     var valorSeleccionado = $("#Id_macota").val();           
     console.log('Respuesta del servidor:', valorSeleccionado);
-    var tipo_Mascota="";
+
     // Realizar una solicitud AJAX para obtener los datos al cargar la página
     $.ajax({
         url: '?c=neurona&a=NuevoPreparadoMascota&X=' + valorSeleccionado,
@@ -872,7 +872,7 @@ console.log("afuera2:", entrenamiento);
         dataType: 'json',
         success: function (data) {
             // Limpia el select actual
-
+               var tipo_Mascota = data[0].TamanoMascota;
 
             // Agrega una opción predeterminada
                 tipo_Mascota= data.TamanoMascota;
