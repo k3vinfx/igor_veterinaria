@@ -115,7 +115,8 @@ dialog {
                                                             <div class="form-group">
                                                                 <label id="lb_entrada_1">Selecione a la Mascota</label>
                                                                 <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
-                                                                <option value="0"><?php echo $pvd->Nombre_Mascota; ?></opcion>                                                                               </select>                                                 
+                                                                <option value="0"><?php echo $pvd->Nombre_Mascota; ?>
+                                                              </opcion>                                                                               </select>                                                 
                                                             </div>
                                                         </div>
                                                     </div> <!-- Fin de la primera fila -->
@@ -267,7 +268,7 @@ dialog {
     </div>
 </div>
 
-k
+
 <!-- Modal para Registro de Propietario -->
 <div class="modal fade" id="RegistroMVC_IA" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="dialog" role="document">
@@ -921,7 +922,53 @@ console.log("afuera2:", entrenamiento);
             var valorSeleccionado = $(this).val();
             // Resto del código AJAX para manejar cambios en entrada_X
         });
+
+
     });
+
+
+   // Funcion para sacar el tamaño de la mas cota y que escoja el tratamiento A O B
+   
+   $("#Id_macota").on("change", function () {
+
+    var valorSeleccionado = $("#Id_macota").val();           
+    console.log('Respuesta del servidor:', valorSeleccionado);
+
+    // Realizar una solicitud AJAX para obtener los datos al cargar la página
+    $.ajax({
+        url: '?c=neurona&a=NuevoPreparadoMascota&X=' + valorSeleccionado,
+        method: 'POST',
+        dataType: 'json',
+        success: function (data) {
+            // Limpia el select actual
+
+
+            // Agrega una opción predeterminada
+                console.log('Respuesta del servidor Mascota:', data);
+            // Llena el select con los datos obtenidos
+
+            // $.each(data, function (key, value) {
+            // $('#Id_macota').append('<option value="' + value.idMascota + '">' + value.nombreMascota + '</option>');
+            // });
+
+            },
+        error: function (xhr, status, error) {
+            console.log('Error al obtener los datos:');
+            console.log('XHR:', xhr);
+            console.log('Status:', status);
+            console.log('Error:', error);
+        }
+    });
+
+    // Agregar el evento change para manejar futuros cambios en entrada_X
+    $("#duenos").change(function () {
+        var valorSeleccionado = $(this).val();
+        // Resto del código AJAX para manejar cambios en entrada_X
+    });
+
+
+    });
+
    
 
   

@@ -17,7 +17,7 @@
 
 	<!-- Heading -->
 	<div class="sidebar-heading">
-		..Modulos..
+		Modulos
 	</div>
 
 	<!-- Nav Item - Pages Collapse Menu -->

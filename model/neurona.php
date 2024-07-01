@@ -93,6 +93,21 @@ class neurona
         }
      }
 
+     public function getListar_Mascota_Datos($valor)
+     {
+         try
+         {         
+             $result = array();
+             $stm = $this->pdo->prepare("SELECT * FROM mascotadatos WHERE idMascota = ?;");
+         $stm->execute(array($valor));
+         return $stm->fetchAll(PDO::FETCH_OBJ);
+         } catch (Exception $e)
+         {
+             die($e->getMessage());
+         }
+      }
+
+
 
     public function getListar_Neurona_x($valor)
     {

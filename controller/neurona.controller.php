@@ -158,7 +158,14 @@ class NeuronaController{
         }
         echo json_encode($recomendaciones);
     }
-
+    public function NuevoPreparadoMascota(){
+        $pvd = new neurona();
+        $recomendaciones = [];
+        if(isset($_REQUEST['X'])){
+            $recomendaciones = $this->model->getListar_Mascota_Datos($_REQUEST['X']);
+        }
+        echo json_encode($recomendaciones);
+    }
 
 
 
