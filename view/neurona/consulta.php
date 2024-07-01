@@ -267,7 +267,7 @@ dialog {
     </div>
 </div>
 
-
+k
 <!-- Modal para Registro de Propietario -->
 <div class="modal fade" id="RegistroMVC_IA" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="dialog" role="document">
@@ -819,6 +819,29 @@ function predecirResultado(entradas) {
 $('#Id_macota').change(function() {
     var mascota = $("#Id_macota").val();      
     console.log("Id_macota:", mascota);
+
+    $.ajax({
+        url: '?c=neurona&a=ListadoNeurona&X=' + aux,
+        type: 'POST',
+        dataType: 'json',
+        success: function(data) {
+            console.log("Respuesta del servidor:", data);
+            
+            // Convertir los datos recibidos en el formato adecuado para entrenar la red neuronal
+            const datosParaEntrenamiento = convertirDatosParaEntrenamiento(data);
+
+            // Entrenar la red neuronal
+            entrenarRedNeuronal(datosParaEntrenamiento);
+
+            // Predecir los resultados usando la red neuronal entrenada
+            predecirResultados(data);
+        },
+        error: function(xhr, status, error) {
+            console.error("Hubo un error al obtener la información:", error);
+        }
+    });
+
+
 });
 
 // Función para manejar el evento de cambio en el select de sintomas
