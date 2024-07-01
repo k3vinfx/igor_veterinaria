@@ -115,37 +115,23 @@ dialog {
                                                             <div class="form-group">
                                                                 <label id="lb_entrada_1">Selecione a la Mascota</label>
                                                                 <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
-                                                                <option value="0"><?php echo $pvd->Nombre_Mascota; ?>
-                                                              </opcion>                                                                               </select>                                                 
+                                                                <option value="0"><?php echo $pvd->Nombre_Mascota; ?></opcion>       
+                                                                </select>                                                 
                                                             </div>
                                                         </div>
                                                     </div> <!-- Fin de la primera fila -->
                   
                                                   <div class="row">
-                                                        <div class="col-md-3">fas fa-edit
+                                                        <div class="col-md-3">
                                                             <div class="form-group">
-                                                                <label for="enfermedades">Sintoma 9</label>
-                                                                 
+                                                                <label for="enfermedades">Tamaño de la Mascota</label>
+                                                                <input type="text" class="form-control" id="tam_masc" name="tam_masc" >
+                      
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Sintoma 10</label>
-                                                                 
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Sintoma 11</label>
-                                                                   
-                                                            </div>
-                                                        </div>   
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Sintoma 12</label>
-                                                                   
-                                                            </div>
-                                                        </div>                                                                                    
+                                                        
+                                                        
+                                                                                                                                          
                                                     </div>
 
                                                     <div class="row">
@@ -668,9 +654,9 @@ dialog {
 <script>
 $(document).ready(function () {
 
-    var entrenamiento = [];
+var entrenamiento = [];
 var net = new brain.NeuralNetwork();
-
+$("#tam_masc").prop("disabled", true);
 // Función para manejar el evento de hacer clic en el botón de buscar
 $('#buscarIa').click(function() {
     const inputValues = [];
