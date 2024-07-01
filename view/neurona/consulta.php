@@ -95,10 +95,9 @@ dialog {
                                             <div class="modal-body">
                                                 <form id="frm-proprietario" action="?c=neurona&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
                                                     <!-- Formulario para propietario -->
-                                                    <div class="row">
-                                                        <div class="col-md-12">  
-                                                            <div class="form-group">
-                                                                <label id="lb_entrada_1">Dueño de la Mascota</label>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">  
+                                                            <label id="lb_entrada_1">Dueño de la Mascota</label>
                                                                 <select class="custom-select selevt" name="duenos" id="duenos" >
                                                                     <option  value="0">Seleccion</option>
                                                                     <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
@@ -106,56 +105,27 @@ dialog {
                                                                             <?php echo $Tipo->duenos; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
                                                                         </option>       
                                                                     <?php endforeach; ?>
-                                                                </select>                 
-                                                            </div>
-                                                        </div>
-                                                    </div> <!-- Fin de la primera fila -->
-                                                    <div class="row">
-                                                        <div class="col-md-12">  
-                                                            <div class="form-group">
-                                                                <label id="lb_entrada_1">Selecione a la Mascota</label>
+                                                               </select>                 
+                                                       </div>
+                                                       <div class="form-group col-md-6">  
+                                                            <label id="lb_entrada_1">Selecione a la Mascota</label>
                                                                 <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
                                                                 <option value="0"><?php echo $pvd->Nombre_Mascota; ?></opcion>       
-                                                                </select>                                                 
-                                                            </div>
-                                                        </div>
+                                                              </select>  
+                                                       </div>
                                                     </div> <!-- Fin de la primera fila -->
-                  
-                                                  <div class="row">
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="enfermedades">Tamaño de la Mascota</label>
+                                                    <div class="form-row">  
+                                                       <div class="form-group col-md-6">  
+                                                       <label for="enfermedades">Tamaño de la Mascota</label>
                                                                 <input type="text" class="form-control" id="tam_masc" name="tam_masc" >
                       
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        
-                                                                                                                                          
-                                                    </div>
-
-                                                    <div class="row">
-               
-                                                        <div class="col-md-6">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                                    <label class="form-check-label" for="defaultCheck1">
-                                                                            Default checkbox 1
-                                                                    </label> 
-                                                                </div>
-                                                        </div> 
-                                                        <div class="col-md-6">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                                                    <label class="form-check-label" for="defaultCheck1">
-                                                                            Default checkbox 2
-                                                                    </label> 
-                                                                </div>
-                                                        </div> 
-                                                 
-
-
-                                                    </div> <!-- Fin de la segunda fila -->
+                                                       </div> 
+                                                       <div class="form-group col-md-6">  
+                                                              <label id="lb_entrada_1">Selecione un Tratamiento</label>
+                                                             <select class="custom-select selevt" name="selc_tratamiento" id="selc_tratamiento" >
+                                                       </div> 
+                                                    </div> 
+                                              
                                                 </form>
                                             </div>
                                             <div class="modal-footer">
