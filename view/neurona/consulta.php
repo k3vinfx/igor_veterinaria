@@ -888,7 +888,9 @@ console.log("afuera2:", entrenamiento);
                                 default:
                                     tamanoTexto = "Desconocido";
                             }
-                    $("#tam_masc").val(tamanoTexto);  
+                    $("#tam_masc").val(tamanoTexto); 
+                    $("#selc_tratamiento").prop("disabled", false);
+                    
                 } else {
                console.log('La respuesta no contiene datos esperados.');
              }   
@@ -964,6 +966,20 @@ console.log("afuera2:", entrenamiento);
         $('#frm-proprietariox #diagnostico').val(enfermedad);
         $('#frm-proprietariox #tratamiento1').val(tratamiento1);
         $('#frm-proprietariox #tratamiento2').val(tratamiento2);
+
+          // Limpiar y llenar el select con los tratamientos
+          var selectTratamiento = $('#selc_tratamiento');
+                selectTratamiento.empty(); // Limpiar las opciones existentes
+                selectTratamiento.append('<option value="">Seleccione un Tratamiento</option>'); // Opción por defecto
+
+                if (trat_01) {
+                    selectTratamiento.append('<option value="' + trat_01 + '">' + trat_01 + '</option>');
+                }
+                if (trat_02) {
+                    selectTratamiento.append('<option value="' + trat_02 + '">' + trat_02 + '</option>');
+                }
+
+           $("#selc_tratamiento").prop("disabled", true);
 
     });
    // Acciones para el botón de editar
