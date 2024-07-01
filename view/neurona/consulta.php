@@ -626,7 +626,9 @@ $(document).ready(function () {
 
 var entrenamiento = [];
 var net = new brain.NeuralNetwork();
+
 $("#tam_masc").prop("disabled", true);
+
 // Función para manejar el evento de hacer clic en el botón de buscar
 $('#buscarIa').click(function() {
     const inputValues = [];
@@ -862,7 +864,7 @@ console.log("afuera2:", entrenamiento);
 
     var valorSeleccionado = $("#Id_macota").val();           
     console.log('Respuesta del servidor:', valorSeleccionado);
-
+    var tipo_Mascota="";
     // Realizar una solicitud AJAX para obtener los datos al cargar la página
     $.ajax({
         url: '?c=neurona&a=NuevoPreparadoMascota&X=' + valorSeleccionado,
@@ -873,9 +875,10 @@ console.log("afuera2:", entrenamiento);
 
 
             // Agrega una opción predeterminada
-                console.log('Respuesta del servidor Mascota:', data);
+                tipo_Mascota= data.TamanoMascota;
+                console.log('Respuesta del servidor Mascota:', tipo_Mascota);
             // Llena el select con los datos obtenidos
-
+                        
             // $.each(data, function (key, value) {
             // $('#Id_macota').append('<option value="' + value.idMascota + '">' + value.nombreMascota + '</option>');
             // });
