@@ -872,13 +872,34 @@ console.log("afuera2:", entrenamiento);
         dataType: 'json',
         success: function (data) {
             // Limpia el select actual
+            if (Array.isArray(data) && data.length > 0) {
                var tipo_Mascota = data[0].TamanoMascota;
 
             // Agrega una opción predeterminada
              
                 console.log('Respuesta del servidor Mascota:', tipo_Mascota);
-            // Llena el select con los datos obtenidos
-                        
+                var tamanoTexto = "";
+                switch(tipo_Mascota) {
+                                case "1":
+                                    tamanoTexto = "Pequeño";
+                                    break;
+                                case "2":
+                                    tamanoTexto = "Mediano";
+                                    break;
+                                case "3":
+                                    tamanoTexto = "Grande";
+                                    break;
+                                case "4":
+                                    tamanoTexto = "Grande Superior";
+                                    break;
+                                default:
+                                    tamanoTexto = "Desconocido";
+                            }
+                    $("#tam_masc").val(tamanoTexto);  
+                } else {
+               console.log('La respuesta no contiene datos esperados.');
+             }   
+            // Llena el select con los datos obtenidos            
             // $.each(data, function (key, value) {
             // $('#Id_macota').append('<option value="' + value.idMascota + '">' + value.nombreMascota + '</option>');
             // });
