@@ -69,9 +69,7 @@ dialog {
                             <th>Sintoma 12</th>
                             <th>Diagnostico</th>
                             <th>Tratamiento 1</th>
-                            <th>Tratamiento 2</th>
-                          
-                       
+                            <th>Tratamiento 2</th>                   
                         </tr>
                     </thead>
                     <tbody>
@@ -118,7 +116,6 @@ dialog {
                                                        <div class="form-group col-md-6">  
                                                        <label for="enfermedades">Tamaño de la Mascota</label>
                                                                 <input type="text" class="form-control" id="tam_masc" name="tam_masc" >
-                      
                                                        </div> 
                                                        <div class="form-group col-md-6">  
                                                               <label id="lb_entrada_1">Selecione un Tratamiento</label>
@@ -167,8 +164,6 @@ dialog {
                                   else{
                                         echo ""?>
                                   <button type="button" id="btnEntrenar" name="btnEntrenar" class="btn btn-success btnEntrenar"
-
-
                                        
                                     data-id="<?php echo $r->idEnfermadad; ?>"
                                     data-nombre="<?php echo $r->nombreEnfermadad; ?>"
@@ -444,9 +439,6 @@ dialog {
                  
                     </div>
                     <div class="col-md-3">
-                 
-
-
                       <div class="form-group">
                             <label for="enfermedades">Respuesta esperada Tratamiento 1</label>
                             <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" required>
@@ -626,7 +618,8 @@ $(document).ready(function () {
 
 var entrenamiento = [];
 var net = new brain.NeuralNetwork();
-
+var trat_01 = "";
+var trat_02 = "";
 $("#tam_masc").prop("disabled", true);
 
 // Función para manejar el evento de hacer clic en el botón de buscar
@@ -947,8 +940,9 @@ console.log("afuera2:", entrenamiento);
         var enfermedad = $(this).data('enfermedad');   
         var tratamiento1 = $(this).data('tratamiento1');               
         var tratamiento2 = $(this).data('tratamiento2');
-
-     
+        trat_01=tratamiento1;
+        trat_02=tratamiento2;
+        console.log("El id trat:", trat_01);
     // Establecer el valor del título del modal
        $('#nombrex').text(nombre);
         $('#frm-proprietariox #idFK').val(id);
