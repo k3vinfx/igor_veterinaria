@@ -893,6 +893,27 @@ console.log("afuera2:", entrenamiento);
 
                 // VER POR EL ID Y EL TIPO DE TAMAÑO LA CONSULTA EN AJAX SOBRE SUS DATOS DE LA MASCOTA Y SORNE
                 var tamanoTexto = "";
+
+                $.ajax({
+                    url: '?c=neurona&a=NuevoPreparadoMascotarResultadosNeurona&X=' + id_tama_mascota,
+                    method: 'POST',
+                    dataType: 'json',
+                    success: function (data) {
+                        // Limpia el select actual
+                        if (Array.isArray(data) && data.length > 0) {
+                            console.log('Respuesta del servidor Mascota Tipo Neurona:', data);   
+                        } else {
+                            console.log('La respuesta no contiene datos esperados Neurona.');
+                        }   
+                    },
+                    error: function (xhr, status, error) {
+                        console.log('Error al obtener los datos:');
+                        console.log('XHR:', xhr);
+                        console.log('Status:', status);
+                        console.log('Error:', error);
+                    }
+                });
+                
                 switch(tipo_Mascota) {
                                 case "1":
                                     tamanoTexto = "Pequeño";
