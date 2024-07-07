@@ -127,7 +127,8 @@ class neurona
      }
 
      public function getLista_Resultados_1($valor) {
-        try {         
+        try {    
+            $result = array();     
             $stm = $this->pdo->prepare("SELECT ROW_NUMBER() OVER () AS Id_Cantidad, outPeso_01 as variable_1, outPeso_05 as variable_2 FROM pesos_rnn WHERE FK_idEnfermedad = ?");
             $stm->execute(array($valor));
             return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -138,6 +139,7 @@ class neurona
     
     public function getLista_Resultados_2($valor) {
         try {         
+            $result = array();
             $stm = $this->pdo->prepare("SELECT ROW_NUMBER() OVER () AS Id_Cantidad, outPeso_02 as variable_1, outPeso_06 as variable_2 FROM pesos_rnn WHERE FK_idEnfermedad = ?");
             $stm->execute(array($valor));
             return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -148,6 +150,7 @@ class neurona
     
     public function getLista_Resultados_3($valor) {
         try {         
+            $result = array();
             $stm = $this->pdo->prepare("SELECT ROW_NUMBER() OVER () AS Id_Cantidad, outPeso_03 as variable_1, outPeso_07 as variable_2 FROM pesos_rnn WHERE FK_idEnfermedad = ?");
             $stm->execute(array($valor));
             return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -157,7 +160,8 @@ class neurona
     }
     
     public function getLista_Resultados_4($valor) {
-        try {         
+        try {    
+            $result = array();     
             $stm = $this->pdo->prepare("SELECT ROW_NUMBER() OVER () AS Id_Cantidad, outPeso_04 as variable_1, outPeso_08 as variable_2 FROM pesos_rnn WHERE FK_idEnfermedad = ?");
             $stm->execute(array($valor));
             return $stm->fetchAll(PDO::FETCH_OBJ);

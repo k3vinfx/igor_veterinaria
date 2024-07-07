@@ -174,15 +174,16 @@ class NeuronaController{
         $recomendaciones = [];
     
         if(isset($_REQUEST['X'])) {
-            $valor = $_REQUEST['X'];
-            if($valor == 1) {
-                $recomendaciones = $this->model->getLista_Resultados_1($valor);
-            } else if($valor == 2) {
-                $recomendaciones = $this->model->getLista_Resultados_2($valor);
-            } else if($valor == 3) {
-                $recomendaciones = $this->model->getLista_Resultados_3($valor);
-            } else if($valor == 4) {
-                $recomendaciones = $this->model->getLista_Resultados_4($valor);
+            $valorX = $_REQUEST['X'];
+            $valorY = $_REQUEST['Y'];
+            if($valorY == 1) {
+                $recomendaciones = $this->model->getLista_Resultados_1($valorX);
+            } else if($valorY == 2) {
+                $recomendaciones = $this->model->getLista_Resultados_2($valorX);
+            } else if($valorY == 3) {
+                $recomendaciones = $this->model->getLista_Resultados_3($valorX);
+            } else if($valorY == 4) {
+                $recomendaciones = $this->model->getLista_Resultados_4($valorX);
             }
         }
         echo json_encode($recomendaciones);

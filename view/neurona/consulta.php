@@ -895,7 +895,7 @@ console.log("afuera2:", entrenamiento);
                 var tamanoTexto = "";
 
                 $.ajax({
-                    url: '?c=neurona&a=NuevoPreparadoMascotarResultadosNeurona&X=' + id_enfermedad,
+                    url: '?c=neurona&a=NuevoPreparadoMascotarResultadosNeurona&X=' + id_enfermedad + '&Y=' + id_tama_mascota,
                     method: 'POST',
                     dataType: 'json',
                     success: function (data) {
