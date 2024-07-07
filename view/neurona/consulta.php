@@ -141,7 +141,7 @@ dialog {
                                             
                                   
 
-                                         </div>
+                                           </div>
                                         </div>
                                     </div>
                                 </div>
@@ -632,10 +632,15 @@ var entrenamiento = [];
 var net = new brain.NeuralNetwork();
 var trat_01 = "";
 var trat_02 = "";
+var id_enfermedad = "";
+var id_tama_mascota ="";
+
 $("#tam_masc").prop("disabled", true);
 
 // Función para manejar el evento de hacer clic en el botón de buscar
 $('#buscarIa').click(function() {
+
+// Consulta a Ajax para obtener los 
     const inputValues = [];
     for (let i = 1; i <= 12; i++) {
         const newValue = parseFloat(document.getElementById('entrada_' + i).value) || 0.00;
@@ -883,10 +888,99 @@ console.log("afuera2:", entrenamiento);
             // Agrega una opción predeterminada
              
                 console.log('Respuesta del servidor Mascota:', tipo_Mascota);
+
+                id_tama_mascota=tipo_Mascota;
+
+                // VER POR EL ID Y EL TIPO DE TAMAÑO LA CONSULTA EN AJAX SOBRE SUS DATOS DE LA MASCOTA Y SOBRE SU EFECTIVIDAD DEL TRATAMIENTO
+
+                $.ajax({
+                url: '?c=neurona&a=NuevoPreparadoMascota&X=' + valorSeleccionado,
+                method: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    // Limpia el select actual
+                    if (Array.isArray(data) && data.length > 0) {
+                    var tipo_Mascota = data[0].TamanoMascota;
+
+                    // Agrega una opción predeterminada
+                    
+                        console.log('Respuesta del servidor Mascota:', tipo_Mascota);
+
+                        id_tama_mascota=tipo_Mascota;
+
+                        // VER POR EL ID Y EL TIPO DE TAMAÑO LA CONSULTA EN AJAX SOBRE SUS DATOS DE LA MASCOTA Y SOBRE SU EFECTIVIDAD DEL TRATAMIENTO
+                        
+
+                        $.ajax({
+                        url: '?c=neurona&a=NuevoPreparadoMascotarResultadosNeurona&X=' + id_tama_mascota,
+                        method: 'POST',
+                        dataType: 'json',
+                        success: function (data) {
+                            // Limpia el select actual
+                            if (Array.isArray(data) && data.length > 0) {
+                            // var tipo_Mascota = data[0].TamanoMascota;
+                            // Agrega una opción predeterminada                          
+                            // console.log('Respuesta del servidor Mascota:', tipo_Mascota);
+                            // id_tama_mascota=tipo_Mascota;
+
+                                // VER POR EL ID Y EL TIPO DE TAMAÑO LA CONSULTA EN AJAX SOBRE SUS DATOS DE LA MASCOTA Y SOBRE SU EFECTIVIDAD DEL TRATAMIENTO
+                                
+                                console.log('Respuesta del servidor Mascota Tipo Neurona:', data);   
+                                    
+                                } else {
+                            console.log('La respuesta no contiene datos esperados Neurona.');
+                            }   
+                            // Llena el select con los datos obtenidos            
+                            // $.each(data, function (key, value) {
+                            // $('#Id_macota').append('<option value="' + value.idMascota + '">' + value.nombreMascota + '</option>');
+                            // });
+
+                            },
+                        error: function (xhr, status, error) {
+                            console.log('Error al obtener los datos:');
+                            console.log('XHR:', xhr);
+                            console.log('Status:', status);
+                            console.log('Error:', error);
+                        }
+                    });
+            
+                    
                 var tamanoTexto = "";
                 switch(tipo_Mascota) {
                                 case "1":
                                     tamanoTexto = "Pequeño";
+                                    break;
+                                case "2":
+                                    tamanoTexto = "Mediano";
+                                    break;
+                                case "3":
+                                    tamanoTexto = "Grande";
+                                    break;
+                                case "4":
+                                    tamanoTexto = "Grande Superior";
+                                    break;
+                                default:
+                                    tamanoTexto = "Desconocido";
+                            }
+                    $("#tam_masc").val(tamanoTexto); 
+                    $("#selc_tratamiento").prop("disabled", false);
+                    
+                } else {
+               console.log('La respuesta no contiene datos esperados.');
+             }   
+            // Llena el select con los datos obtenidos            
+            // $.each(data, function (key, value) {
+            // $('#Id_macota').append('<option value="' + value.idMascota + '">' + value.nombreMascota + '</option>');
+            // });
+
+            },
+        error: function (xhr, status, error) {
+            console.log('Error al obtener los datos:');
+            console.log('XHR:', xhr);
+            console.log('Status:', status);
+            console.log('Error:', error);
+        }
+    });
                                     break;
                                 case "2":
                                     tamanoTexto = "Mediano";
@@ -956,7 +1050,10 @@ console.log("afuera2:", entrenamiento);
         var tratamiento2 = $(this).data('tratamiento2');
         trat_01=tratamiento1;
         trat_02=tratamiento2;
+        id_enfermedad= id;
         console.log("El id trat:", trat_01);
+        console.log("El id id_enfermedad:", id_enfermedad);
+            id_enfermedad= id;
     // Establecer el valor del título del modal
        $('#nombrex').text(nombre);
         $('#frm-proprietariox #idFK').val(id);
@@ -978,6 +1075,9 @@ console.log("afuera2:", entrenamiento);
         $('#frm-proprietariox #diagnostico').val(enfermedad);
         $('#frm-proprietariox #tratamiento1').val(tratamiento1);
         $('#frm-proprietariox #tratamiento2').val(tratamiento2);
+
+
+
 
           // Limpiar y llenar el select con los tratamientos
           var selectTratamiento = $('#selc_tratamiento');
