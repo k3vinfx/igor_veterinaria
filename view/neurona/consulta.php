@@ -870,149 +870,80 @@ console.log("afuera2:", entrenamiento);
 
    // Funcion para sacar el tamaño de la mas cota y que escoja el tratamiento A O B
    
-   $("#Id_macota").on("change", function () {
+        $("#Id_macota").on("change", function () {
+            var valorSeleccionado = $("#Id_macota").val();           
+            console.log('Respuesta del servidor:', valorSeleccionado);
 
-    var valorSeleccionado = $("#Id_macota").val();           
-    console.log('Respuesta del servidor:', valorSeleccionado);
-
-    // Realizar una solicitud AJAX para obtener los datos al cargar la página
-    $.ajax({
-        url: '?c=neurona&a=NuevoPreparadoMascota&X=' + valorSeleccionado,
-        method: 'POST',
-        dataType: 'json',
-        success: function (data) {
-            // Limpia el select actual
-            if (Array.isArray(data) && data.length > 0) {
-               var tipo_Mascota = data[0].TamanoMascota;
-
-            // Agrega una opción predeterminada
-             
-                console.log('Respuesta del servidor Mascota:', tipo_Mascota);
-
-                id_tama_mascota=tipo_Mascota;
-
-                // VER POR EL ID Y EL TIPO DE TAMAÑO LA CONSULTA EN AJAX SOBRE SUS DATOS DE LA MASCOTA Y SOBRE SU EFECTIVIDAD DEL TRATAMIENTO
-
-                $.ajax({
+            // Realizar una solicitud AJAX para obtener los datos al cargar la página
+            $.ajax({
                 url: '?c=neurona&a=NuevoPreparadoMascota&X=' + valorSeleccionado,
                 method: 'POST',
                 dataType: 'json',
                 success: function (data) {
                     // Limpia el select actual
                     if (Array.isArray(data) && data.length > 0) {
-                    var tipo_Mascota = data[0].TamanoMascota;
+                        var tipo_Mascota = data[0].TamanoMascota;
 
-                    // Agrega una opción predeterminada
-                    
                         console.log('Respuesta del servidor Mascota:', tipo_Mascota);
 
-                        id_tama_mascota=tipo_Mascota;
+                        var id_tama_mascota = tipo_Mascota;
 
                         // VER POR EL ID Y EL TIPO DE TAMAÑO LA CONSULTA EN AJAX SOBRE SUS DATOS DE LA MASCOTA Y SOBRE SU EFECTIVIDAD DEL TRATAMIENTO
-                        
 
                         $.ajax({
-                        url: '?c=neurona&a=NuevoPreparadoMascotarResultadosNeurona&X=' + id_tama_mascota,
-                        method: 'POST',
-                        dataType: 'json',
-                        success: function (data) {
-                            // Limpia el select actual
-                            if (Array.isArray(data) && data.length > 0) {
-                            // var tipo_Mascota = data[0].TamanoMascota;
-                            // Agrega una opción predeterminada                          
-                            // console.log('Respuesta del servidor Mascota:', tipo_Mascota);
-                            // id_tama_mascota=tipo_Mascota;
-
-                                // VER POR EL ID Y EL TIPO DE TAMAÑO LA CONSULTA EN AJAX SOBRE SUS DATOS DE LA MASCOTA Y SOBRE SU EFECTIVIDAD DEL TRATAMIENTO
-                                
-                                console.log('Respuesta del servidor Mascota Tipo Neurona:', data);   
-                                    
+                            url: '?c=neurona&a=NuevoPreparadoMascotarResultadosNeurona&X=' + id_tama_mascota,
+                            method: 'POST',
+                            dataType: 'json',
+                            success: function (data) {
+                                // Limpia el select actual
+                                if (Array.isArray(data) && data.length > 0) {
+                                    console.log('Respuesta del servidor Mascota Tipo Neurona:', data);   
                                 } else {
-                            console.log('La respuesta no contiene datos esperados Neurona.');
-                            }   
-                            // Llena el select con los datos obtenidos            
-                            // $.each(data, function (key, value) {
-                            // $('#Id_macota').append('<option value="' + value.idMascota + '">' + value.nombreMascota + '</option>');
-                            // });
-
+                                    console.log('La respuesta no contiene datos esperados Neurona.');
+                                }   
                             },
-                        error: function (xhr, status, error) {
-                            console.log('Error al obtener los datos:');
-                            console.log('XHR:', xhr);
-                            console.log('Status:', status);
-                            console.log('Error:', error);
+                            error: function (xhr, status, error) {
+                                console.log('Error al obtener los datos:');
+                                console.log('XHR:', xhr);
+                                console.log('Status:', status);
+                                console.log('Error:', error);
+                            }
+                        });
+
+                        var tamanoTexto = "";
+                        switch(tipo_Mascota) {
+                            case "1":
+                                tamanoTexto = "Pequeño";
+                                break;
+                            case "2":
+                                tamanoTexto = "Mediano";
+                                break;
+                            case "3":
+                                tamanoTexto = "Grande";
+                                break;
+                            case "4":
+                                tamanoTexto = "Grande Superior";
+                                break;
+                            default:
+                                tamanoTexto = "Desconocido";
                         }
-                    });
-            
-                    
-                var tamanoTexto = "";
-                switch(tipo_Mascota) {
-                                case "1":
-                                    tamanoTexto = "Pequeño";
-                                    break;
-                                case "2":
-                                    tamanoTexto = "Mediano";
-                                    break;
-                                case "3":
-                                    tamanoTexto = "Grande";
-                                    break;
-                                case "4":
-                                    tamanoTexto = "Grande Superior";
-                                    break;
-                                default:
-                                    tamanoTexto = "Desconocido";
-                            }
-                    $("#tam_masc").val(tamanoTexto); 
-                    $("#selc_tratamiento").prop("disabled", false);
-                    
-                } else {
-               console.log('La respuesta no contiene datos esperados.');
-             }   
-            // Llena el select con los datos obtenidos            
-            // $.each(data, function (key, value) {
-            // $('#Id_macota').append('<option value="' + value.idMascota + '">' + value.nombreMascota + '</option>');
-            // });
+                        $("#tam_masc").val(tamanoTexto); 
+                        $("#selc_tratamiento").prop("disabled", false);
 
-            },
-        error: function (xhr, status, error) {
-            console.log('Error al obtener los datos:');
-            console.log('XHR:', xhr);
-            console.log('Status:', status);
-            console.log('Error:', error);
-        }
-    });
-                                    break;
-                                case "2":
-                                    tamanoTexto = "Mediano";
-                                    break;
-                                case "3":
-                                    tamanoTexto = "Grande";
-                                    break;
-                                case "4":
-                                    tamanoTexto = "Grande Superior";
-                                    break;
-                                default:
-                                    tamanoTexto = "Desconocido";
-                            }
-                    $("#tam_masc").val(tamanoTexto); 
-                    $("#selc_tratamiento").prop("disabled", false);
-                    
-                } else {
-               console.log('La respuesta no contiene datos esperados.');
-             }   
-            // Llena el select con los datos obtenidos            
-            // $.each(data, function (key, value) {
-            // $('#Id_macota').append('<option value="' + value.idMascota + '">' + value.nombreMascota + '</option>');
-            // });
+                    } else {
+                        console.log('La respuesta no contiene datos esperados.');
+                    }   
+                },
+                error: function (xhr, status, error) {
+                    console.log('Error al obtener los datos:');
+                    console.log('XHR:', xhr);
+                    console.log('Status:', status);
+                    console.log('Error:', error);
+                }
+            });
+        });
 
-            },
-        error: function (xhr, status, error) {
-            console.log('Error al obtener los datos:');
-            console.log('XHR:', xhr);
-            console.log('Status:', status);
-            console.log('Error:', error);
-        }
-    });
+               
 
     // Agregar el evento change para manejar futuros cambios en entrada_X
     $("#duenos").change(function () {
