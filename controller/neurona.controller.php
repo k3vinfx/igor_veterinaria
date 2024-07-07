@@ -168,23 +168,24 @@ class NeuronaController{
         }
         echo json_encode($recomendaciones);
     }
-    public function NuevoPreparadoMascotarResultadosNeurona(){
+ 
+    public function NuevoPreparadoMascotarResultadosNeurona() {
         $pvd = new neurona();
         $recomendaciones = [];
-        if(isset($_REQUEST['X'])){
-            if(isset($_REQUEST['X'])==1){
-                $recomendaciones = $this->model->getLista_Resultados_1($_REQUEST['X']);
-            }else if(isset($_REQUEST['X'])==2){
-                $recomendaciones = $this->model->getLista_Resultados_2($_REQUEST['X']);
-            }else if (isset($_REQUEST['X'])==3){
-                $recomendaciones = $this->model->getLista_Resultados_3($_REQUEST['X']);
-            }else if (isset($_REQUEST['X'])==4){
-                $recomendaciones = $this->model->getLista_Resultados_4($_REQUEST['X']);
+    
+        if(isset($_REQUEST['X'])) {
+            $valor = $_REQUEST['X'];
+            if($valor == 1) {
+                $recomendaciones = $this->model->getLista_Resultados_1($valor);
+            } else if($valor == 2) {
+                $recomendaciones = $this->model->getLista_Resultados_2($valor);
+            } else if($valor == 3) {
+                $recomendaciones = $this->model->getLista_Resultados_3($valor);
+            } else if($valor == 4) {
+                $recomendaciones = $this->model->getLista_Resultados_4($valor);
             }
-          
         }
         echo json_encode($recomendaciones);
     }
-
 
 }

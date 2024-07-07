@@ -900,6 +900,8 @@ console.log("afuera2:", entrenamiento);
                     dataType: 'json',
                     success: function (data) {
                         // Limpia el select actual
+
+                        console.log("data esperada:",data);
                         if (Array.isArray(data) && data.length > 0) {
                             console.log('Respuesta del servidor Mascota Tipo Neurona:', data);   
                         } else {
@@ -913,7 +915,7 @@ console.log("afuera2:", entrenamiento);
                         console.log('Error:', error);
                     }
                 });
-                
+
                 switch(tipo_Mascota) {
                                 case "1":
                                     tamanoTexto = "Pequeño";
