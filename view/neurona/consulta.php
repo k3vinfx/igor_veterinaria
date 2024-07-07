@@ -627,7 +627,7 @@ dialog {
 
 <script>
 $(document).ready(function () {
-
+var Datos_vec = [];
 var entrenamiento = [];
 var net = new brain.NeuralNetwork();
 var trat_01 = "";
@@ -903,7 +903,19 @@ console.log("afuera2:", entrenamiento);
 
                         console.log("data esperada:");
                         if (Array.isArray(data) && data.length > 0) {
-                            console.log('Respuesta del servidor Mascota Tipo Neurona:', data);   
+                            console.log('Respuesta del servidor Mascota Tipo Neurona:', data); 
+                            //Datos_vec
+                            
+                            Datos_vec = data.map(item => {
+                                return {
+                                    id: item.Id_Cantidad,
+                                    tam: item.tamMascota,
+                                    edad: item.edadMascota,
+                                    efectividad_1: item.variable_1,
+                                    efectividad_2: item.variable_2
+                                };
+                            });
+
                         } else {
                             console.log('La respuesta no contiene datos esperados Neurona.');
                         }   
