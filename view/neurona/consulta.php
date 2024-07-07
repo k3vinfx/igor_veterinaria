@@ -895,13 +895,13 @@ console.log("afuera2:", entrenamiento);
                 var tamanoTexto = "";
 
                 $.ajax({
-                    url: '?c=neurona&a=NuevoPreparadoMascotarResultadosNeurona&X=' + id_tama_mascota,
+                    url: '?c=neurona&a=NuevoPreparadoMascotarResultadosNeurona&X=' + id_enfermedad,
                     method: 'POST',
                     dataType: 'json',
                     success: function (data) {
                         // Limpia el select actual
 
-                        console.log("data esperada:",data);
+                        console.log("data esperada:");
                         if (Array.isArray(data) && data.length > 0) {
                             console.log('Respuesta del servidor Mascota Tipo Neurona:', data);   
                         } else {
