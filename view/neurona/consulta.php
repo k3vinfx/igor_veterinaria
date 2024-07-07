@@ -113,23 +113,35 @@ dialog {
                                                        </div>
                                                     </div> <!-- Fin de la primera fila -->
                                                     <div class="form-row">  
-                                                       <div class="form-group col-md-6">  
+                                                       <div class="form-group col-md-7">  
                                                        <label for="enfermedades">Tamaño de la Mascota</label>
                                                                 <input type="text" class="form-control" id="tam_masc" name="tam_masc" >
                                                        </div> 
-                                                       <div class="form-group col-md-6">  
+                                                       <div class="form-group col-md-7">  
                                                               <label id="lb_entrada_1">Selecione un Tratamiento</label>
                                                              <select class="custom-select selevt" name="selc_tratamiento" id="selc_tratamiento" >
                                                        </div> 
                                                     </div> 
+                                                    <div class="form-row">  
+                                                       <div class="form-group col-md-7">  
+                                                              <label id="lb_entrada_1">Efectividad </label>
+                                                              <input type="text" class="form-control" id="efectividad_trat" name="efectividad_trat" >
+                                                       </div> 
+
+                                                    </div> 
+
                                               
+                                                    <div class="modal-footer">
+                                                     <button type="button" name="buscar" id="buscarIa" class="btn btn-danger">Buscar</button>
+                                                     <button type="button" name="salir" id="salir" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                    <button type="submit" form="frm-proprietario" class="btn btn-primary">Guardar</button>
+                                                 </div>
+
                                                 </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                              <button type="button" name="buscar" id="buscarIa" class="btn btn-danger">Buscar</button>
-                                                <button type="button" name="salir" id="salir" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                                <button type="submit" form="frm-proprietario" class="btn btn-primary">Guardar</button>
-                                            </div>
+                                            
+                                  
+
+                                         </div>
                                         </div>
                                     </div>
                                 </div>
