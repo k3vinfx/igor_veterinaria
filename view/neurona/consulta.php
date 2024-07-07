@@ -916,6 +916,31 @@ console.log("afuera2:", entrenamiento);
                                 };
                             });
 
+                            // Crear una nueva instancia de la red neuronal
+                            const net = new brain.NeuralNetwork();
+
+                            // Datos de entrenamiento
+                            const trainingData = Datos_vec.map(item => ({
+                                input: {
+                                    taman: item.tamaño,
+                                    edad: item.edad
+                                },
+                                output: { efectividad_1: item.efectividad_1, efectividad_2: item.efectividad_2  } // Puedes promediar efectividad_1 y efectividad_2 si es necesario
+                            }));
+
+                            // Entrenar la red neuronal
+                            net.train(trainingData);
+                            // Usar la red neuronal para predecir la efectividad basándose en un nuevo conjunto de entradas
+                            const nuevo_dato = {
+                                taman: 2, // por ejemplo, tamaño pequeño
+                                edad: 3,   // por ejemplo, 4 años
+                               /* tipo_enfermedad: 1 // tipo de enfermedad*/
+                            };
+
+                            const resultado = net.run(nuevo_dato);
+                            
+                            console.log('Efectividad del tratamiento según los nuevos datos 1:', resultado.efectividad_1  );
+                            console.log('Efectividad del tratamiento según los nuevos datos 2:', resultado.efectividad_2  );
                         } else {
                             console.log('La respuesta no contiene datos esperados Neurona.');
                         }   
