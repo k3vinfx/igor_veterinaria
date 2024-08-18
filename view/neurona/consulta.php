@@ -113,10 +113,7 @@ dialog {
                                                        </div>
                                                     </div> <!-- Fin de la primera fila -->
                                                     <div class="form-row">  
-                                                       <div class="form-group col-md-7">  
-                                                       <label for="enfermedades">Tamaño de la Mascota</label>
-                                                                <input type="text" class="form-control" id="tam_masc" name="tam_masc" >
-                                                       </div> 
+                                                 
                                                        <div class="form-group col-md-7">  
                                                               <label id="lb_entrada_1">Selecione un Tratamiento</label>
                                                              <select class="custom-select selevt" name="selc_tratamiento" id="selc_tratamiento" >
@@ -1038,7 +1035,7 @@ console.log("afuera2:", entrenamiento);
                     selectTratamiento.append('<option value="' + trat_02 + '">' + trat_02 + '</option>');
                 }
 
-           $("#selc_tratamiento").prop("disabled", true);
+           $("#selc_tratamiento").prop("disabled", false);
 
     });
    // Acciones para el botón de editar
