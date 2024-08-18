@@ -894,6 +894,8 @@ console.log("afuera2:", entrenamiento);
           $.ajax({
                 url: '?c=neurona&a=NuevoPreparadoMascotaRRN_2',
                 method: 'POST',
+                dataType: 'json',
+                
                 data: {
                     entrada_1: data[0].VAR1, // Suponiendo que VAR1 es entrada_1
                     entrada_2: data[0].VAR2, // Suponiendo que VAR2 es entrada_2
