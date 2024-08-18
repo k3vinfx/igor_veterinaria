@@ -870,6 +870,7 @@ console.log("afuera2:", entrenamiento);
              console.log("data[0].VAR1",data[0].VAR1);
              console.log("data[0].VAR2",data[0].VAR2);
              console.log("data[0].VAR3",data[0].VAR3);
+             console.log("valorSeleccionadoTratamiento",valorSeleccionadoTratamiento);
           $.ajax({
                 url: '?c=neurona&a=NuevoPreparadoMascotaRRN_2',
                 method: 'POST',
