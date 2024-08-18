@@ -1035,6 +1035,8 @@ console.log("afuera2:", entrenamiento);
                     selectTratamiento.append('<option value="' + trat_02 + '">' + trat_02 + '</option>');
                 }
 
+                console.log("Tratamiento>>",selectTratamiento );
+
            $("#selc_tratamiento").prop("disabled", false);
 
     });
