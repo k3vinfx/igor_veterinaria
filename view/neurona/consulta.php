@@ -1033,10 +1033,10 @@ console.log("afuera2:", entrenamiento);
                 selectTratamiento.append('<option value="">Seleccione un Tratamiento</option>'); // Opción por defecto
 
                 if (trat_01) {
-                    selectTratamiento.append('<option value="' + trat_01 + '">' + trat_01 + '</option>');
+                    selectTratamiento.append('<option value="' + 1 + '">' + trat_01 + '</option>');
                 }
                 if (trat_02) {
-                    selectTratamiento.append('<option value="' + trat_02 + '">' + trat_02 + '</option>');
+                    selectTratamiento.append('<option value="' + 2 + '">' + trat_02 + '</option>');
                 }
 
                 console.log("Tratamiento>>",selectTratamiento );
