@@ -179,14 +179,14 @@ class NeuronaController{
 
     public function NuevoPreparadoMascotaRRN_2() {
         $pvd = new neurona();
-        
+        $recomendaciones = [];
         $pvd->entrada_1 = $_POST['entrada_1'];
         $pvd->entrada_2 = $_POST['entrada_2'];
         $pvd->entrada_3 = $_POST['entrada_3'];
         
         // Aquí se pasa el objeto $pvd al modelo para que realice las operaciones necesarias
-        $this->model->getListar_Mascota_Datos_RRN2($pvd);
-        
+        $recomendaciones = $this->model->getListar_Mascota_Datos_RRN2($pvd);
+        echo json_encode($recomendaciones);
         // Redirige a una página de éxito o lista
        // header('Location: index.php?c=neurona&a=Start');
     }
