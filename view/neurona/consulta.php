@@ -873,7 +873,11 @@ console.log("afuera2:", entrenamiento);
 
 
    // Funcion para sacar el tamaño de la mas cota y que escoja el tratamiento A O B
-   
+   $("#selectTratamiento").on("change", function () {
+
+    var valorSeleccionado = $("#selectTratamiento").val();           
+    console.log('Respuesta del Tratamiento:', valorSeleccionado);
+   });
    $("#Id_macota").on("change", function () {
 
     var valorSeleccionado = $("#Id_macota").val();           
@@ -1040,6 +1044,8 @@ console.log("afuera2:", entrenamiento);
            $("#selc_tratamiento").prop("disabled", false);
 
     });
+
+
    // Acciones para el botón de editar
     $('.btnEditar').on('click', function () {
         // Aquí iría el código para rellenar el formulario del modal con los datos del propietario a editar
