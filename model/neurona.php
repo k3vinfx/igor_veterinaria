@@ -107,6 +107,52 @@ class neurona
          }
       }
 
+      public function getListar_Mascota_Datos_RRN1($valor)
+      {
+          try
+          {         
+              $result = array();
+              $stm = $this->pdo->prepare("SELECT DISTINCT 
+                            ant.idAntecedentes, 
+                            ROUND(ant.pesoAntecedentes) AS pesoRedondeado,
+                            mas.TamanoMascota AS VAR1, 
+                            CASE 
+                                WHEN ROUND(ant.pesoAntecedentes) BETWEEN 0 AND 1 THEN 1
+                                WHEN ROUND(ant.pesoAntecedentes) BETWEEN 2 AND 2 THEN 2
+                                WHEN ROUND(ant.pesoAntecedentes) BETWEEN 3 AND 3 THEN 3
+                                WHEN ROUND(ant.pesoAntecedentes) BETWEEN 4 AND 4 THEN 4
+                                WHEN ROUND(ant.pesoAntecedentes) BETWEEN 5 AND 5 THEN 5
+                                WHEN ROUND(ant.pesoAntecedentes) BETWEEN 6 AND 6 THEN 6
+                                WHEN ROUND(ant.pesoAntecedentes) BETWEEN 7 AND 7 THEN 7
+                                WHEN ROUND(ant.pesoAntecedentes) BETWEEN 8 AND 8 THEN 8
+                                WHEN ROUND(ant.pesoAntecedentes) BETWEEN 9 AND 9 THEN 9
+                            END AS VAR2, ant.alturaAntecedentes as VAR3
+                        FROM mascotadatos mas 
+                        INNER JOIN antecedentes_mascota ant ON mas.idMascota = ant.FK_idMascota 
+                        WHERE mas.idMascota = ? 
+                        ORDER BY ant.idAntecedentes DESC 
+                        LIMIT 1;");
+          $stm->execute(array($valor));
+          return $stm->fetchAll(PDO::FETCH_OBJ);
+          } catch (Exception $e)
+          {
+              die($e->getMessage());
+          }
+       }
+
+    public function getNeurona_Simple($valores)
+    {try{
+
+        $result=array();
+        $smt = $this->pdo->prepare("SELECT entrada_1,entrada_2,respuesta_1 FROM peso_rnn where entrada_1_ant=? and entrada_2_ant=? and tratamiento=?;");
+        $stm->execute(array($valor));
+        return $stm->fetchAll(PDO::FETCH_OBJ);
+        } catch (Exception $e)
+        {
+            die($e->getMessage());
+        }
+    }      
+
 
 
     public function getListar_Neurona_x($valor)

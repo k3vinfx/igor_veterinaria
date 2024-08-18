@@ -168,6 +168,25 @@ class NeuronaController{
         }
         echo json_encode($recomendaciones);
     }
+    public function NuevoPreparadoMascotaRRN_1(){
+        $pvd = new neurona();
+        $recomendaciones = [];
+        if(isset($_REQUEST['X'])){
+            $recomendaciones = $this->model->getListar_Mascota_Datos($_REQUEST['X']);
+        }
+        echo json_encode($recomendaciones);
+    }
+
+
+    public function NuevoPreparadoNeuronaSimple(){
+        $pvd = new neurona();
+        $recomendaciones = [];
+        if(isset($_REQUEST['X'])){
+            $recomendaciones = $this->model->getNeurona_Simple($_REQUEST['X']);
+        }
+        echo json_encode($recomendaciones);
+    }
+    
  
     public function NuevoPreparadoMascotarResultadosNeurona() {
         $pvd = new neurona();

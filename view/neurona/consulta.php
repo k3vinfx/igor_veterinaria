@@ -640,6 +640,13 @@ $("#tam_masc").prop("disabled", true);
 // Función para manejar el evento de hacer clic en el botón de buscar
 $('#buscarIa').click(function() {
 
+//dato 1
+console.log();
+// dato 2
+
+
+console.log();
+
 // Consulta a Ajax para obtener los 
     const inputValues = [];
     for (let i = 1; i <= 12; i++) {
@@ -874,119 +881,24 @@ console.log("afuera2:", entrenamiento);
 
     var valorSeleccionado = $("#Id_macota").val();           
     console.log('Respuesta del servidor:', valorSeleccionado);
-
+    
     // Realizar una solicitud AJAX para obtener los datos al cargar la página
     $.ajax({
-        url: '?c=neurona&a=NuevoPreparadoMascota&X=' + valorSeleccionado,
+        url: '?c=neurona&a=NuevoPreparadoMascotaRRN_1&X=' + valorSeleccionado,
         method: 'POST',
         dataType: 'json',
         success: function (data) {
-            // Limpia el select actual
-            if (Array.isArray(data) && data.length > 0) {
-               var tipo_Mascota = data[0].TamanoMascota;
-
-            // Agrega una opción predeterminada
+            
+          console.log('Respuesta del servidor Mascota Tipo Neurona:', data); 
              
-                console.log('Respuesta del servidor Mascota:', tipo_Mascota);
-
-                id_tama_mascota=tipo_Mascota;
-
-                // VER POR EL ID Y EL TIPO DE TAMAÑO LA CONSULTA EN AJAX SOBRE SUS DATOS DE LA MASCOTA Y SORNE
-                var tamanoTexto = "";
-
-                $.ajax({
-                    url: '?c=neurona&a=NuevoPreparadoMascotarResultadosNeurona&X=' + id_enfermedad + '&Y=' + id_tama_mascota,
-                    method: 'POST',
-                    dataType: 'json',
-                    success: function (data) {
-                        // Limpia el select actual
-
-                        console.log("data esperada:");
-                        if (Array.isArray(data) && data.length > 0) {
-                            console.log('Respuesta del servidor Mascota Tipo Neurona:', data); 
-                            //Datos_vec
-                            
-                            Datos_vec = data.map(item => {
-                                return {
-                                    id: item.Id_Cantidad,
-                                    tam: item.tamMascota,
-                                    edad: item.edadMascota,
-                                    efectividad_1: item.variable_1,
-                                    efectividad_2: item.variable_2
-                                };
-                            });
-
-                            // Crear una nueva instancia de la red neuronal
-                            const net = new brain.NeuralNetwork();
-
-                            // Datos de entrenamiento
-                            const trainingData = Datos_vec.map(item => ({
-                                input: {
-                                    taman: item.tamaño,
-                                    edad: item.edad
-                                },
-                                output: { efectividad_1: item.efectividad_1, efectividad_2: item.efectividad_2  } // Puedes promediar efectividad_1 y efectividad_2 si es necesario
-                            }));
-
-                            // Entrenar la red neuronal
-                            net.train(trainingData);
-                            // Usar la red neuronal para predecir la efectividad basándose en un nuevo conjunto de entradas
-                            const nuevo_dato = {
-                                taman: 2, // por ejemplo, tamaño pequeño
-                                edad: 3,   // por ejemplo, 4 años
-                               /* tipo_enfermedad: 1 // tipo de enfermedad*/
-                            };
-
-                            const resultado = net.run(nuevo_dato);
-                            
-                            console.log('Efectividad del tratamiento según los nuevos datos 1:', resultado.efectividad_1  );
-                            console.log('Efectividad del tratamiento según los nuevos datos 2:', resultado.efectividad_2  );
-                        } else {
-                            console.log('La respuesta no contiene datos esperados Neurona.');
-                        }   
-                    },
-                    error: function (xhr, status, error) {
-                        console.log('Error al obtener los datos:');
-                        console.log('XHR:', xhr);
-                        console.log('Status:', status);
-                        console.log('Error:', error);
-                    }
-                });
-
-                switch(tipo_Mascota) {
-                                case "1":
-                                    tamanoTexto = "Pequeño";
-                                    break;
-                                case "2":
-                                    tamanoTexto = "Mediano";
-                                    break;
-                                case "3":
-                                    tamanoTexto = "Grande";
-                                    break;
-                                case "4":
-                                    tamanoTexto = "Grande Superior";
-                                    break;
-                                default:
-                                    tamanoTexto = "Desconocido";
-                            }
-                    $("#tam_masc").val(tamanoTexto); 
-                    $("#selc_tratamiento").prop("disabled", false);
-                    
-                } else {
-               console.log('La respuesta no contiene datos esperados.');
-             }   
-            // Llena el select con los datos obtenidos            
-            // $.each(data, function (key, value) {
-            // $('#Id_macota').append('<option value="' + value.idMascota + '">' + value.nombreMascota + '</option>');
-            // });
-
-            },
+        },
         error: function (xhr, status, error) {
             console.log('Error al obtener los datos:');
             console.log('XHR:', xhr);
             console.log('Status:', status);
             console.log('Error:', error);
         }
+
     });
 
     // Agregar el evento change para manejar futuros cambios en entrada_X
