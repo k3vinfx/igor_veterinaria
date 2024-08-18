@@ -888,8 +888,8 @@ console.log("afuera2:", entrenamiento);
         method: 'POST',
         dataType: 'json',
         success: function (data) {
-            
-          console.log('Respuesta del servidor Mascota Tipo Neurona:', data); 
+
+          console.log('Respuesta del servidor Mascota Tipo Neurona>>:', data); 
              
         },
         error: function (xhr, status, error) {
