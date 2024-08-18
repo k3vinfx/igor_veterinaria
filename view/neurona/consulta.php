@@ -81,67 +81,64 @@ dialog {
 
                             <!-- Modal para Registro de Propietario -->
                             <div class="modal fade" id="RegistroMVC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="dialog" role="document">
-                                    <div class="modal-dialog modal-lg" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Nueva Consulta....</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form id="frm-proprietario" action="?c=neurona&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
-                                                    <!-- Formulario para propietario -->
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">  
-                                                            <label id="lb_entrada_1">Dueño de la Mascota</label>
-                                                                <select class="custom-select selevt" name="duenos" id="duenos" >
-                                                                    <option  value="0">Seleccion</option>
-                                                                    <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
-                                                                        <option  value="<?php echo $Tipo->idDueno; ?>">
-                                                                            <?php echo $Tipo->duenos; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
-                                                                        </option>       
-                                                                    <?php endforeach; ?>
-                                                               </select>                 
-                                                       </div>
-                                                       <div class="form-group col-md-6">  
-                                                            <label id="lb_entrada_1">Selecione a la Mascota</label>
-                                                                <select class="custom-select selevt" name="Id_macota" id="Id_macota" >
-                                                                <option value="0"><?php echo $pvd->Nombre_Mascota; ?></opcion>       
-                                                              </select>  
-                                                       </div>
-                                                    </div> <!-- Fin de la primera fila -->
-                                                    <div class="form-row">  
-                                                 
-                                                       <div class="form-group col-md-6">  
-                                                              <label id="lb_entrada_1">Selecione un Tratamiento</label>
-                                                             <select class="custom-select selevt" name="selc_tratamiento" id="selc_tratamiento" >
-                                                       </div> 
-                                                       <div class="form-group col-md-6">  
-                                                              <label id="lb_entrada_1">Efectividad </label>
-                                                              <input type="text" class="form-control" id="efectividad_trat" name="efectividad_trat" >
-                                                       </div> 
-
-                                                    </div> 
-                                     
-
-                                              
-                                                    <div class="modal-footer">
-                                                     <button type="button" name="buscar" id="buscarIa" class="btn btn-danger">Buscar</button>
-                                                     <button type="button" name="salir" id="salir" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                                    <button type="submit" form="frm-proprietario" class="btn btn-primary">Guardar</button>
-                                                 </div>
-
-                                                </form>
-                                            
-                                  
-
-                                           </div>
-                                        </div>
-                                    </div>
-                                </div>
+    <div class="dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nueva Consulta....</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="frm-proprietario" action="?c=neurona&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
+                        <!-- Formulario para propietario -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">  
+                                <label for="duenos">Dueño de la Mascota</label>
+                                <select class="custom-select" name="duenos" id="duenos">
+                                    <option value="0">Seleccion</option>
+                                    <?php foreach ($this->model->Listar_Due() as $Tipo): ?>
+                                        <option value="<?php echo $Tipo->idDueno; ?>">
+                                            <?php echo $Tipo->duenos; ?>
+                                        </option>       
+                                    <?php endforeach; ?>
+                                </select>                 
                             </div>
+                            <div class="form-group col-md-6">  
+                                <label for="Id_macota">Seleccione a la Mascota</label>
+                                <select class="custom-select" name="Id_macota" id="Id_macota">
+                                    <option value="0"><?php echo $pvd->Nombre_Mascota; ?></option>       
+                                </select>  
+                            </div>
+                        </div> <!-- Fin de la primera fila -->
+                        
+                        <div class="form-row">  
+                            <div class="form-group col-md-6">  
+                                <label for="selc_tratamiento">Seleccione un Tratamiento</label>
+                                <select class="custom-select" name="selc_tratamiento" id="selc_tratamiento">
+                                    <!-- Aquí deberías agregar las opciones para el tratamiento -->
+                                </select>
+                            </div> 
+                            <div class="form-group col-md-6">  
+                                <label for="efectividad_trat">Efectividad</label>
+                                <input type="text" class="form-control" id="efectividad_trat" name="efectividad_trat">
+                            </div> 
+                        </div> <!-- Fin de la segunda fila -->
+
+                        <div class="modal-footer">
+                            <button type="button" name="buscar" id="buscarIa" class="btn btn-danger">Buscar</button>
+                            <button type="button" name="salir" id="salir" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="submit" form="frm-proprietario" class="btn btn-primary">Guardar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
                                 <button type="button" id="btnEntrenar" name="btnEntrenar" class="btn btn-danger btnEntrenar"
 
