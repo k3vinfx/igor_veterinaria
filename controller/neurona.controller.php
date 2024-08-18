@@ -65,7 +65,7 @@ class NeuronaController{
         $pvd->tratamiento2 = $_REQUEST['tratamiento2'];
     
         //Registro al modelo categorias.
-        $this->model->Registrar($pvd);
+        $this->model->NuevoPreparadoMascotaRRN_2($pvd);
         
         header('Location: index.php?c=neurona&a=Start'); // redirecciona a la pagina de listar
     }

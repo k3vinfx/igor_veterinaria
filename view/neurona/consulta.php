@@ -867,7 +867,9 @@ console.log("afuera2:", entrenamiento);
         success: function (data) {
 
           console.log('Respuesta del servidor Mascota Tipo Neurona>>:', data); 
-             
+             console.log("data[0].VAR1",data[0].VAR1);
+             console.log("data[0].VAR2",data[0].VAR2);
+             console.log("data[0].VAR3",data[0].VAR3);
           $.ajax({
                 url: '?c=neurona&a=NuevoPreparadoMascotaRRN_2',
                 method: 'POST',
@@ -878,6 +880,7 @@ console.log("afuera2:", entrenamiento);
                     entrada_2_ant: data[0].VAR2, // Suponiendo que VAR2 es entrada_2
                     entrada_3_ant: data[0].VAR3,  // Suponiendo que VAR3 es entrada_3
                     tratamiento: valorSeleccionadoTratamiento,  // Suponiendo que VAR3 es entrada_3
+                    
                 },
                 
                 success: function(response) {
