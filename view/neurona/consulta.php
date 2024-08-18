@@ -895,14 +895,50 @@ console.log("afuera2:", entrenamiento);
                 url: '?c=neurona&a=NuevoPreparadoMascotaRRN_2',
                 method: 'POST',
                 dataType: 'json',
-                
+
                 data: {
-                    entrada_1: data[0].VAR1, // Suponiendo que VAR1 es entrada_1
-                    entrada_2: data[0].VAR2, // Suponiendo que VAR2 es entrada_2
-                    entrada_3: data[0].VAR3  // Suponiendo que VAR3 es entrada_3
+                    entrada_1_ant: data[0].VAR1, // Suponiendo que VAR1 es entrada_1
+                    entrada_2_ant: data[0].VAR2, // Suponiendo que VAR2 es entrada_2
+                    entrada_3_ant: data[0].VAR3  // Suponiendo que VAR3 es entrada_3
                 },
                 success: function(response) {
                     console.log('Datos enviados y procesados>:', response);
+                        //Datos_vec
+                            
+                            Datos_vec = data.map(item => {
+                                return {
+                                    entrada1: item.entrada1,
+                                    entrada2: item.entrada2,
+                                    entrada3: item.entrada3,
+                                    efectividad_1: item.respuesta_1
+                                };
+                            }); 
+                       // Crear una nueva instancia de la red neuronal
+                          const net = new brain.NeuralNetwork();
+                        // Datos de entrenamiento
+                        const trainingData = Datos_vec.map(item => ({
+                                input: {
+                                    entrada1: item.entrada1,
+                                    entrada2: item.entrada2,
+                                    entrada3: item.entrada3,
+                                },
+                                output: { efectividad_1: item.efectividad_1  } // Puedes promediar efectividad_1 y efectividad_2 si es necesario
+                            }));
+                            net.train(trainingData);
+                             // Usar la red neuronal para predecir la efectividad basándose en un nuevo conjunto de entradas
+                             const nuevo_dato = {
+                                entrada1: 0.90, // por ejemplo, tamaño pequeño
+                                entrada2: 0.90,   // por ejemplo, 4 años
+                                entrada3: 0.90,   // por ejemplo, 4 años
+                               /* tipo_enfermedad: 1 // tipo de enfermedad*/
+                            };
+
+                            const resultado = net.run(nuevo_dato);
+                            
+                            console.log('Efectividad del tratamiento según los nuevos datos 1:', resultado.efectividad_1  );
+                              
+
+
 
                 },
                 error: function(xhr, status, error) {

@@ -152,9 +152,9 @@ class neurona
     
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([
-                $data->entrada_1,
-                $data->entrada_2,
-                $data->entrada_3
+                $data->entrada_1_ant,
+                $data->entrada_2_ant,
+                $data->entrada_3_ant
                 //$valor_2
             ]);
             
