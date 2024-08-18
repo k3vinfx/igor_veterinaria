@@ -883,6 +883,8 @@ console.log("afuera2:", entrenamiento);
     var valorSeleccionado = $("#Id_macota").val();           
     console.log('Respuesta del servidor:', valorSeleccionado);
     var valorSeleccionadoTratamiento = $("#selc_tratamiento").val();  
+
+    console.log("valorSeleccionadoTratamiento",valorSeleccionadoTratamiento);
     // Realizar una solicitud AJAX para obtener los datos al cargar la página
     $.ajax({
         url: '?c=neurona&a=NuevoPreparadoMascotaRRN_1&X=' + valorSeleccionado,
