@@ -138,7 +138,30 @@ class neurona
           {
               die($e->getMessage());
           }
-       }
+    }
+
+    public function getListar_Mascota_Datos_RRN2($data) {
+        try {
+            $sql = "SELECT  entrada_1 , entrada_2 ,entrada_3 
+                    FROM peso_rnn
+                    WHERE entrada_1_ant = ? 
+                    and  entrada_2_ant = ? 
+                    and entrada_3_ant = ?";
+            //$valor_2 = 1; // Asumiendo que esta es una constante que se usa en la consulta
+    
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([
+                $data->entrada_1,
+                $data->entrada_2,
+                $data->entrada_3
+                //$valor_2
+            ]);
+            
+            return $stmt->fetchAll(); // Devuelve los resultados de la consulta
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 
     public function getNeurona_Simple($valores)
     {try{

@@ -891,6 +891,28 @@ console.log("afuera2:", entrenamiento);
 
           console.log('Respuesta del servidor Mascota Tipo Neurona>>:', data); 
              
+          $.ajax({
+                url: '?c=neurona&a=NuevoPreparadoMascotaRRN_2',
+                method: 'POST',
+                data: {
+                    entrada_1: data[0].VAR1, // Suponiendo que VAR1 es entrada_1
+                    entrada_2: data[0].VAR2, // Suponiendo que VAR2 es entrada_2
+                    entrada_3: data[0].VAR3  // Suponiendo que VAR3 es entrada_3
+                },
+                success: function(response) {
+                    console.log('Datos enviados y procesados>:', response);
+
+                },
+                error: function(xhr, status, error) {
+                    console.log('Error al enviar los datos:');
+                    console.log('XHR:', xhr);
+                    console.log('Status:', status);
+                    console.log('Error:', error);
+                }
+            });
+
+
+
         },
         error: function (xhr, status, error) {
             console.log('Error al obtener los datos:');
