@@ -142,11 +142,12 @@ class neurona
 
     public function getListar_Mascota_Datos_RRN2($data) {
         try {
-            $sql = "SELECT  entrada_1 , entrada_2 ,entrada_3 
+            $sql = "SELECT  entrada_1 , entrada_2 ,entrada_3, respuesta_1 
                     FROM peso_rnn
                     WHERE entrada_1_ant = ? 
                     and  entrada_2_ant = ? 
-                    and entrada_3_ant = ?";
+                    and entrada_3_ant = ?
+                    and tratamiento = 1";
             //$valor_2 = 1; // Asumiendo que esta es una constante que se usa en la consulta
     
             $stmt = $this->pdo->prepare($sql);
