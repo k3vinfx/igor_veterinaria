@@ -147,14 +147,15 @@ class neurona
                     WHERE entrada_1_ant = ? 
                     and  entrada_2_ant = ? 
                     and entrada_3_ant = ?
-                    and tratamiento = 1";
+                    and tratamiento = ?";
             //$valor_2 = 1; // Asumiendo que esta es una constante que se usa en la consulta
     
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([
                 $data->entrada_1_ant,
                 $data->entrada_2_ant,
-                $data->entrada_3_ant
+                $data->entrada_3_ant,
+                $data->tratamiento,
                 //$valor_2
             ]);
             

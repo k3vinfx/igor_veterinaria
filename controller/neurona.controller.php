@@ -183,7 +183,7 @@ class NeuronaController{
         $pvd->entrada_1_ant = $_POST['entrada_1_ant'];
         $pvd->entrada_2_ant = $_POST['entrada_2_ant'];
         $pvd->entrada_3_ant = $_POST['entrada_3_ant'];
-        
+        $pvd->tratamiento = $_POST['tratamiento'];
         // Aquí se pasa el objeto $pvd al modelo para que realice las operaciones necesarias
         $recomendaciones = $this->model->getListar_Mascota_Datos_RRN2($pvd);
         echo json_encode($recomendaciones);

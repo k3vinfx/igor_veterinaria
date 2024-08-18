@@ -882,7 +882,7 @@ console.log("afuera2:", entrenamiento);
 
     var valorSeleccionado = $("#Id_macota").val();           
     console.log('Respuesta del servidor:', valorSeleccionado);
-    
+    var valorSeleccionadoTratamiento = $("#selc_tratamiento").val();  
     // Realizar una solicitud AJAX para obtener los datos al cargar la página
     $.ajax({
         url: '?c=neurona&a=NuevoPreparadoMascotaRRN_1&X=' + valorSeleccionado,
@@ -900,7 +900,8 @@ console.log("afuera2:", entrenamiento);
                 data: {
                     entrada_1_ant: data[0].VAR1, // Suponiendo que VAR1 es entrada_1
                     entrada_2_ant: data[0].VAR2, // Suponiendo que VAR2 es entrada_2
-                    entrada_3_ant: data[0].VAR3  // Suponiendo que VAR3 es entrada_3
+                    entrada_3_ant: data[0].VAR3,  // Suponiendo que VAR3 es entrada_3
+                    tratamiento: valorSeleccionadoTratamiento,  // Suponiendo que VAR3 es entrada_3
                 },
                 success: function(response) {
                     console.log('Datos enviados y procesados>:', response);
