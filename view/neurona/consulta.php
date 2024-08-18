@@ -905,8 +905,11 @@ console.log("afuera2:", entrenamiento);
                     entrada_3_ant: data[0].VAR3,  // Suponiendo que VAR3 es entrada_3
                     tratamiento: valorSeleccionadoTratamiento,  // Suponiendo que VAR3 es entrada_3
                 },
+                
                 success: function(response) {
-                    console.log('Datos enviados y procesados>:', response);
+
+                    console.log('Datos enviados y procesados>1:', data);
+                    console.log('Datos enviados y procesados>2:', response);
                         //Datos_vec
                             
                             Datos_vec = data.map(item => {
