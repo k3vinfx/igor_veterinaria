@@ -124,9 +124,7 @@ dialog {
                                                        </div> 
 
                                                     </div> 
-                                                    <div class="form-row">  
-                       
-                                                    </div> 
+                                     
 
                                               
                                                     <div class="modal-footer">
