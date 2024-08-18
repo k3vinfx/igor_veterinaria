@@ -114,17 +114,18 @@ dialog {
                                                     </div> <!-- Fin de la primera fila -->
                                                     <div class="form-row">  
                                                  
-                                                       <div class="form-group col-md-7">  
+                                                       <div class="form-group col-md-6">  
                                                               <label id="lb_entrada_1">Selecione un Tratamiento</label>
                                                              <select class="custom-select selevt" name="selc_tratamiento" id="selc_tratamiento" >
                                                        </div> 
-                                                    </div> 
-                                                    <div class="form-row">  
-                                                       <div class="form-group col-md-7">  
+                                                       <div class="form-group col-md-6">  
                                                               <label id="lb_entrada_1">Efectividad </label>
                                                               <input type="text" class="form-control" id="efectividad_trat" name="efectividad_trat" >
                                                        </div> 
 
+                                                    </div> 
+                                                    <div class="form-row">  
+                       
                                                     </div> 
 
                                               
