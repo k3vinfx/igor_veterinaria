@@ -172,7 +172,7 @@ class NeuronaController{
         $pvd = new neurona();
         $recomendaciones = [];
         if(isset($_REQUEST['X'])){
-            $recomendaciones = $this->model->getListar_Mascota_Datos($_REQUEST['X']);
+            $recomendaciones = $this->model->getListar_Mascota_Datos_RRN1($_REQUEST['X']);
         }
         echo json_encode($recomendaciones);
     }
