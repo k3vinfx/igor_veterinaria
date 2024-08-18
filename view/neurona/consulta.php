@@ -875,7 +875,7 @@ console.log("afuera2:", entrenamiento);
    // Funcion para sacar el tamaño de la mas cota y que escoja el tratamiento A O B
    $("#selc_tratamiento").on("change", function () {
     console.log('Respuesta del Tratamiento:dsad');
-    var valorSeleccionado = $("#selectTratamiento").val();           
+    var valorSeleccionado = $("#selc_tratamiento").val();           
     console.log('Respuesta del Tratamiento:', valorSeleccionado);
    });
    $("#Id_macota").on("change", function () {
