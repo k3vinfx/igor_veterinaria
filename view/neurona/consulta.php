@@ -127,7 +127,7 @@ dialog {
                         </div> <!-- Fin de la segunda fila -->
 
                         <div class="modal-footer">
-                            <button type="button" name="buscar" id="buscarIa" class="btn btn-danger">Buscar</button>
+                            <button type="button" name="buscar" id="buscarIa" class="btn btn-danger">Analizar</button>
                             <button type="button" name="salir" id="salir" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                             <button type="submit" form="frm-proprietario" class="btn btn-primary">Guardar</button>
                         </div>
@@ -607,7 +607,7 @@ dialog {
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" name="buscar" id="buscar" class="btn btn-danger">Buscar</button>
+                <button type="button" name="buscar" id="buscar" class="btn btn-danger">Analizar</button>
                 <button type="button" name="salir" id="salir" class="btn btn-secondary">Cerrar..</button>
                 <button type="submit" form="frm-proprietario" class="btn btn-primary">Guardar</button>
             </div>
@@ -631,29 +631,7 @@ var id_tama_mascota ="";
 $("#tam_masc").prop("disabled", true);
 
 // Función para manejar el evento de hacer clic en el botón de buscar
-$('#buscarIa').click(function() {
 
-//dato 1
-console.log();
-// dato 2
-
-
-console.log();
-
-// Consulta a Ajax para obtener los 
-    const inputValues = [];
-    for (let i = 1; i <= 12; i++) {
-        const newValue = parseFloat(document.getElementById('entrada_' + i).value) || 0.00;
-        inputValues.push(newValue);
-
-    }
-    // que va buscar y en donde
- 
-    const predictionResult = net.run(inputValues);
-
-    console.log('Resultado de la busqueda:', inputValues);
-    console.log('Resultado de la predicción:', predictionResult);
-});
 function convertirDatosParaEntrenamientoxzz(data) {
     data.forEach(function(dato) {
         const input = {
@@ -874,7 +852,7 @@ console.log("afuera2:", entrenamiento);
     var valorSeleccionado = $("#selc_tratamiento").val();           
     console.log('Respuesta del Tratamiento:', valorSeleccionado);
    });
-   $("#Id_macota").on("change", function () {
+   $("#buscarIa").on("click", function () {
 
     var valorSeleccionado = $("#Id_macota").val();           
     console.log('Respuesta del servidor:', valorSeleccionado);
@@ -939,7 +917,8 @@ console.log("afuera2:", entrenamiento);
                             const resultado = net.run(nuevo_dato);
                             
                             console.log('Efectividad del tratamiento según los nuevos datos 1:', resultado.efectividad_1  );
-                              
+                              //efectividad_trat
+                              $('#efectividad_trat').val(resultado.efectividad_1);
 
 
 
