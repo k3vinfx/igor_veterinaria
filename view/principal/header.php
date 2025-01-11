@@ -148,11 +148,21 @@ if ($row_empresa > 0) {
 			showConfirmButton: false,
 			allowOutsideClick: false,
 		});
+			// Borra la sesión y redirige al usuario
+			setTimeout(() => {
+				<?php
+					session_start();
+					session_unset();
+					session_destroy();
+				?>
+				window.location.href = '../index.php';
+				history.replaceState(null, null, '../index.php');
+				window.addEventListener('popstate', () => {
+				window.location.href = 'https://k3sys.cloud/igor_v1/';
 
-		// Redirige después de 1.5 segundos
-		setTimeout(() => {
-			window.location.href = 'https://k3sys.cloud/igor_v1/';
-		}, 1500);
+				});
+			}, 1500);
+
 	});
 </script>
 
