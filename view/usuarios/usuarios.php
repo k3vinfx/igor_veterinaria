@@ -156,7 +156,21 @@
                     return;
                 }
 
-                this.submit();
+                // Enviar formulario y mostrar confirmación
+                $.ajax({
+                    url: $('#usuarioForm').attr('action'),
+                    type: 'POST',
+                    data: $('#usuarioForm').serialize(),
+                    success: function () {
+                        Swal.fire('Éxito', 'El registro se ha guardado correctamente.', 'success')
+                            .then(() => {
+                                location.reload();
+                            });
+                    },
+                    error: function () {
+                        Swal.fire('Error', 'Hubo un problema al guardar el registro.', 'error');
+                    }
+                });
             });
 
             // Cargar datos en el modal para editar
@@ -190,7 +204,13 @@
                     type: 'GET',
                     data: { User_Id: id, Usuario_Enable: estado },
                     success: function () {
-                        location.reload();
+                        Swal.fire('Éxito', 'El estado se ha cambiado correctamente.', 'success')
+                            .then(() => {
+                                location.reload();
+                            });
+                    },
+                    error: function () {
+                        Swal.fire('Error', 'Hubo un problema al cambiar el estado.', 'error');
                     }
                 });
             });
