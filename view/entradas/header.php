@@ -53,7 +53,7 @@ if ($row_empresa > 0) {
 	<meta name="author" content="">
 
 
-	<title>ETRAVEL</title>
+	ETRAVEL</title>
   <!-- <link href="sistema/css/sb-admin-2.min.css" rel="stylesheet">-->
 	<!-- Custom styles for this template-->
 	<link href="../beta1/assets/css/sb-admin-2.min.css" rel="stylesheet">
