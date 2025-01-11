@@ -64,7 +64,7 @@
 
 
 	<!-- Nav Item - Utilities Collapse Menu -->
-	<li class="nav-item">
+	<!-- <li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategorias" aria-expanded="true" aria-controls="collapseUtilities">
 			<i class="fas fa-capsules"></i>
 			<span>Categorias & R.N.N.</span>
@@ -74,7 +74,7 @@
 			<a class="collapse-item" href="?c=categorias&a=Nuevo">Registro Categorias</a>
 			</div>		
 		</div>
-	</li>
+	</li> -->
 
 		<!-- Nav Item - Clientes Collapse Menu -->
 		<li class="nav-item">
