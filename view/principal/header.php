@@ -151,7 +151,7 @@ if ($row_empresa > 0) {
 
 		// Redirige después de 1.5 segundos
 		setTimeout(() => {
-			window.location.href = '../index.php';
+			window.location.href = 'https://k3sys.cloud/igor_v1/';
 		}, 1500);
 	});
 </script>
