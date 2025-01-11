@@ -42,7 +42,7 @@ if ($row_empresa > 0) {
 <!-- Core plugin JavaScript-->
 
 <!-- Custom scripts for all pages-->
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <head>
 
@@ -128,7 +128,8 @@ if ($row_empresa > 0) {
 									<?php echo $_SESSION['session_email']?>
 								</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="salir.php">
+								
+								<a class="dropdown-item logout-btn" href="#">
 									<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 									Salir
 								</a>
@@ -138,4 +139,19 @@ if ($row_empresa > 0) {
 					</ul>
 
 				</nav>
+				<script>
+		document.querySelector('.logout-btn').addEventListener('click', function (e) {
+			e.preventDefault();
+			Swal.fire({
+				title: 'Cerrando sesión...',
+				text: 'Por favor, espere mientras cerramos el sistema.',
+				icon: 'info',
+				showConfirmButton: false,
+				allowOutsideClick: false,
+				willClose: () => {
+					window.location.href = '../index.php';
+				}
+			});
+		});
+	</script>
 
