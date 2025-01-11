@@ -5,14 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Usuarios</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .table-search {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            border: 1px solid #ddd;
+            background-color: #f8f8f8;
+        }
+
+        .form-group label {
+            color: #5a5a5a;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="mb-4">Gestión de Usuarios</h1>
-        <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#usuarioModal">Nuevo Usuario</button>
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Datos del Usuario</h1>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#usuarioModal">Nuevo Usuario</button>
+        </div>
 
-        <table class="table table-bordered">
+        <div class="table-search">
+            <input type="text" id="searchInput" class="form-control" placeholder="Buscar...">
+        </div>
+
+        <table class="table table-striped table-bordered">
             <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
@@ -23,7 +45,7 @@
                     <th>Acciones</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="userTable">
                 <?php foreach ($this->model->Listar() as $usuario): ?>
                     <tr>
                         <td><?php echo $usuario->User_Id; ?></td>
@@ -104,11 +126,16 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $(document).ready(function () {
+            // Filtrar tabla
+            $('#searchInput').on('keyup', function () {
+                var value = $(this).val().toLowerCase();
+                $('#userTable tr').filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+
             // Validar formulario
             $('#usuarioForm').on('submit', function (e) {
                 e.preventDefault();
