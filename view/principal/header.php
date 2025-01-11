@@ -140,22 +140,19 @@ if ($row_empresa > 0) {
 
 				</nav>
 				<script>
-		document.querySelector('.logout-btn').addEventListener('click', function (e) {
-			e.preventDefault();
-			Swal.fire({
-				title: 'Cerrando sesión...',
-				html: '<div class="spinner-border text-primary" role="status"><span class="sr-only">Cargando...</span></div>',
-				showConfirmButton: false,
-				allowOutsideClick: false,
-				willOpen: () => {
-					Swal.showLoading();
-				},
-				willClose: () => {
-					setTimeout(() => {
-						window.location.href = '../index.php';
-					}, 1500);
-				}
-			});
+	document.querySelector('.logout-btn').addEventListener('click', function (e) {
+		e.preventDefault();
+		Swal.fire({
+			title: 'Cerrando sesión...',
+			html: '<div class="spinner-border text-primary" role="status"><span class="sr-only">Cargando...</span></div>',
+			showConfirmButton: false,
+			allowOutsideClick: false,
 		});
-	</script>
+
+		// Redirige después de 1.5 segundos
+		setTimeout(() => {
+			window.location.href = '../index.php';
+		}, 1500);
+	});
+</script>
 
