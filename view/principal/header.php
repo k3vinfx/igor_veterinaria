@@ -106,7 +106,7 @@ if ($result_data > 0) {
 				showConfirmButton: false,
 				allowOutsideClick: false,
 				willClose: () => {
-					window.location.href = 'salir.php';
+					window.location.href = '../index.php';
 				}
 			});
 		});
