@@ -155,11 +155,10 @@ if ($row_empresa > 0) {
 					session_unset();
 					session_destroy();
 				?>
-				window.location.href = '../index.php';
+				window.location.href = 'https://k3sys.cloud/igor_v1/';
 				history.replaceState(null, null, '../index.php');
 				window.addEventListener('popstate', () => {
-				window.location.href = 'https://k3sys.cloud/igor_v1/';
-
+				
 				});
 			}, 1500);
 
