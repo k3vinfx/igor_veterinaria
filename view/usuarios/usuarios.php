@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Usuarios</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .table-search {
@@ -24,8 +21,8 @@
     </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+<div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-6">
             <h1 class="h3 mb-0 text-gray-800">Datos del Usuario</h1>
             <button class="btn btn-primary" data-toggle="modal" data-target="#usuarioModal">Nuevo Usuario</button>
         </div>
