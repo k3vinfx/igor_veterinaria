@@ -144,12 +144,16 @@ if ($row_empresa > 0) {
 			e.preventDefault();
 			Swal.fire({
 				title: 'Cerrando sesión...',
-				text: 'Por favor, espere mientras cerramos el sistema.',
-				icon: 'info',
+				html: '<div class="spinner-border text-primary" role="status"><span class="sr-only">Cargando...</span></div>',
 				showConfirmButton: false,
 				allowOutsideClick: false,
+				willOpen: () => {
+					Swal.showLoading();
+				},
 				willClose: () => {
-					window.location.href = '../index.php';
+					setTimeout(() => {
+						window.location.href = '../index.php';
+					}, 1500);
 				}
 			});
 		});
