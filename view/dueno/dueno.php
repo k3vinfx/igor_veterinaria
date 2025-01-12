@@ -64,7 +64,7 @@
                                   data-movil="<?php echo $r->celularDueno; ?>"
                                   
                                   data-correoelectronico="<?php echo $r->correoDueno; ?>"
-                                  data-toggle="modal" data-target="#RegistroPropietario">
+                                  data-toggle="modal" data-target="#EditarPropietario">
                                 <i class='fas fa-edit'></i></button>
 
                                 <button type="button" id="btnEliminar" name="btnEliminar" class="btn btn-danger btnEliminar"
@@ -91,7 +91,68 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nuevo Propietario..</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Registro Propietario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="frm-proprietario" action="?c=dueno&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
+                    <!-- Formulario para propietario -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nombresPropietario">Nombres</label>
+                            <input type="text" class="form-control" id="nombresDueno" name="nombresDueno" placeholder="Nombres del propietario" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellidosPropietario">Apellidos</label>
+                            <input type="text" class="form-control" id="apellidosDueno" name="apellidosDueno" placeholder="Apellidos del propietario" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="direccionPropietario">Dirección</label>
+                            <input type="text" class="form-control" id="direccionDueno" name="direccionDueno" placeholder="Dirección del propietario" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ciPropietario">C.I.</label>
+                            <input type="text" class="form-control" id="ciPropietario" name="ciPropietario" placeholder="Carnet de Identidad" required>
+                        </div>
+
+                        
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="zonaPropietario">Zona</label>
+                            <input type="text" class="form-control" id="zonaDueno" name="zonaDueno" placeholder="Zona del propietario" required>
+                        </div>
+                  
+                        <div class="form-group">
+                            <label for="telefonomovilPropietario">Teléfono Móvil</label>
+                            <input type="text" class="form-control" id="celularDueno" name="celularDueno" placeholder="Teléfono móvil" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correoelectronicoPropietario">Correo Electrónico</label>
+                            <input type="text" class="form-control" id="correoDueno" name="correoDueno" placeholder="Correo electrónico" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" form="frm-proprietario" class="btn btn-primary">Guardar Propietario</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal para Editar de Propietario -->
+<div class="modal fade" id="EditarPropietario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Propietario</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

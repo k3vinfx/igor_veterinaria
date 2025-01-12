@@ -15,7 +15,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-6">
-        <h1 class="h3 mb-0 text-gray-800">Datos de la Mascota..</h1>
+        <h1 class="h3 mb-0 text-gray-800">Datos de la Mascota</h1>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#RegistroMascota">
             Nuevo
         </button>
@@ -102,7 +102,7 @@
                                          data-color="<?php echo $r->colorMascota; ?>"
                                          data-tamano="<?php echo $r->TamanoMascota; ?>"
                                          data-dueno="<?php echo $r->nombresDueno; ?>"
-                                         data-toggle="modal" data-target="#RegistroMascota">
+                                         data-toggle="modal" data-target="#EditarMascota">
                                        <i class='fas fa-edit'></i></button>
 
                                        <button type="button" id="btnEliminar" name="btnEliminar" class="btn btn-danger btnEliminar"
@@ -135,6 +135,111 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Nueva Mascota</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+
+                <form id="frm-principal-mascota" action="?c=mascota&a=Guardar" method="post" class="form-row" enctype="multipart/form-data" >
+
+             
+                    <!-- Primera columna -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nombreMascota">Nombre Mascota</label>
+                            <input type="text" class="form-control" id="nombreMascota" name="nombreMascota"
+                                placeholder="Ingresa el nombre de la mascota" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="especieMascota">Especie</label>
+                            <input type="text" class="form-control" id="especieMascota" name="especieMascota"
+                                placeholder="Especie de la mascota" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="razaMascota">Raza</label>
+                            <input type="text" class="form-control" id="razaMascota"  name="razaMascota" 
+                            placeholder="Raza de la mascota" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaNacimientoMascota">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="fechaNacimientoMascota" name="fechaNacimientoMascota" 
+                            required>
+                        </div>
+                    </div>
+                    <!-- Segunda columna -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="sexoMascota">Sexo</label>
+                            <select class="form-control" id="sexoMascota" name="sexoMascota"  required>
+                                <option value="">Selecciona un sexo</option>
+                                <option value="M">Macho</option>
+                                <option value="F">Hembra</option>
+                            </select>
+                        </div>
+                        <div class="form-group"> 
+                            <label for="colorMascota">Color</label>
+                            <input type="text" class="form-control" id="colorMascota"  name="colorMascota"placeholder="Color de la mascota"
+                                required>
+                        </div>
+                 
+
+                        <div class="form-group">
+                            <label for="sexoMascota">Tamaño</label>
+                            <select class="form-control" id="tamanoMascota" name="tamanoMascota"  required>
+                                <option value="">Selecciona el tamaño</option>
+                                <option value="1">Raza Pequeña</option>
+                                <option value="2">Raza Mediana</option>
+                                <option value="3">Raza Grande</option>
+                                <option value="4">Raza Grande Superior</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sexoMascota">Macho o Hembra</label>
+                            <select class="form-control" id="sexoMascota" name="sexoMascota"  required>
+                                <option value="">Selecciona un sexo</option>
+                                <option value="M">Macho</option>
+                                <option value="F">Hembra</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                        <label id="lb_entrada_1">Seleciona un Dueño</label>
+                        <select class="custom-select selevt" name="duenoMascota" id="duenoMascota" >
+                        <option  value="0">Seleccion </opcion>
+                        <?php foreach ($this->model->MenuListaX() as $Tipo): ?>
+                            <option  value="<?php echo $Tipo->idDueno; ?>">
+                                <?php echo $Tipo->nombresDueno; ?>  <?php echo $Tipo->apellidosDueno; ?> , CI: <?php echo $Tipo->ciDueno; ?>  <!-- Reemplaza "Nombre" con el nombre real de la columna que deseas mostrar en el select -->
+                            </option>       
+                        <?php endforeach; ?>
+                        </select>                 
+                        </div>             
+
+
+
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                <button type="submit" form="frm-principal-mascota" class="btn btn-primary">Guardar Mascota</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="EditarMascota" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Mascota</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
