@@ -1,7 +1,7 @@
 
 <?php
 
-class Mascota
+class mascota
 {
 
 	private $pdo;
