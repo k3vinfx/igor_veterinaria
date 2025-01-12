@@ -82,7 +82,7 @@
             
                                 </td>
                                 <td>
-                                    <?php echo $r->nombresDueno; ?>
+                                    <?php echo $r->nombresDuenoX; ?>
                                 </td>
                                 <td>
                                     <?php  if ($r->estado==0){echo "Inactivo";}else{
