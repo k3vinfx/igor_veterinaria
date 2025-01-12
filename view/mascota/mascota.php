@@ -322,5 +322,9 @@
        
 
     });
-
+    $('.btn-primary').on('click', function () {
+        $('#RegistroMascota .modal-title').text('Nuevo Mascota');
+        $('#frm-principal-mascota')[0].reset(); // Limpia los campos del formulario
+        $('#frm-principal-mascota').attr('action', '?c=dueno&a=Guardar'); // Cambia la acción al registro
+    });
 </script>

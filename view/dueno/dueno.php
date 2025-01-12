@@ -253,4 +253,10 @@ var estadox = $(this).data('estado');
 
 
 });
+
+$('.btn-primary').on('click', function () {
+        $('#RegistroPropietario .modal-title').text('Nuevo Propietario');
+        $('#frm-proprietario')[0].reset(); // Limpia los campos del formulario
+        $('#frm-proprietario').attr('action', '?c=dueno&a=Guardar'); // Cambia la acción al registro
+    });
 </script>
