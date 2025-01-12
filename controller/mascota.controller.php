@@ -21,7 +21,7 @@ class MascotaController
     // Guardar nueva mascota
     public function Guardar()
     {
-        $mascota = new stdClass();
+        $mascota = new mascota();
 
         // Captura de los datos del formulario (vista)
         $mascota->nombreMascota = $_REQUEST['nombreMascota'];
@@ -43,7 +43,7 @@ class MascotaController
     // Editar mascota existente
     public function Editar()
     {
-        $mascota = new stdClass();
+        $mascota = new mascota();
 
         // Captura de los datos del formulario (vista)
         $mascota->idMascota = $_REQUEST['id'];
