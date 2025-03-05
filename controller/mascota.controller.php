@@ -38,6 +38,9 @@ class MascotaController{
         //"Location:" No solamente envía el encabezado al navegador, sino que
         //también devuelve el código de status (302) REDIRECT al
         //navegador
+        
+        header('Location: index.php?c=mascota');
+        
     }
     public function Editar(){
         $pvd = new mascota();
