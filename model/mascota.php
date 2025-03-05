@@ -67,9 +67,10 @@ class mascota
 				sexoMascota,
 				colorMascota,
 				TamanoMascota,
-				estado
+				estado,
+				FK_idDueno
 				)
-		        VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+		        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
@@ -81,7 +82,8 @@ class mascota
 					$data->valor_5,
                     $data->valor_6,
 					$data->valor_7,
-					$AUX
+					$AUX,
+					$data->valor_8,
                 )
 			);
 		} catch (Exception $e)

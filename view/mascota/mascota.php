@@ -170,14 +170,7 @@
                     </div>
                     <!-- Segunda columna -->
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="sexoMascota">Sexo</label>
-                            <select class="form-control" id="sexoMascota" name="sexoMascota"  required>
-                                <option value="">Selecciona un sexo</option>
-                                <option value="M">Macho</option>
-                                <option value="F">Hembra</option>
-                            </select>
-                        </div>
+             
                         <div class="form-group"> 
                             <label for="colorMascota">Color</label>
                             <input type="text" class="form-control" id="colorMascota"  name="colorMascota"placeholder="Color de la mascota"
@@ -206,7 +199,7 @@
                         </div>
                         <div class="form-group">
                         <label id="lb_entrada_1">Seleciona un Dueño</label>
-                        <select class="custom-select selevt" name="duenoMascota" id="duenoMascota" >
+                        <select class="custom-select selevt" name="FK_idDueno" id="FK_idDueno" >
                         <option  value="0">Seleccion </opcion>
                         <?php foreach ($this->model->MenuListaX() as $Tipo): ?>
                             <option  value="<?php echo $Tipo->idDueno; ?>">

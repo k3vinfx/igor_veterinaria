@@ -30,7 +30,7 @@ class MascotaController{
         $pvd->valor_5 = $_REQUEST['sexoMascota'];
         $pvd->valor_6 = $_REQUEST['colorMascota'];
         $pvd->valor_7 = $_REQUEST['tamanoMascota']; 
-       
+        $pvd->valor_8 = $_REQUEST['FK_idDueno']; 
         //Registro al modelo proveedor.
         $this->model->Registrar($pvd);
     
