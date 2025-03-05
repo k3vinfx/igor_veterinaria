@@ -266,7 +266,7 @@ class principal
 		try
 		{
 			$sql = "UPDATE mascotadatos SET
-			estado        = 0,
+			estado  = 0
 			WHERE idMascota  = ?";
 
 			$this->pdo->prepare($sql)
