@@ -140,8 +140,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                ...
-
+ 
                 <form id="frm-principal-mascota" action="?c=mascota&a=Guardar" method="post" class="form-row" enctype="multipart/form-data" >
 
              
