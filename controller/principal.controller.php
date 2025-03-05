@@ -178,7 +178,9 @@ class PrincipalController{
     }
 
     public function Eliminar(){
-        $this->model->Eliminar($_REQUEST['Neurona_Id']);
-        header('Location: index.php');
+        $pvd = new principal();
+        $pvd->idMascota = $_REQUEST['idMascota'];
+        $this->model->Eliminar($pvd);
+        header('Location: index.php?c=principal');
     }
 }

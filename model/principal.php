@@ -259,19 +259,29 @@ class principal
 		}
 	}
 
-	public function Eliminar($idProducto)
+
+
+	public function Eliminar($data)
 	{
 		try
 		{
-			$stm = $this->pdo
-			            ->prepare("DELETE FROM neurona WHERE idProducto = ?");
+			$sql = "UPDATE mascotadatos SET
+			estado        = 0,
+			WHERE idMascota  = ?";
 
-			$stm->execute(array($idProducto));
+			$this->pdo->prepare($sql)
+			     ->execute(
+				    array( 
+                     	$data->idMascota
+					)
+				);
 		} catch (Exception $e)
 		{
 			die($e->getMessage());
 		}
 	}
+
+
 
 	
 	public function RegistrarEntrenamiento($data)

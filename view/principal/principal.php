@@ -48,7 +48,7 @@
             <td>
                 <a href="?c=principal&a=Crud&idMascota=<?php echo $r->idMascota; ?>"class="btn btn-success"><i class='fas fa-edit'></i></a>
          
-                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=producto&a=Eliminar&idProducto=<?php echo $r->idMascota; ?>" class="btn btn-danger"><i class='fas fa-trash-alt'></i></a>
+                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=principal&a=Eliminar&idMascota=<?php echo $r->idMascota; ?>" class="btn btn-danger"><i class='fas fa-trash-alt'></i></a>
             </td>
         </tr>
     <?php endforeach; ?>
