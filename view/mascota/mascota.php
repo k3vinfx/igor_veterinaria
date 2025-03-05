@@ -179,7 +179,7 @@
 
                         <div class="form-group">
                             <label for="sexoMascota">Tamaño</label>
-                            <select class="form-control" id="tamanoMascota" name="tamanoMascota"  required>
+                            <select class="form-control" id="tamanoMascota" name="tamanoMascota" >
                                 <option value="">Selecciona el tamaño</option>
                                 <option value="1">Raza Pequeña</option>
                                 <option value="2">Raza Mediana</option>
@@ -190,7 +190,7 @@
 
                         <div class="form-group">
                             <label for="sexoMascota">Macho o Hembra</label>
-                            <select class="form-control" id="sexoMascota" name="sexoMascota"  required>
+                            <select class="form-control" id="sexoMascota" name="sexoMascota"  >
                                 <option value="">Selecciona un sexo</option>
                                 <option value="M">Macho</option>
                                 <option value="F">Hembra</option>
