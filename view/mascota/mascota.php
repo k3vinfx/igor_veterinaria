@@ -150,22 +150,22 @@
                         <div class="form-group">
                             <label for="nombreMascota">Nombre Mascota</label>
                             <input type="text" class="form-control" id="nombreMascota" name="nombreMascota"
-                                placeholder="Ingresa el nombre de la mascota" required>
+                                placeholder="Ingresa el nombre de la mascota" >
                         </div>
                         <div class="form-group">
                             <label for="especieMascota">Especie</label>
                             <input type="text" class="form-control" id="especieMascota" name="especieMascota"
-                                placeholder="Especie de la mascota" required>
+                                placeholder="Especie de la mascota" >
                         </div>
                         <div class="form-group">
                             <label for="razaMascota">Raza</label>
                             <input type="text" class="form-control" id="razaMascota"  name="razaMascota" 
-                            placeholder="Raza de la mascota" required>
+                            placeholder="Raza de la mascota" >
                         </div>
                         <div class="form-group">
                             <label for="fechaNacimientoMascota">Fecha de Nacimiento</label>
                             <input type="date" class="form-control" id="fechaNacimientoMascota" name="fechaNacimientoMascota" 
-                            required>
+                            >
                         </div>
                     </div>
                     <!-- Segunda columna -->
@@ -174,7 +174,7 @@
                         <div class="form-group"> 
                             <label for="colorMascota">Color</label>
                             <input type="text" class="form-control" id="colorMascota"  name="colorMascota"placeholder="Color de la mascota"
-                                required>
+                                >
                         </div>
                  
 
