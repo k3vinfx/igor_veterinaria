@@ -314,9 +314,9 @@
        
 
     });
-    $('.btn-primary').on('click', function () {
-        $('#RegistroMascota .modal-title').text('Nuevo Mascota');
-        $('#frm-principal-mascota').attr('action', '?c=mascota&a=Guardar'); // Cambia la acción al registro
-        $('#frm-principal-mascota')[0].reset(); // Limpia los campos del formulario
-    });
+   // $('.btn-primary').on('click', function () {
+    //    $('#RegistroMascota .modal-title').text('Nuevo Mascota');
+       // $('#frm-principal-mascota').attr('action', '?c=mascota&a=Guardar'); // Cambia la acción al registro
+      //  $('#frm-principal-mascota')[0].reset(); // Limpia los campos del formulario
+ //  });
 </script>
