@@ -52,7 +52,7 @@ class principal
 		{
 
 			$result = array();
-			$stm = $this->pdo->prepare("SELECT * FROM mascotadatos WHERE estado = 0");
+			$stm = $this->pdo->prepare("SELECT * FROM mascotadatos WHERE estado = 1");
 			$stm->execute();
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e)
