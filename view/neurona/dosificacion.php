@@ -146,9 +146,11 @@
                         </div>
 
                     </div>
-                           
-                    
                     <div class="form-group">
+                       <label for="efectividad">Efectividad </label>
+                       <input type="text" class="form-control font-weight-bold text-primary bg-light" id="efectividad" readonly>
+                    </div>
+                <div class="form-group">
                         <label for="observaciones">Observaciones</label>
                         <textarea class="form-control" id="observaciones" rows="2"></textarea>
                     </div>
@@ -234,6 +236,23 @@ $(document).ready(function () {
 
 
     $('#RegistroDocificacion').modal('show');
+    const datos = localStorage.getItem('datosTratamiento');
+    if (datos) {
+        try {
+            const obj = JSON.parse(datos);
+            if (obj.efectividad !== undefined) {
+                $('#efectividad').val(parseFloat(obj.efectividad).toFixed(2));
+            } else {
+                $('#efectividad').val('No disponible');
+            }
+        } catch (e) {
+            console.error("Error al parsear datosTratamiento:", e);
+            $('#efectividad').val('Error al leer');
+        }
+    } else {
+        $('#efectividad').val('Sin datos');
+    }
+
     // Acciones para el botón de editar
     $('.btnEditar').on('click', function () {
         // Aquí iría el código para rellenar el formulario del modal con los datos del propietario a editar
