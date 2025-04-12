@@ -146,10 +146,17 @@
                         </div>
 
                     </div>
-                    <div class="form-group">
-                       <label for="efectividad">Efectividad </label>
-                       <input type="text" class="form-control font-weight-bold text-primary bg-light" id="efectividad" readonly>
+                    <div class="form-group col-md-6">  
+                        <label for="efectiviefectividaddad_trat">Efectividad</label>
+                        <input 
+                            type="text" 
+                            class="form-control text-white text-center font-weight-bold bg-info border-0"
+                            id="efectividad" 
+                            name="efectividad" 
+                            readonly
+                        >
                     </div>
+
                 <div class="form-group">
                         <label for="observaciones">Observaciones</label>
                         <textarea class="form-control" id="observaciones" rows="2"></textarea>
