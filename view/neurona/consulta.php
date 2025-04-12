@@ -812,17 +812,21 @@ $('#sintomas').change(function() {
 $('#btnEmpezarTratamiento').on('click', function () {
     console.log("Click detectado en btnEmpezarTratamiento");
 
-    // Oculta el modal actual
+    // Paso 1: Forzar cierre del primer modal
     $('#RegistroMVC').modal('hide');
 
-    // Espera a que el modal actual termine de cerrarse para abrir el otro
-    $('#RegistroMVC').on('hidden.bs.modal', function () {
-        $('#DosificacionModal').modal('show');
+    // Paso 2: Eliminar manualmente cualquier backdrop viejo
+    $('.modal-backdrop').remove(); // <-- esto es clave
 
-        // Para evitar múltiples bindings, elimina el evento luego de ejecutarse
-        $(this).off('hidden.bs.modal');
-    });
+    // Paso 3: Asegurarse que no esté 'display:none'
+    $('#DosificacionModal').css('display', 'block');
+
+    // Paso 4: Forzar apertura limpia
+    setTimeout(function () {
+        $('#DosificacionModal').modal('show');
+    }, 500); // medio segundo después del hide, para dejar respirar al DOM
 });
+
 
     // Validar formulario
 console.log("afuera2:", entrenamiento);
