@@ -811,9 +811,19 @@ $('#sintomas').change(function() {
 });
 $('#btnEmpezarTratamiento').on('click', function () {
     console.log("Click detectado en btnEmpezarTratamiento");
-    //$('#DosificacionModal').modal('show');
+
+    // Oculta el modal actual
     $('#RegistroMVC').modal('hide');
+
+    // Espera a que el modal actual termine de cerrarse para abrir el otro
+    $('#RegistroMVC').on('hidden.bs.modal', function () {
+        $('#DosificacionModal').modal('show');
+
+        // Para evitar múltiples bindings, elimina el evento luego de ejecutarse
+        $(this).off('hidden.bs.modal');
+    });
 });
+
     // Validar formulario
 console.log("afuera2:", entrenamiento);
    
