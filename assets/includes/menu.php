@@ -38,11 +38,11 @@
 	<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
 			<i class="fas fa-fw fa-history"></i>
-			<span>Ficha Clinica & Historial</span>
+			<span>Antecedentes & Historial</span>
 		</a>
 		<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
-			    <a class="collapse-item" href="?c=antecedentes&a=Start">Ficha Clinica</a>
+			    <a class="collapse-item" href="?c=antecedentes&a=Start">Antecedentes Clinica</a>
 				<a class="collapse-item" href="?c=historial&a=Start">Historial Clinico</a>
 			</div>
 		</div>
@@ -51,11 +51,11 @@
 	<li class="nav-item">
 		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseConsulta" aria-expanded="true" aria-controls="collapseUtilities">
 			<i class="fas fa-book-medical"></i>
-			<span>Tratamientos & Enfermedades</span>
+			<span>Analisis & Tratamientos</span>
 		</a>
 		<div id="collapseConsulta" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
-			<a class="collapse-item" href="?c=neurona&a=Consulta">Consulta de Enfermedad</a>
+			<a class="collapse-item" href="?c=neurona&a=Consulta">Analisis de Enfermedad</a>
 			<a class="collapse-item" href="?c=categorias&a=Listar">Resultados del Tratamiento</a>
 		 </div>		
 		</div>
