@@ -551,6 +551,21 @@ dialog {
     </div>
 </div>
 
+<div class="modal fade" id="DosificacionModal" tabindex="1" role="dialog" aria-hidden="true" >
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Dosificación Test</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Contenido de prueba</p>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Modal para Registro de Propietario -->
 <div class="modal fade" id="RegistroMVC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="dialog" role="document">
@@ -617,21 +632,7 @@ dialog {
     </div>
 </div>
 
-<div class="modal fade" id="DosificacionModal" tabindex="-1" role="dialog" aria-labelledby="dosificacionModalLabel" >
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Dosificación Test</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Contenido de prueba</p>
-      </div>
-    </div>
-  </div>
-</div>
+
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/brain.js@2.0.0-beta.18/dist/browser.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
