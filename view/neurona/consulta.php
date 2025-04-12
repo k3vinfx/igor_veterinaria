@@ -962,7 +962,7 @@ console.log("afuera2:", entrenamiento);
                             
                             console.log('Efectividad del tratamiento según los nuevos datos 1:', resultado.efectividad_1  );
 
-                            const porcentaje = (resultado.efectividad_1 * 1000).toFixed(2) + '%';
+                            const porcentaje = (resultado.efectividad_1 * 100).toFixed(2) + '%';
                             $('#efectividad_trat').val(porcentaje);
 
                               //efectividad_trat
