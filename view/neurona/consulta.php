@@ -128,8 +128,9 @@ dialog {
 
                         <div class="modal-footer">
                             <button type="button" name="buscar" id="buscarIa" class="btn btn-danger">Analizar</button>
-                              <button type="submit" form="frm-proprietario" class="btn btn-primary">Empezar Tratamiento</button>
-                        </div>
+
+                              <button type="button" id="btnEmpezarTratamiento" class="btn btn-primary">Empezar Tratamiento</button>
+                            </div>
 
                     </form>
                 </div>
@@ -708,8 +709,8 @@ $("#tam_masc").prop("disabled", true);
     
     // Guardar dosificación en la tabla
 // En tu script, reemplaza el manejo del formulario principal por esto:
-    $('#frm-proprietario').on('submit', function(e) {
-    e.preventDefault(); // Prevenir el envío normal
+    $(document).on('click', '#btnEmpezarTratamiento', function(e) {
+    e.preventDefault();
     
     // Validar que se haya seleccionado mascota y tratamiento
     var idMascota = $('#Id_macota').val();
@@ -723,17 +724,54 @@ $("#tam_masc").prop("disabled", true);
     // Obtener el nombre del tratamiento seleccionado
     var nombreTratamiento = $('#selc_tratamiento option:selected').text();
     
+    // Cerrar el modal actual
+    $('#RegistroMVC').modal('hide');
+    
     // Configurar el modal de dosificación
     $('#DosificacionModal .modal-title').text('Dosificación para: ' + nombreTratamiento);
     $('#frm-dosificacion')[0].reset();
     $('#fechaInicio').val(new Date().toISOString().split('T')[0]);
     $('#historialDosificaciones').empty(); // Limpiar tabla de historial
     
-    // Mostrar el modal de dosificación
-    $('#DosificacionModal').modal('show');
+    // Mostrar el modal de dosificación después de un pequeño retraso para permitir que se cierre el primero
+    setTimeout(function() {
+        $('#DosificacionModal').modal('show');
+    }, 500);
 });
-
+digo para manejar la dosificación como está
+$('#btnGuardarDosificacion').on('click', function() {
+    // Validar formulario
+    if($('#tipoDosificacion').val() === '' || $('#dosis').val() === '' || 
+       $('#duracion').val() === '' || $('#fechaInicio').val() === '') {
+        Swal.fire('Error', 'Por favor complete todos los campos requeridos', 'error');
+        return;
+    }
     
+    // Crear fila para la tabla
+    var nuevaFila = `
+        <tr>
+            <td>${$('#tipoDosificacion').val()}</td>
+            <td>${$('#dosis').val()}</td>
+            <td>${$('#duracion').val()}</td>
+            <td>${$('#fechaInicio').val()}</td>
+            <td>${$('#observaciones').val() || '-'}</td>
+            <td>
+                <button class="btn btn-sm btn-danger btnEliminar">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+    `;
+    
+    // Agregar fila a la tabla
+    $('#historialDosificaciones').append(nuevaFila);
+    
+    // Limpiar formulario
+    $('#frm-dosificacion')[0].reset();
+    $('#fechaInicio').val(new Date().toISOString().split('T')[0]);
+    
+    Swal.fire('Éxito', 'Dosificación agregada al historial', 'success');
+});
     // Eliminar dosificación (usamos delegación de eventos por ser elementos dinámicos)
     $(document).on('click', '.btnEliminar', function() {
         $(this).closest('tr').remove();
