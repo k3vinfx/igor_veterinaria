@@ -12,7 +12,7 @@
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-6">
         <h1 class="h3 mb-0 text-gray-800">Docificación</h1>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#RegistroPropietario">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#RegistroDocificacion">
             Nuevo
         </button>
     </div>
@@ -64,7 +64,7 @@
                                   data-movil="<?php echo $r->celularDueno; ?>"
                                   
                                   data-correoelectronico="<?php echo $r->correoDueno; ?>"
-                                  data-toggle="modal" data-target="#RegistroPropietario">
+                                  data-toggle="modal" data-target="#RegistroDocificacion">
                                 <i class='fas fa-edit'></i></button>
 
                                 <button type="button" id="btnEliminar" name="btnEliminar" class="btn btn-danger btnEliminar"
@@ -87,7 +87,7 @@
 </div>
 
 <!-- Modal para Registro de Propietario -->
-<div class="modal fade" id="RegistroPropietario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="RegistroDocificacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -169,12 +169,14 @@
 
 <script>
 $(document).ready(function () {
+
+    $('#RegistroDocificacion').modal('show');
     // Acciones para el botón de editar
     $('.btnEditar').on('click', function () {
         // Aquí iría el código para rellenar el formulario del modal con los datos del propietario a editar
            // Llena el formulario en el modal con los datos obtenidos
        // Cambia el título del modal a "Editar Propietario"
-       $('#RegistroPropietario .modal-title').text('Editar Propietario');
+       $('#RegistroDocificacion .modal-title').text('Editar Propietario');
            var id = $(this).data('id');
 
            console.log("El id:", id);
@@ -276,7 +278,7 @@ var estadox = $(this).data('estado');
 });
 
 $('.btn-primary').on('click', function () {
-        $('#RegistroPropietario .modal-title').text('Nuevo Propietario');
+        $('#RegistroDocificacion .modal-title').text('Nuevo Docificación');
         $('#frm-proprietario')[0].reset(); // Limpia los campos del formulario
         $('#frm-proprietario').attr('action', '?c=dueno&a=Guardar'); // Cambia la acción al registro
     });
