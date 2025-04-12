@@ -159,7 +159,7 @@
                 </form>
                 
                     
-                    <div class="modal-footer">
+                 
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 <button type="button" id="btnGuardarDosificacion" class="btn btn-primary">Guardar Dosificación</button>
             </div>
