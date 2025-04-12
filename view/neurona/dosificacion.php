@@ -139,10 +139,10 @@
                         <label for="observaciones">Observaciones</label>
                         <textarea class="form-control" id="observaciones" rows="2"></textarea>
                     </div>
-                    
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <div class="form-group text-center">
+                    <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal">Cerrar</button>
                     <button type="button" id="btnGuardarDosificacion" class="btn btn-primary">Guardar Dosificación</button>
-                    
+                    </div>
                     <!-- Tabla de Historial -->
                     <div class="mt-4">
                         <h6>Historial de Dosificaciones</h6>
@@ -177,6 +177,45 @@
 
 <script>
 $(document).ready(function () {
+
+
+            $('#btnGuardarDosificacion').on('click', function () {
+            // Obtener valores de los campos
+            var tipo = $('#tipoDosificacion').val();
+            var dosis = $('#dosis').val();
+            var duracion = $('#duracion').val();
+            var inicio = $('#fechaInicio').val();
+            var medicamento = $('#medicamento').val();
+            var observaciones = $('#observaciones').val();
+
+            // Validación rápida
+            if (!tipo || !dosis || !duracion || !inicio || !medicamento) {
+                alert("Por favor, complete todos los campos requeridos.");
+                return;
+            }
+
+            // Crear nueva fila
+            var nuevaFila = `
+                <tr>
+                    <td>${tipo}</td>
+                    <td>${dosis}</td>
+                    <td>${duracion}</td>
+                    <td>${inicio}</td>
+                    <td>${medicamento}</td>
+                    <td>${observaciones}</td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-danger btnEliminarFila">Eliminar</button>
+                    </td>
+                </tr>
+            `;
+
+            // Insertar en la tabla
+            $('#historialDosificaciones').append(nuevaFila);
+
+            // Limpiar campos del formulario
+            $('#frm-dosificacion')[0].reset();
+        });
+
 
     $('#RegistroDocificacion').modal('show');
     // Acciones para el botón de editar
