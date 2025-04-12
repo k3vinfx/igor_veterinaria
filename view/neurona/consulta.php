@@ -130,7 +130,7 @@ dialog {
                         <div class="form-group text-center">
                             <button type="button" name="buscar" id="buscarIa" class="btn btn-danger">Analizar</button>
                   
-                            <button type="submit" form="frm-proprietario" class="btn btn-primary">Empezar Tratamiento</button>
+                            <button type="submit" id="btnEmpezarTratamiento" class="btn btn-primary">Empezar Tratamiento</button>
             
                             </div>
                  
@@ -813,29 +813,19 @@ $('#sintomas').change(function() {
 });
 $('#btnEmpezarTratamiento').on('click', function () {
     console.log("Click detectado en btnEmpezarTratamiento");
+ // Captura de los datos del formulario
+ const data = {
+        dueno: $('#duenos').val(),
+        mascota: $('#Id_macota').val(),
+        tratamiento: $('#selc_tratamiento').val(),
+        efectividad: $('#efectividad_trat').val()
+    };
 
-    // Ocultar modal actual
-    $('#RegistroMVC').modal('hide');
+    // Almacena temporalmente en localStorage o sessionStorage
+    localStorage.setItem('datosTratamiento', JSON.stringify(data));
 
-    // Esperar a que se cierre completamente y luego mostrar el otro
-    $('#RegistroMVC').on('hidden.bs.modal', function () {
-
-        // Asegurar que no haya backdrop colgado
-        $('.modal-backdrop').remove();
-
-        // Reiniciar estilos del modal por si quedaron mal
-        $('#DosificacionModal').removeClass('fade').css({
-            display: 'block',
-            opacity: 1,
-            zIndex: 1050
-        });
-
-        // Mostrar el modal correctamente
-        $('#DosificacionModal').modal('show');
-
-        // Remover el listener para que no se acumule
-        $(this).off('hidden.bs.modal');
-    });
+    // Redirige a la nueva vista donde se registrará
+    window.location.href = 'index.php?c=tratamiento&a=Nuevo';
 });
 
 
