@@ -612,7 +612,57 @@ dialog {
         </div>
     </div>
 </div>
-
+<!-- Agrega este modal al final del código, antes de los scripts -->
+<div class="modal fade" id="DosificacionModal" tabindex="-1" role="dialog" aria-labelledby="dosificacionModalLabel" aria-hidden="true">
+    <div class="dialog" role="document">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="dosificacionModalLabel">Dosificación del Tratamiento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="frm-dosificacion" action="?c=neurona&a=GuardarDosificacion" method="post">
+                        <input type="hidden" id="idMascotaDosificacion" name="idMascotaDosificacion">
+                        <input type="hidden" id="idEnfermedadDosificacion" name="idEnfermedadDosificacion">
+                        <input type="hidden" id="tratamientoSeleccionado" name="tratamientoSeleccionado">
+                        
+                        <div class="form-group">
+                            <label for="tipoDosificacion">Tipo de Dosificación</label>
+                            <select class="form-control" id="tipoDosificacion" name="tipoDosificacion" required>
+                                <option value="">Seleccione...</option>
+                                <option value="Pastillas">Pastillas</option>
+                                <option value="Inyectable">Inyectable</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dosis">Dosis</label>
+                            <input type="text" class="form-control" id="dosis" name="dosis" placeholder="Ej: 1 pastilla cada 8 horas" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="duracion">Duración del tratamiento</label>
+                            <input type="text" class="form-control" id="duracion" name="duracion" placeholder="Ej: 7 días" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="observaciones">Observaciones</label>
+                            <textarea class="form-control" id="observaciones" name="observaciones" rows="3" placeholder="Instrucciones adicionales..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" form="frm-dosificacion" class="btn btn-primary">Guardar Dosificación</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/brain.js@2.0.0-beta.18/dist/browser.js"></script>
 
