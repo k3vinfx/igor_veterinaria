@@ -615,7 +615,9 @@ dialog {
             </div>
         </div>
     </div>
-</div><div class="modal fade" id="DosificacionModal" tabindex="-1" role="dialog" aria-labelledby="dosificacionModalLabel" aria-hidden="true">
+</div>
+
+<div class="modal fade" id="DosificacionModal" tabindex="-1" role="dialog" aria-labelledby="dosificacionModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -633,6 +635,7 @@ dialog {
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/brain.js@2.0.0-beta.18/dist/browser.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
 $(document).ready(function () {
