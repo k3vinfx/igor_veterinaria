@@ -704,47 +704,35 @@ var id_tama_mascota ="";
 
 $("#tam_masc").prop("disabled", true);
 
-  // Mostrar modal cuando se guarde el formulario principal
-  $('#frm-proprietario').on('submit', function(e) {
-        e.preventDefault();
-        $('#DosificacionModal').modal('show');
-        
-        // Establecer fecha actual como predeterminada
-        $('#fechaInicio').val(new Date().toISOString().split('T')[0]);
-    });
+
     
     // Guardar dosificación en la tabla
-    $('#btnGuardarDosificacion').on('click', function() {
-        // Validar formulario
-        if($('#tipoDosificacion').val() === '' || $('#dosis').val() === '' || 
-           $('#duracion').val() === '' || $('#fechaInicio').val() === '') {
-            alert('Por favor complete todos los campos requeridos');
-            return;
-        }
-        
-        // Crear fila para la tabla
-        var nuevaFila = `
-            <tr>
-                <td>${$('#tipoDosificacion').val()}</td>
-                <td>${$('#dosis').val()}</td>
-                <td>${$('#duracion').val()}</td>
-                <td>${$('#fechaInicio').val()}</td>
-                <td>${$('#observaciones').val() || '-'}</td>
-                <td>
-                    <button class="btn btn-sm btn-danger btnEliminar">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                </td>
-            </tr>
-        `;
-        
-        // Agregar fila a la tabla
-        $('#historialDosificaciones').append(nuevaFila);
-        
-        // Limpiar formulario
-        $('#frm-dosificacion')[0].reset();
-        $('#fechaInicio').val(new Date().toISOString().split('T')[0]);
-    });
+// En tu script, reemplaza el manejo del formulario principal por esto:
+    $('#frm-proprietario').on('submit', function(e) {
+    e.preventDefault(); // Prevenir el envío normal
+    
+    // Validar que se haya seleccionado mascota y tratamiento
+    var idMascota = $('#Id_macota').val();
+    var tratamiento = $('#selc_tratamiento').val();
+    
+    if(idMascota == 0 || tratamiento == "" || tratamiento == null) {
+        Swal.fire('Error', 'Debe seleccionar una mascota y un tratamiento', 'error');
+        return;
+    }
+    
+    // Obtener el nombre del tratamiento seleccionado
+    var nombreTratamiento = $('#selc_tratamiento option:selected').text();
+    
+    // Configurar el modal de dosificación
+    $('#DosificacionModal .modal-title').text('Dosificación para: ' + nombreTratamiento);
+    $('#frm-dosificacion')[0].reset();
+    $('#fechaInicio').val(new Date().toISOString().split('T')[0]);
+    $('#historialDosificaciones').empty(); // Limpiar tabla de historial
+    
+    // Mostrar el modal de dosificación
+    $('#DosificacionModal').modal('show');
+});
+
     
     // Eliminar dosificación (usamos delegación de eventos por ser elementos dinámicos)
     $(document).on('click', '.btnEliminar', function() {
