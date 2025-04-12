@@ -130,16 +130,21 @@
                           
                          
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="fechaInicio">Fecha de Inicio</label>
-                                <input type="date" class="form-control" id="fechaInicio" required>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="fechaInicio">Fecha de Inicio</label>
+                                    <input type="date" class="form-control" id="fechaInicio" required>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="fechaFinal">Fecha de Final</label>
-                                <input type="date" class="form-control" id="fechaFinal" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="fechaFinal">Fecha de Final</label>
+                                    <input type="date" class="form-control" id="fechaFinal" required>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                            
                     
