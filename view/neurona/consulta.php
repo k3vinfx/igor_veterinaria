@@ -962,7 +962,7 @@ console.log("afuera2:", entrenamiento);
                             
                             console.log('Efectividad del tratamiento según los nuevos datos 1:', resultado.efectividad_1  );
                               //efectividad_trat
-                              $('#efectividad_trat').val(resultado.efectividad_1);
+                              $('#efectividad_trat').val(100*resultado.efectividad_1);
 
 
 
