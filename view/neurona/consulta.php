@@ -129,9 +129,7 @@ dialog {
                         <div class="modal-footer">
                             <button type="button" name="buscar" id="buscarIa" class="btn btn-danger">Analizar</button>
                             <button type="button" name="salir" id="salir" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                            <button type="submit" form="frm-proprietario" class="btn btn-primary">Empezar Tratamiento</button>
-                        </div>
-
+                            <button type="button" id="btnEmpezarTratamiento" form="frm-proprietario" class="btn btn-primary">Empezar Tratamiento</button>
                     </form>
                 </div>
             </div>
@@ -631,6 +629,80 @@ var id_tama_mascota ="";
 $("#tam_masc").prop("disabled", true);
 
 // Función para manejar el evento de hacer clic en el botón de buscar
+$(document).on('click', '#btnEmpezarTratamiento', function(e) {
+    e.preventDefault();
+    
+    // Validar que se haya seleccionado mascota y tratamiento
+    var idMascota = $('#Id_macota').val();
+    var tratamiento = $('#selc_tratamiento').val();
+    
+    if(idMascota == 0 || tratamiento == "" || tratamiento == null) {
+        Swal.fire('Error', 'Debe seleccionar una mascota y un tratamiento', 'error');
+        return;
+    }
+    
+    // Obtener el nombre del tratamiento seleccionado
+    var nombreTratamiento = $('#selc_tratamiento option:selected').text();
+    
+    // Cerrar el modal actual
+    $('#RegistroMVC').modal('hide');
+    
+    // Configurar el modal de dosificación
+    $('#DosificacionModal .modal-title').text('Dosificación para: ' + nombreTratamiento);
+    $('#frm-dosificacion')[0].reset();
+    $('#fechaInicio').val(new Date().toISOString().split('T')[0]);
+    $('#historialDosificaciones').empty(); // Limpiar tabla de historial
+    
+    // Mostrar el modal de dosificación después de un pequeño retraso para permitir que se cierre el primero
+    setTimeout(function() {
+        $('#DosificacionModal').modal('show');
+    }, 500);
+});
+
+// Cambia el botón en tu HTML para que tenga el ID correcto:
+// <button type="button" id="btnEmpezarTratamiento" form="frm-proprietario" class="btn btn-primary">Empezar Tratamiento</button>
+
+// Mantén el resto del código para manejar la dosificación como está
+$('#btnGuardarDosificacion').on('click', function() {
+    // Validar formulario
+    if($('#tipoDosificacion').val() === '' || $('#dosis').val() === '' || 
+       $('#duracion').val() === '' || $('#fechaInicio').val() === '') {
+        Swal.fire('Error', 'Por favor complete todos los campos requeridos', 'error');
+        return;
+    }
+    
+    // Crear fila para la tabla
+    var nuevaFila = `
+        <tr>
+            <td>${$('#tipoDosificacion').val()}</td>
+            <td>${$('#dosis').val()}</td>
+            <td>${$('#duracion').val()}</td>
+            <td>${$('#fechaInicio').val()}</td>
+            <td>${$('#observaciones').val() || '-'}</td>
+            <td>
+                <button class="btn btn-sm btn-danger btnEliminar">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+    `;
+    
+    // Agregar fila a la tabla
+    $('#historialDosificaciones').append(nuevaFila);
+    
+    // Limpiar formulario
+    $('#frm-dosificacion')[0].reset();
+    $('#fechaInicio').val(new Date().toISOString().split('T')[0]);
+    
+    Swal.fire('Éxito', 'Dosificación agregada al historial', 'success');
+});
+
+// Eliminar dosificación
+$(document).on('click', '.btnEliminar', function() {
+    $(this).closest('tr').remove();
+});
+
+
 
 function convertirDatosParaEntrenamientoxzz(data) {
     data.forEach(function(dato) {
