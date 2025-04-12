@@ -126,13 +126,14 @@ dialog {
                             </div> 
                         </div> <!-- Fin de la segunda fila -->
 
-                        <div class="modal-footer">
+               
+                        <div class="form-group text-center">
                             <button type="button" name="buscar" id="buscarIa" class="btn btn-danger">Analizar</button>
-                            <button type="button" name="salir" id="salir" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  
                             <button type="submit" form="frm-proprietario" class="btn btn-primary">Empezar Tratamiento</button>
             
-                     
-                        </div>
+                            </div>
+                 
 
                     </form>
                 </div>

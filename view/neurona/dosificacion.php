@@ -141,7 +141,7 @@
                     </div>
                     <div class="form-group text-center">
                     <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal">Cerrar</button>
-                    <button type="button" id="btnGuardarDosificacion" class="btn btn-primary">Guardar Dosificación</button>
+                    <button type="button" id="btnGuardarDosificacion" class="btn btn-primary">Agregar Dosificación</button>
                     </div>
                     <!-- Tabla de Historial -->
                     <div class="mt-4">
@@ -177,7 +177,10 @@
 
 <script>
 $(document).ready(function () {
-
+            // Eliminar dosificación
+            $(document).on('click', '.btnEliminar', function() {
+                $(this).closest('tr').remove();
+            });
 
             $('#btnGuardarDosificacion').on('click', function () {
             // Obtener valores de los campos
