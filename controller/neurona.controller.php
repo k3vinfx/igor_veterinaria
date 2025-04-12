@@ -41,6 +41,15 @@ class NeuronaController{
     }
  
 
+        // Llamado plantilla consulta
+        public function Dosificacion(){
+
+     
+            require_once 'view/principal/header.php';
+            require_once 'view/neurona/dosificacion.php';
+            require_once 'view/footerx.php';
+        }
+
 
      public function Guardar(){
         //Captura de los datos del formulario (vista).
