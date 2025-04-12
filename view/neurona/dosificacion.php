@@ -96,51 +96,107 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form id="frm-proprietario" action="?c=dueno&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
-                    <!-- Formulario para propietario -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="nombresPropietario">Nombres</label>
-                            <input type="text" class="form-control" id="nombresDueno" name="nombresDueno" placeholder="Nombres del propietario" required>
+               <div class="modal-body">
+               <form id="frm-dosificacion">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="tipoDosificacion">Tipo de Dosificación</label>
+                                <select class="form-control" id="tipoDosificacion" required>
+                                    <option value="">Seleccione...</option>
+                                    <option value="Pastillas">Pastillas</option>
+                                    <option value="Inyectable">Inyectable</option>
+                                    <option value="Pomada">Pomada</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="dosis">Dosis</label>
+                                <input type="text" class="form-control" id="dosis" placeholder="Ej: 1 pastilla cada 8 horas" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="apellidosPropietario">Apellidos</label>
-                            <input type="text" class="form-control" id="apellidosDueno" name="apellidosDueno" placeholder="Apellidos del propietario" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="direccionPropietario">Dirección</label>
-                            <input type="text" class="form-control" id="direccionDueno" name="direccionDueno" placeholder="Dirección del propietario" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="ciPropietario">C.I.</label>
-                            <input type="text" class="form-control" id="ciPropietario" name="ciPropietario" placeholder="Carnet de Identidad" required>
-                        </div>
-
                         
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="duracion">Duración</label>
+                                <input type="text" class="form-control" id="duracion" placeholder="Ej: 7 días" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="fechaInicio">Fecha de Inicio</label>
+                                <input type="date" class="form-control" id="fechaInicio" required>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="zonaPropietario">Zona</label>
-                            <input type="text" class="form-control" id="zonaDueno" name="zonaDueno" placeholder="Zona del propietario" required>
-                        </div>
-                  
-                        <div class="form-group">
-                            <label for="telefonomovilPropietario">Teléfono Móvil</label>
-                            <input type="text" class="form-control" id="celularDueno" name="celularDueno" placeholder="Teléfono móvil" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="correoelectronicoPropietario">Correo Electrónico</label>
-                            <input type="text" class="form-control" id="correoDueno" name="correoDueno" placeholder="Correo electrónico" required>
+                    
+                    <div class="form-group">
+                        <label for="observaciones">Observaciones</label>
+                        <textarea class="form-control" id="observaciones" rows="2"></textarea>
+                    </div>
+                    
+                    <!-- Tabla de Historial -->
+                    <div class="mt-4">
+                        <h6>Historial de Dosificaciones</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo</th>
+                                        <th>Dosis</th>
+                                        <th>Duración</th>
+                                        <th>Inicio</th>
+                                        <th>Observaciones</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="historialDosificaciones">
+                                    <!-- Los registros aparecerán aquí -->
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="tipoDosificacion">Tipo de Dosificación</label>
+                                <select class="form-control" id="tipoDosificacion" required>
+                                    <option value="">Seleccione...</option>
+                                    <option value="Pastillas">Pastillas</option>
+                                    <option value="Inyectable">Inyectable</option>
+                                    <option value="Pomada">Pomada</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="dosis">Dosis</label>
+                                <input type="text" class="form-control" id="dosis" placeholder="Ej: 1 pastilla cada 8 horas" required>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="duracion">Duración</label>
+                                <input type="text" class="form-control" id="duracion" placeholder="Ej: 7 días" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="fechaInicio">Fecha de Inicio</label>
+                                <input type="date" class="form-control" id="fechaInicio" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="observaciones">Observaciones</label>
+                        <textarea class="form-control" id="observaciones" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="submit" form="frm-proprietario" class="btn btn-primary">Guardar Propietario</button>
+                <button type="button" id="btnGuardarDosificacion" class="btn btn-primary">Guardar Dosificación</button>
             </div>
         </div>
     </div>
