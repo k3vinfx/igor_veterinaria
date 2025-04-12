@@ -91,7 +91,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nuevo Propietario..</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo Docificacion..</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -157,42 +157,7 @@
                         </div>
                     </div>
                 </form>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="tipoDosificacion">Tipo de Dosificación</label>
-                                <select class="form-control" id="tipoDosificacion" required>
-                                    <option value="">Seleccione...</option>
-                                    <option value="Pastillas">Pastillas</option>
-                                    <option value="Inyectable">Inyectable</option>
-                                    <option value="Pomada">Pomada</option>
-                                    <option value="Otro">Otro</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="dosis">Dosis</label>
-                                <input type="text" class="form-control" id="dosis" placeholder="Ej: 1 pastilla cada 8 horas" required>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="duracion">Duración</label>
-                                <input type="text" class="form-control" id="duracion" placeholder="Ej: 7 días" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="fechaInicio">Fecha de Inicio</label>
-                                <input type="date" class="form-control" id="fechaInicio" required>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="observaciones">Observaciones</label>
-                        <textarea class="form-control" id="observaciones" rows="2"></textarea>
-                    </div>
+                
                     
                     <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
