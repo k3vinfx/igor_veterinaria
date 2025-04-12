@@ -616,7 +616,84 @@ dialog {
         </div>
     </div>
 </div>
-
+<div class="modal fade" id="DosificacionModal" tabindex="-1" role="dialog" aria-labelledby="dosificacionModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dosificacionModalLabel">Dosificación del Tratamiento</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="frm-dosificacion">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="tipoDosificacion">Tipo de Dosificación</label>
+                                <select class="form-control" id="tipoDosificacion" required>
+                                    <option value="">Seleccione...</option>
+                                    <option value="Pastillas">Pastillas</option>
+                                    <option value="Inyectable">Inyectable</option>
+                                    <option value="Pomada">Pomada</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="dosis">Dosis</label>
+                                <input type="text" class="form-control" id="dosis" placeholder="Ej: 1 pastilla cada 8 horas" required>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="duracion">Duración</label>
+                                <input type="text" class="form-control" id="duracion" placeholder="Ej: 7 días" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="fechaInicio">Fecha de Inicio</label>
+                                <input type="date" class="form-control" id="fechaInicio" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="observaciones">Observaciones</label>
+                        <textarea class="form-control" id="observaciones" rows="2"></textarea>
+                    </div>
+                    
+                    <!-- Tabla de Historial -->
+                    <div class="mt-4">
+                        <h6>Historial de Dosificaciones</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo</th>
+                                        <th>Dosis</th>
+                                        <th>Duración</th>
+                                        <th>Inicio</th>
+                                        <th>Observaciones</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="historialDosificaciones">
+                                    <!-- Los registros aparecerán aquí -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" id="btnGuardarDosificacion" class="btn btn-primary">Guardar Dosificación</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/brain.js@2.0.0-beta.18/dist/browser.js"></script>
 
@@ -792,7 +869,13 @@ $('#sintomas').change(function() {
         }
     });
 });
+$('#btnEmpezarTratamiento').on('click', function() {
 
+    $('#DosificacionModal').modal('show');
+  //  DosificacionModal
+
+});
+    // Validar formulario
 console.log("afuera2:", entrenamiento);
    
     $(".close").on("click", function(){
