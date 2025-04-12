@@ -812,6 +812,7 @@ $('#sintomas').change(function() {
 $('#btnEmpezarTratamiento').on('click', function () {
     console.log("Click detectado en btnEmpezarTratamiento");
     $('#DosificacionModal').modal('show');
+    $('#RegistroMVC').modal('hide');
 });
     // Validar formulario
 console.log("afuera2:", entrenamiento);
