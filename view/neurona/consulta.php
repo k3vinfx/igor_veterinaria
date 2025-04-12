@@ -130,7 +130,7 @@ dialog {
                             <button type="button" name="buscar" id="buscarIa" class="btn btn-danger">Analizar</button>
                             <button type="button" name="salir" id="salir" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                             <button type="submit" form="frm-proprietario" class="btn btn-primary">Guardar</button>
-                     <button type="button" id="btnEmpezarTratamiento" form="frm-proprietario" class="btn btn-primary">Empezar Tratamiento</button>
+                     <button type="button" id="btnEmpezarTratamiento"  class="btn btn-primary">Empezar Tratamiento</button>
                      
                         </div>
 
