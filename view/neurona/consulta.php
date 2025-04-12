@@ -91,7 +91,7 @@ dialog {
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="frm-proprietario" action="?c=neurona&a=Guardar" method="post" class="form-row" enctype="multipart/form-data">
+                    <form id="frm-proprietario" action="?c=neurona&a=Dosificacion" method="post" class="form-row" enctype="multipart/form-data">
                         <!-- Formulario para propietario -->
                         <div class="form-row">
                             <div class="form-group col-md-6">  
