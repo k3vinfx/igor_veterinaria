@@ -91,7 +91,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nuevo Docificacion..</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo Docificación</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -129,11 +129,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="medicamento">Medicamento</label>
+                        <input type="text" class="form-control" rows="2" id="medicamento" placeholder="Ej: Iboprefeno" required>
+                    </div>
+                    
                     
                     <div class="form-group">
                         <label for="observaciones">Observaciones</label>
                         <textarea class="form-control" id="observaciones" rows="2"></textarea>
                     </div>
+                    
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" id="btnGuardarDosificacion" class="btn btn-primary">Guardar Dosificación</button>
                     
                     <!-- Tabla de Historial -->
                     <div class="mt-4">
@@ -146,6 +154,7 @@
                                         <th>Dosis</th>
                                         <th>Duración</th>
                                         <th>Inicio</th>
+                                        <th>Medicamento</th>
                                         <th>Observaciones</th>
                                         <th>Acciones</th>
                                     </tr>
@@ -160,8 +169,7 @@
                 
                     
                  
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" id="btnGuardarDosificacion" class="btn btn-primary">Guardar Dosificación</button>
+             
             </div>
         </div>
     </div>
