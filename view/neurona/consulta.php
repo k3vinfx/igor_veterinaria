@@ -128,9 +128,9 @@ dialog {
 
                         <div class="modal-footer">
                             <button type="button" name="buscar" id="buscarIa" class="btn btn-danger">Analizar</button>
-
-                              <button type="button" id="btnEmpezarTratamiento" class="btn btn-primary">Empezar Tratamiento</button>
-                            </div>
+                            <button type="button" name="salir" id="salir" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="submit" form="frm-proprietario" class="btn btn-primary">Empezar Tratamiento</button>
+                        </div>
 
                     </form>
                 </div>
@@ -614,82 +614,7 @@ dialog {
         </div>
     </div>
 </div>
-<div class="modal fade" id="DosificacionModal" tabindex="-1" role="dialog" aria-labelledby="dosificacionModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="dosificacionModalLabel">Dosificación del Tratamiento</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="frm-dosificacion">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="tipoDosificacion">Tipo de Dosificación</label>
-                                <select class="form-control" id="tipoDosificacion" required>
-                                    <option value="">Seleccione...</option>
-                                    <option value="Pastillas">Pastillas</option>
-                                    <option value="Inyectable">Inyectable</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="dosis">Dosis</label>
-                                <input type="text" class="form-control" id="dosis" placeholder="Ej: 1 cada 8 horas" required>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="duracion">Duración</label>
-                                <input type="text" class="form-control" id="duracion" placeholder="Ej: 7 días" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="fechaInicio">Fecha de Inicio</label>
-                                <input type="date" class="form-control" id="fechaInicio" required>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="observaciones">Observaciones</label>
-                        <textarea class="form-control" id="observaciones" rows="2"></textarea>
-                    </div>
-                    
-                    <!-- Tabla de Historial -->
-                    <div class="mt-4">
-                        <h6>Historial de Dosificaciones</h6>
-                        <div class="table-responsive">
-                            <table class="table table-sm table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Tipo</th>
-                                        <th>Dosis</th>
-                                        <th>Duración</th>
-                                        <th>Inicio</th>
-                                        <th>Observaciones</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="historialDosificaciones">
-                                    <!-- Los registros aparecerán aquí -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" id="btnGuardarDosificacion" class="btn btn-primary">Guardar Dosificación</button>
-            </div>
-        </div>
-    </div>
-</div>
+
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/brain.js@2.0.0-beta.18/dist/browser.js"></script>
 
@@ -704,78 +629,6 @@ var id_enfermedad = "";
 var id_tama_mascota ="";
 
 $("#tam_masc").prop("disabled", true);
-
-
-    
-    // Guardar dosificación en la tabla
-// En tu script, reemplaza el manejo del formulario principal por esto:
-    $(document).on('click', '#btnEmpezarTratamiento', function(e) {
-    e.preventDefault();
-    
-    // Validar que se haya seleccionado mascota y tratamiento
-    var idMascota = $('#Id_macota').val();
-    var tratamiento = $('#selc_tratamiento').val();
-    
-    if(idMascota == 0 || tratamiento == "" || tratamiento == null) {
-        Swal.fire('Error', 'Debe seleccionar una mascota y un tratamiento', 'error');
-        return;
-    }
-    
-    // Obtener el nombre del tratamiento seleccionado
-    var nombreTratamiento = $('#selc_tratamiento option:selected').text();
-    
-    // Cerrar el modal actual
-    $('#RegistroMVC').modal('hide');
-    
-    // Configurar el modal de dosificación
-    $('#DosificacionModal .modal-title').text('Dosificación para: ' + nombreTratamiento);
-    $('#frm-dosificacion')[0].reset();
-    $('#fechaInicio').val(new Date().toISOString().split('T')[0]);
-    $('#historialDosificaciones').empty(); // Limpiar tabla de historial
-    
-    // Mostrar el modal de dosificación después de un pequeño retraso para permitir que se cierre el primero
-    setTimeout(function() {
-        $('#DosificacionModal').modal('show');
-    }, 500);
-});
-digo para manejar la dosificación como está
-$('#btnGuardarDosificacion').on('click', function() {
-    // Validar formulario
-    if($('#tipoDosificacion').val() === '' || $('#dosis').val() === '' || 
-       $('#duracion').val() === '' || $('#fechaInicio').val() === '') {
-        Swal.fire('Error', 'Por favor complete todos los campos requeridos', 'error');
-        return;
-    }
-    
-    // Crear fila para la tabla
-    var nuevaFila = `
-        <tr>
-            <td>${$('#tipoDosificacion').val()}</td>
-            <td>${$('#dosis').val()}</td>
-            <td>${$('#duracion').val()}</td>
-            <td>${$('#fechaInicio').val()}</td>
-            <td>${$('#observaciones').val() || '-'}</td>
-            <td>
-                <button class="btn btn-sm btn-danger btnEliminar">
-                    <i class="fas fa-trash"></i>
-                </button>
-            </td>
-        </tr>
-    `;
-    
-    // Agregar fila a la tabla
-    $('#historialDosificaciones').append(nuevaFila);
-    
-    // Limpiar formulario
-    $('#frm-dosificacion')[0].reset();
-    $('#fechaInicio').val(new Date().toISOString().split('T')[0]);
-    
-    Swal.fire('Éxito', 'Dosificación agregada al historial', 'success');
-});
-    // Eliminar dosificación (usamos delegación de eventos por ser elementos dinámicos)
-    $(document).on('click', '.btnEliminar', function() {
-        $(this).closest('tr').remove();
-    });
 
 // Función para manejar el evento de hacer clic en el botón de buscar
 
