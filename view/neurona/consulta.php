@@ -696,6 +696,7 @@ dialog {
 </div>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/brain.js@2.0.0-beta.18/dist/browser.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <script>
 $(document).ready(function () {
@@ -869,11 +870,9 @@ $('#sintomas').change(function() {
         }
     });
 });
-$('#btnEmpezarTratamiento').on('click', function() {
-
+$('#btnEmpezarTratamiento').on('click', function () {
+    console.log("Click detectado en btnEmpezarTratamiento");
     $('#DosificacionModal').modal('show');
-  //  DosificacionModal
-
 });
     // Validar formulario
 console.log("afuera2:", entrenamiento);
