@@ -812,20 +812,30 @@ $('#sintomas').change(function() {
 $('#btnEmpezarTratamiento').on('click', function () {
     console.log("Click detectado en btnEmpezarTratamiento");
 
-    // Paso 1: Forzar cierre del primer modal
+    // Ocultar modal actual
     $('#RegistroMVC').modal('hide');
 
-    // Paso 2: Eliminar manualmente cualquier backdrop viejo
-    $('.modal-backdrop').remove(); // <-- esto es clave
+    // Esperar a que se cierre completamente y luego mostrar el otro
+    $('#RegistroMVC').on('hidden.bs.modal', function () {
 
-    // Paso 3: Asegurarse que no esté 'display:none'
-    $('#DosificacionModal').css('display', 'block');
+        // Asegurar que no haya backdrop colgado
+        $('.modal-backdrop').remove();
 
-    // Paso 4: Forzar apertura limpia
-    setTimeout(function () {
+        // Reiniciar estilos del modal por si quedaron mal
+        $('#DosificacionModal').removeClass('fade').css({
+            display: 'block',
+            opacity: 1,
+            zIndex: 1050
+        });
+
+        // Mostrar el modal correctamente
         $('#DosificacionModal').modal('show');
-    }, 500); // medio segundo después del hide, para dejar respirar al DOM
+
+        // Remover el listener para que no se acumule
+        $(this).off('hidden.bs.modal');
+    });
 });
+
 
 
     // Validar formulario
