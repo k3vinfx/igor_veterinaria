@@ -247,7 +247,15 @@ $(document).ready(function () {
             $('#historialDosificaciones').append(nuevaFila);
 
             // Limpiar campos del formulario
-            $('#frm-dosificacion')[0].reset();
+            // Guardamos efectividad y sus clases antes de limpiar
+                const efectividadValor = $('#efectividad').val();
+                const efectividadClases = $('#efectividad').attr('class');
+
+                // Limpiamos el formulario
+                $('#frm-dosificacion')[0].reset();
+
+                // Restauramos efectividad
+                $('#efectividad').val(efectividadValor).attr('class', efectividadClases);
         });
 
 
