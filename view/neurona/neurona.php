@@ -276,7 +276,7 @@ dialog {
                  
                  
 
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                       <div class="form-group">
                             <label for="enfermedades">Respuesta esperada Tratamiento 1</label>
                             <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" required>
