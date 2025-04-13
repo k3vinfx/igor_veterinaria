@@ -15,7 +15,7 @@
 dialog {
 	padding: 1rem 3rem;
 	background: white;
-	max-width: 200px;
+	max-width: 150px;
 	padding-top: 2rem;
 	border-radius: 10px;
 	border: 10px;
@@ -261,7 +261,7 @@ dialog {
 
 <!-- Modal para Registro de Propietario -->
 <div class="modal fade" id="RegistroMVC_IA" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 900px;" role="document">
+<div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 600px;" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Nueva Neurona / Nombre de la Enfermedad : 
