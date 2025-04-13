@@ -263,8 +263,10 @@ dialog {
 <div class="modal fade" id="RegistroMVC_IA" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 600px;" role="document">
         <div class="modal-content">
+        <h5 >Nueva Neurona</h5>
             <div class="modal-header">
-            <h5 >Nueva Neurona</h5>
+        
+                                </br>
                                 </br>
                 <h5 class="modal-title" id="exampleModalLabel">Nombre de la Enfermedad : 
 
