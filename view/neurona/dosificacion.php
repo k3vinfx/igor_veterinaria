@@ -248,7 +248,7 @@ $(document).ready(function () {
     if (datos) {
             const obj = JSON.parse(datos);
                     if (obj.efectividad !== undefined) {
-            const valor = parseFloat(obj.efectividad) * 100;
+            const valor = parseFloat(obj.efectividad) ;
             const porcentaje = valor.toFixed(2) + '%';
             const efectividadInput = $('#efectividad');
 
