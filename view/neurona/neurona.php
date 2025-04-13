@@ -276,7 +276,7 @@ dialog {
                  
                  
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                       <div class="form-group">
                             <label for="enfermedades">Respuesta esperada Tratamiento 1</label>
                             <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" required>
@@ -321,8 +321,7 @@ dialog {
                             ?>
                             </select>
                      
-                        </div>
-                        <select class="custom-select selevt" name="salida_medicamento" id="salida_medicamento">
+                            <select class="custom-select selevt" name="salida_medicamento" id="salida_medicamento">
                             <!-- Tipo de dosificación -->
                             <div class="form-group">
                                 <label for="tipoDosificacion">Tipo de Dosificación</label>
@@ -344,8 +343,12 @@ dialog {
                                     placeholder="Ej: 1 pastilla cada 8h por 5 días">
                             </div>
 
-  ...
+
                         </select>
+                        </div>
+
+
+              
 
                     </div>
 
