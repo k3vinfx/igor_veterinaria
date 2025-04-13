@@ -146,14 +146,15 @@
                         </div>
 
                     </div>
-                    <div class="form-group col-md-6">  
-                        <label for="efectiviefectividaddad_trat">Efectividad</label>
+                    <div class="form-group col-md-12 text-center">  
+                        <label for="efectividad">Efectividad</label>
                         <input 
                             type="text" 
-                            class="form-control text-white text-center font-weight-bold bg-info border-0"
+                            class="form-control font-weight-bold text-white text-center"
                             id="efectividad" 
                             name="efectividad" 
                             readonly
+                            style="max-width: 150px; margin: 0 auto;"
                         >
                     </div>
 
@@ -247,17 +248,29 @@ $(document).ready(function () {
     if (datos) {
         try {
             const obj = JSON.parse(datos);
-            if (obj.efectividad !== undefined) {
-                $('#efectividad').val(parseFloat(obj.efectividad).toFixed(2));
+                    if (obj.efectividad !== undefined) {
+            const valor = parseFloat(obj.efectividad) * 100;
+            const porcentaje = valor.toFixed(2) + '%';
+            const efectividadInput = $('#efectividad');
+
+            // Limpiar clases anteriores
+            efectividadInput.removeClass('bg-danger bg-warning bg-success bg-custom');
+
+            // Aplicar color según rango
+            if (valor < 50) {
+                efectividadInput.addClass('bg-danger');
+            } else if (valor < 75) {
+                efectividadInput.addClass('bg-warning');
+            } else if (valor < 90) {
+                efectividadInput.addClass('bg-success');
             } else {
-                $('#efectividad').val('No disponible');
+                efectividadInput.css('background-color', '#2e8b57'); // Verde oscuro
             }
-        } catch (e) {
-            console.error("Error al parsear datosTratamiento:", e);
-            $('#efectividad').val('Error al leer');
+
+            efectividadInput.val(porcentaje);
+        } else {
+            $('#efectividad').val('No disponible');
         }
-    } else {
-        $('#efectividad').val('Sin datos');
     }
 
     // Acciones para el botón de editar
