@@ -142,8 +142,14 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="duracion">Duración</label>
-                            <input type="text" class="form-control" id="duracion" placeholder="Ej: 7 días" required>
+                            <label for="duracion">Duración (días)</label>
+                            <input 
+                                type="text" 
+                                class="form-control text-center bg-light" 
+                                id="duracion" 
+                                placeholder="Duración en días" 
+                                readonly
+                            >
                         </div>
                     </div>
                 </div>
@@ -273,6 +279,29 @@ $(document).ready(function () {
             $('#efectividad').val('No disponible');
         }
     }
+
+
+    function calcularDuracion() {
+    const inicio = new Date($('#fechaInicio').val());
+    const fin = new Date($('#fechaFinal').val());
+
+    if (!isNaN(inicio.getTime()) && !isNaN(fin.getTime())) {
+            const diffTime = fin - inicio;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // Diferencia en días
+
+            // Si el resultado es válido, mostrarlo. Si no, dejar en blanco.
+            if (diffDays >= 0) {
+                $('#duracion').val(`${diffDays} días`);
+            } else {
+                $('#duracion').val('Fechas inválidas');
+            }
+        } else {
+            $('#duracion').val('');
+        }
+    }
+
+    // Escucha los cambios en ambas fechas
+    $('#fechaInicio, #fechaFinal').on('change', calcularDuracion);
 
     // Acciones para el botón de editar
     $('.btnEditar').on('click', function () {
