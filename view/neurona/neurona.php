@@ -273,92 +273,37 @@ dialog {
                 <form id="frm-proprietariox" action="?c=neurona&a=Neurona" method="post" class="form-row" enctype="multipart/form-data">
                     <!-- Formulario para propietario -->
               
-                     <div class="col-md-4">
-
-
-           
-                        <div class="form-group">
-                            <label for="alturaPropietario">Sintoma 1</label>
-                            <input type="text" class="form-control" id="idFK" name="idFK"  required>
-                     
-                            <input type="text" class="form-control" id="sintoma1" name="sintoma1" placeholder="Sintoma de la enfermedad" required>
-                            <select class="custom-select selevt" name="entrada_1" id="entrada_1">
-                            <option value="0">Seleccione</option>
-                            <?php
-                            for ($i = 20; $i <= 95; $i += 5) {
-                                $valor = $i / 100; // Divide por 100 para obtener el valor decimal
-                                $valor_formateado = number_format($valor, 2); // Formatea el valor con dos decimales
-                                echo "<option value=\"$valor_formateado\">$valor_formateado</option>";
-                            }
-                            ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="alergicoPropietario">Sintoma 2</label>
-                            <input type="text" class="form-control" id="sintoma2" name="sintoma2" placeholder="Sintoma de la enfermedad" >
-                            <select class="custom-select selevt" name="entrada_2" id="entrada_2">
-                            <option value="0">Seleccione</option>
-                            <?php
-                            for ($i = 20; $i <= 95; $i += 5) {
-                                $valor = $i / 100; // Divide por 100 para obtener el valor decimal
-                                $valor_formateado = number_format($valor, 2); // Formatea el valor con dos decimales
-                                echo "<option value=\"$valor_formateado\">$valor_formateado</option>";
-                            }
-                            ?>
-                            </select>
-                      
-                        </div>
-                        <div class="form-group">
-                            <label for="tipoSangrePropietario">Sintoma 3</label>
-                            <input type="text" class="form-control" id="sintoma3" name="sintoma3" placeholder="Sintoma de la enfermedad" >
-                            <select class="custom-select selevt" name="entrada_3" id="entrada_3">
-                            <option value="0">Seleccione</option>
-                            <?php
-                            for ($i = 20; $i <= 95; $i += 5) {
-                                $valor = $i / 100; // Divide por 100 para obtener el valor decimal
-                                $valor_formateado = number_format($valor, 2); // Formatea el valor con dos decimales
-                                echo "<option value=\"$valor_formateado\">$valor_formateado</option>";
-                            }
-                            ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="enfermedades">Sintoma 4</label>
-                            <input type="text" class="form-control" id="sintoma4" name="sintoma4" placeholder="Sintoma de la enfermedad" >
-                            <select class="custom-select selevt" name="entrada_4" id="entrada_4">
-                            <option value="0">Seleccione</option>
-                            <?php
-                            for ($i = 20; $i <= 95; $i += 5) {
-                                $valor = $i / 100; // Divide por 100 para obtener el valor decimal
-                                $valor_formateado = number_format($valor, 2); // Formatea el valor con dos decimales
-                                echo "<option value=\"$valor_formateado\">$valor_formateado</option>";
-                            }
-                            ?>
-                            </select>  
-                        </div>
-                        <div class="form-group">
-                            <label for="enfermedades">Sintoma 5</label>
-                            <input type="text" class="form-control" id="sintoma5" name="sintoma5" placeholder="Sintoma de la enfermedad" >
-                            <select class="custom-select selevt" name="entrada_5" id="entrada_5">
-                            <option value="0">Seleccione</option>
-                            <?php
-                            for ($i = 20; $i <= 95; $i += 5) {
-                                $valor = $i / 100; // Divide por 100 para obtener el valor decimal
-                                $valor_formateado = number_format($valor, 2); // Formatea el valor con dos decimales
-                                echo "<option value=\"$valor_formateado\">$valor_formateado</option>";
-                            }
-                            ?>
-                            </select>
-                        
-                        </div>
-
-                           
-                    </div>
-           
+                 
                  
 
                     <div class="col-md-4">
+                    <select class="custom-select selevt" name="salida_medicamento" id="salida_medicamento">
+                            <!-- Tipo de dosificación -->
+                            <div class="form-group">
+                                <label for="tipoDosificacion">Tipo de Dosificación</label>
+                                <select class="form-control" id="tipoDosificacion" name="tipoDosificacion">
+                                    <option value="">Seleccione una opción</option>
+                                    <option value="Pastilla">Pastilla</option>
+                                    <option value="Inyectable">Inyectable</option>
+                                    <option value="Suero">Suero</option>
+                                    <option value="Pomada">Pomada</option>
+                                    <option value="Jarabe">Jarabe</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <!-- Detalle del tratamiento -->
+                            <div class="form-group">
+                                <label for="detalleDosificacion">Detalle del Tratamiento</label>
+                                <input type="text" class="form-control" id="detalleDosificacion" name="detalleDosificacion"
+                                    placeholder="Ej: 1 pastilla cada 8h por 5 días">
+                            </div>
+
+  ...
+                        </select>
+
                       <div class="form-group">
+
                             <label for="enfermedades">Respuesta esperada Tratamiento 1</label>
                             <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" required>
                             <select class="custom-select selevt" name="salida_1" id="salida_1">
@@ -403,7 +348,7 @@ dialog {
                             </select>
                      
                         </div>
-
+                        
                     </div>
 
                     <div class="col-md-4">
