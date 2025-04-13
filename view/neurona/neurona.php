@@ -405,6 +405,8 @@ dialog {
                         </div>
 
                     </div>
+
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="tratamientos">Respuesta esperada Tratamiento 2</label>
                             <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2" >
