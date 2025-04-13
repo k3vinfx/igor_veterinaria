@@ -273,21 +273,14 @@ dialog {
                 <form id="frm-proprietariox" action="?c=neurona&a=Neurona" method="post" class="form-row" enctype="multipart/form-data">
                     <!-- Formulario para propietario -->
               
-                 
-                 
-
-                    <div class="col-md-4">
-
-
+                     <div class="col-md-4">
                       <div class="form-group">
-                            <label for="enfermedades">Efectividad Tratamiento 1</label>
-
-                            
+                            <label for="enfermedades">Efectividad Tratamiento 1</label>                    
                             <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" required>
                          
                             <div class="form-group">
-                                <label for="tipoDosificacion">Tipo de Dosificación</label>
-                                <select class="form-control" id="tipoDosificacion" name="tipoDosificacion">
+                                <label for="tipoDosificacion1">Tipo de Dosificación</label>
+                                <select class="form-control" id="tipoDosificacion1" name="tipoDosificacion1">
                                     <option value="">Seleccione una opción</option>
                                     <option value="Pastilla">Pastilla</option>
                                     <option value="Inyectable">Inyectable</option>
@@ -345,22 +338,31 @@ dialog {
                             }
                             ?>
                             </select>
-                     
-                           
-
-
+ 
                         </select>
                         </div>
-
-
-              
-
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
+
                             <label for="tratamientos">Respuesta esperada Tratamiento 2</label>
+
                             <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2" >
+    
+                            <div class="form-group">
+                                <label for="tipoDosificacion2">Tipo de Dosificación</label>
+                                <select class="form-control" id="tipoDosificacion2" name="tipoDosificacion2">
+                                    <option value="">Seleccione una opción</option>
+                                    <option value="Pastilla">Pastilla</option>
+                                    <option value="Inyectable">Inyectable</option>
+                                    <option value="Suero">Suero</option>
+                                    <option value="Pomada">Pomada</option>
+                                    <option value="Jarabe">Jarabe</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                                </div>
+
                             <select class="custom-select selevt" name="salida_1_aux" id="salida_1_aux">
                             <option value="0">Raza Pequeña</option>
                             <?php
