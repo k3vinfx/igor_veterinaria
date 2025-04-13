@@ -12,7 +12,7 @@
 dialog {
 	padding: 1rem 3rem;
 	background: white;
-	max-width: 350px;
+	max-width: 200px;
 	padding-top: 2rem;
 	border-radius: 10px;
 	border: 10px;
