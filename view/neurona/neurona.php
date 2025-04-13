@@ -264,7 +264,8 @@ dialog {
 <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 600px;" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Nueva Neurona</h5>
+            <h5 >Nueva Neurona</h5>
+                                </br>
                 <h5 class="modal-title" id="exampleModalLabel">Nombre de la Enfermedad : 
 
 
@@ -356,7 +357,7 @@ dialog {
                             <label for="tratamientos">2do Tratamiento</label>
 
                             <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2" >
-    
+                            </br>
                             <div class="form-group">
                                 <label for="tipoDosificacion2">Tipo de Dosificación</label>
                                 <select class="form-control" id="tipoDosificacion2" name="tipoDosificacion2">
