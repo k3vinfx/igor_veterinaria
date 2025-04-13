@@ -7,7 +7,10 @@
   border: 1px solid #ddd;
   background-color: #f8f8f8;
 }
-
+.modal-content .form-control,
+.modal-content .custom-select {
+  max-width: 100%;
+}
 /*Dialog Styles*/
 dialog {
 	padding: 1rem 3rem;
@@ -258,7 +261,7 @@ dialog {
 
 <!-- Modal para Registro de Propietario -->
 <div class="modal fade" id="RegistroMVC_IA" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="dialog" role="document">
+<div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 900px;" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Nueva Neurona / Nombre de la Enfermedad : 
