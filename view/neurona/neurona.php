@@ -264,7 +264,10 @@ dialog {
 <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 600px;" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nueva Neurona / Nombre de la Enfermedad : 
+            <h5 class="modal-title" id="exampleModalLabel">Nueva Neurona</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Nombre de la Enfermedad : 
+
+
 
                 <h5 class="modal-title" id="nombrex" name="nombrex" ></h5>
                 </h5>
