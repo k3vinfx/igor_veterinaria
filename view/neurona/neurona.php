@@ -280,7 +280,7 @@ dialog {
                       <div class="form-group">
                             <label for="enfermedades">1er Tratamiento</label>                    
                             <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" required>
-                         
+                                </br>
                             <div class="form-group">
                                 <label for="tipoDosificacion1">Tipo de Dosificación</label>
                                 <select class="form-control" id="tipoDosificacion1" name="tipoDosificacion1">
@@ -301,7 +301,7 @@ dialog {
                                     placeholder="Ej: 1 pastilla cada 8h por 5 días">
                             </div>
                             <label for="tratamientos">Efectividad en Porcentajes</label>
-                            
+
                             <select class="custom-select selevt" name="salida_1" id="salida_1">
                             <option value="0">Raza Pequeña</option>
                             <?php
