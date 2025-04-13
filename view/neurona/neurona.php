@@ -164,13 +164,6 @@ dialog {
                                         data-sintoma3="<?php echo $r->sintomaEnfermadad3; ?>"
                                         data-sintoma4="<?php echo $r->sintomaEnfermadad4; ?>"
                                         data-sintoma5="<?php echo $r->sintomaEnfermadad5; ?>"
-                                        data-sintoma6="<?php echo $r->sintomaEnfermadad6; ?>" 
-                                        data-sintoma7="<?php echo $r->sintomaEnfermadad7; ?>"      
-                                        data-sintoma8="<?php echo $r->sintomaEnfermadad8; ?>"
-                                        data-sintoma9="<?php echo $r->sintomaEnfermadad9; ?>"
-                                        data-sintoma10="<?php echo $r->sintomaEnfermadad10; ?>"
-                                        data-sintoma11="<?php echo $r->sintomaEnfermadad11; ?>"
-                                        data-sintoma12="<?php echo $r->sintomaEnfermadad12; ?>"
                                         data-examinacion="<?php echo $r->examinacionEnfermadad; ?>"
                                         data-enfermedad="<?php echo $r->enfermedadDiasnosticada; ?>"
                                         data-tratamiento1="<?php echo $r->enfermedadTratamiento1; ?>" 
@@ -203,13 +196,6 @@ dialog {
                                     data-sintoma3="<?php echo $r->sintomaEnfermadad3; ?>"
                                     data-sintoma4="<?php echo $r->sintomaEnfermadad4; ?>"
                                     data-sintoma5="<?php echo $r->sintomaEnfermadad5; ?>"
-                                    data-sintoma6="<?php echo $r->sintomaEnfermadad6; ?>" 
-                                    data-sintoma7="<?php echo $r->sintomaEnfermadad7; ?>"      
-                                    data-sintoma8="<?php echo $r->sintomaEnfermadad8; ?>"
-                                    data-sintoma9="<?php echo $r->sintomaEnfermadad9; ?>"
-                                    data-sintoma10="<?php echo $r->sintomaEnfermadad10; ?>"
-                                    data-sintoma11="<?php echo $r->sintomaEnfermadad11; ?>"
-                                    data-sintoma12="<?php echo $r->sintomaEnfermadad12; ?>"
                                     data-examinacion="<?php echo $r->examinacionEnfermadad; ?>"
                                     data-enfermedad="<?php echo $r->enfermedadDiasnosticada; ?>"
                                     data-tratamiento1="<?php echo $r->enfermedadTratamiento1; ?>" 
@@ -229,13 +215,6 @@ dialog {
                                     <td><?php echo $r->sintomaEnfermadad3; ?></td>
                                     <td><?php echo $r->sintomaEnfermadad4; ?></td>
                                     <td><?php echo $r->sintomaEnfermadad5; ?></td>
-                                    <td><?php echo $r->sintomaEnfermadad6; ?></td>
-                                    <td><?php echo $r->sintomaEnfermadad7; ?></td>
-                                    <td><?php echo $r->sintomaEnfermadad8; ?></td>
-                                    <td><?php echo $r->sintomaEnfermadad9; ?></td>
-                                    <td><?php echo $r->sintomaEnfermadad10; ?></td>
-                                    <td><?php echo $r->sintomaEnfermadad11; ?></td>
-                                    <td><?php echo $r->sintomaEnfermadad12; ?></td>
                                     <td><?php echo $r->examinacionEnfermadad; ?></td>
                                     <td><?php echo $r->enfermedadDiasnosticada; ?></td>
                                     <td><?php echo $r->enfermedadTratamiento1; ?></td>
@@ -252,13 +231,6 @@ dialog {
                                   data-sintoma3="<?php echo $r->sintomaEnfermadad3; ?>"
                                   data-sintoma4="<?php echo $r->sintomaEnfermadad4; ?>"
                                   data-sintoma5="<?php echo $r->sintomaEnfermadad5; ?>"
-                                  data-sintoma6="<?php echo $r->sintomaEnfermadad6; ?>" 
-                                  data-sintoma7="<?php echo $r->sintomaEnfermadad7; ?>"      
-                                  data-sintoma8="<?php echo $r->sintomaEnfermadad8; ?>"
-                                  data-sintoma9="<?php echo $r->sintomaEnfermadad9; ?>"
-                                  data-sintoma10="<?php echo $r->sintomaEnfermadad10; ?>"
-                                  data-sintoma11="<?php echo $r->sintomaEnfermadad11; ?>"
-                                  data-sintoma12="<?php echo $r->sintomaEnfermadad12; ?>"
                                   data-examinacion="<?php echo $r->examinacionEnfermadad; ?>"
                                   data-enfermedad="<?php echo $r->enfermedadDiasnosticada; ?>"
                                   data-tratamiento1="<?php echo $r->enfermedadTratamiento1; ?>" 
@@ -381,128 +353,7 @@ dialog {
 
                            
                     </div>
-                    <div class="col-md-3">
-                  
-                        <div class="form-group">
-                            <label for="tratamientos">Sintoma 6</label>
-                            <input type="text" class="form-control" id="sintoma6" name="sintoma6" placeholder="Sintoma de la enfermedad" >
-                            <select class="custom-select selevt" name="entrada_6" id="entrada_6">
-                            <option value="0">Seleccione</option>
-                            <?php
-                            for ($i = 20; $i <= 95; $i += 5) {
-                                $valor = $i / 100; // Divide por 100 para obtener el valor decimal
-                                $valor_formateado = number_format($valor, 2); // Formatea el valor con dos decimales
-                                echo "<option value=\"$valor_formateado\">$valor_formateado</option>";
-                            }
-                            ?>
-                            </select>
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="cirugias">Sintoma 7</label>
-                            <input type="text" class="form-control" id="sintoma7" name="sintoma7" placeholder="Sintoma de la enfermedad" >
-                            <select class="custom-select selevt" name="entrada_7" id="entrada_7">
-                            <option value="0">Seleccione</option>
-                            <?php
-                            for ($i = 20; $i <= 95; $i += 5) {
-                                $valor = $i / 100; // Divide por 100 para obtener el valor decimal
-                                $valor_formateado = number_format($valor, 2); // Formatea el valor con dos decimales
-                                echo "<option value=\"$valor_formateado\">$valor_formateado</option>";
-                            }
-                            ?>
-                            </select>
-                     
-                        </div>
-                        <div class="form-group">
-                            <label for="extras">Sintoma 8</label>
-                            <input type="text" class="form-control" id="sintoma8" name="sintoma8" placeholder="Sintoma de la enfermedad" >
-                            <select class="custom-select selevt" name="entrada_8" id="entrada_8">
-                            <option value="0">Seleccione</option>
-                            <?php
-                            for ($i = 20; $i <= 95; $i += 5) {
-                                $valor = $i / 100; // Divide por 100 para obtener el valor decimal
-                                $valor_formateado = number_format($valor, 2); // Formatea el valor con dos decimales
-                                echo "<option value=\"$valor_formateado\">$valor_formateado</option>";
-                            }
-                            ?>
-                            </select>
-                        </div>  
-                        <div class="form-group">
-                            <label for="extras">Sintoma 9</label>
-                            <input type="text" class="form-control" id="sintoma9" name="sintoma9" placeholder="Sintoma de la enfermedad" >
-                            <select class="custom-select selevt" name="entrada_9" id="entrada_9">
-                            <option value="0">Seleccione</option>
-                            <?php
-                            for ($i = 20; $i <= 95; $i += 5) {
-                                $valor = $i / 100; // Divide por 100 para obtener el valor decimal
-                                $valor_formateado = number_format($valor, 2); // Formatea el valor con dos decimales
-                                echo "<option value=\"$valor_formateado\">$valor_formateado</option>";
-                            }
-                            ?>
-                            </select>
-                     
-                        </div> 
-                        <div class="form-group">
-                            <label for="enfermedades">Sintoma 10</label>
-                            <input type="text" class="form-control" id="sintoma10" name="sintoma10" placeholder="Sintoma de la enfermedad" >
-                            <select class="custom-select selevt" name="entrada_10" id="entrada_10">
-                            <option value="0">Seleccione</option>
-                            <?php
-                            for ($i = 20; $i <= 95; $i += 5) {
-                                $valor = $i / 100; // Divide por 100 para obtener el valor decimal
-                                $valor_formateado = number_format($valor, 2); // Formatea el valor con dos decimales
-                                echo "<option value=\"$valor_formateado\">$valor_formateado</option>";
-                            }
-                            ?>
-                            </select>
-                        </div>
-                        
-
-                    </div>
-
-                    <div class="col-md-3">
-                      
-                        <div class="form-group">
-                            <label for="tratamientos">Sintoma 11</label>
-                            <input type="text" class="form-control" id="sintoma11" name="sintoma11" placeholder="Sintoma de la enfermedad" >
-                            <select class="custom-select selevt" name="entrada_11" id="entrada_11">
-                            <option value="0">Seleccione</option>
-                            <?php
-                            for ($i = 20; $i <= 95; $i += 5) {
-                                $valor = $i / 100; // Divide por 100 para obtener el valor decimal
-                                $valor_formateado = number_format($valor, 2); // Formatea el valor con dos decimales
-                                echo "<option value=\"$valor_formateado\">$valor_formateado</option>";
-                            }
-                            ?>
-                            </select>
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="cirugias">Sintoma 12</label>
-                            <input type="text" class="form-control" id="sintoma12" name="sintoma12" placeholder="Sintoma de la enfermedad" >
-                            <select class="custom-select selevt" name="entrada_12" id="entrada_12">
-                            <option value="0">Seleccione</option>
-                            <?php
-                            for ($i = 20; $i <= 95; $i += 5) {
-                                $valor = $i / 100; // Divide por 100 para obtener el valor decimal
-                                $valor_formateado = number_format($valor, 2); // Formatea el valor con dos decimales
-                                echo "<option value=\"$valor_formateado\">$valor_formateado</option>";
-                            }
-                            ?>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="extras">Examinación</label>
-                            <input type="text" class="form-control" id="examinacion" name="examinacion" placeholder="Examinación de la Enfermedad" required>
-                        </div>  
-                        <div class="form-group">
-                            <label for="extras">Diagnostico</label>
-                            <input type="text" class="form-control" id="diagnostico" name="diagnostico" placeholder="Enfermedad Diasnosticada" required >
-                        </div> 
-                 
-                    </div>
-                    <div class="col-md-3">
+           
                  
 
 
