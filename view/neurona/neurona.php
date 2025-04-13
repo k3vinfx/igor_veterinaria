@@ -278,7 +278,7 @@ dialog {
               
                      <div class="col-md-6">
                       <div class="form-group">
-                            <label for="enfermedades">Efectividad Tratamiento 1</label>                    
+                            <label for="enfermedades">1er Tratamiento</label>                    
                             <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" required>
                          
                             <div class="form-group">
@@ -300,7 +300,8 @@ dialog {
                                 <input type="text" class="form-control" id="detalleDosificacion1" name="detalleDosificacion1"
                                     placeholder="Ej: 1 pastilla cada 8h por 5 días">
                             </div>
-                           
+                            <label for="tratamientos">Efectividad en Porcentajes</label>
+                            
                             <select class="custom-select selevt" name="salida_1" id="salida_1">
                             <option value="0">Raza Pequeña</option>
                             <?php
@@ -349,7 +350,7 @@ dialog {
                     <div class="col-md-6">
                         <div class="form-group">
 
-                            <label for="tratamientos">Respuesta esperada Tratamiento 2</label>
+                            <label for="tratamientos">2do Tratamiento</label>
 
                             <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2" >
     
@@ -372,6 +373,8 @@ dialog {
                                 <input type="text" class="form-control" id="detalleDosificacion2" name="detalleDosificacion2"
                                     placeholder="Ej: 1 pastilla cada 8h por 5 días">
                             </div>
+                            <label for="tratamientos">Efectividad en Porcentajes</label>
+
 
                             <select class="custom-select selevt" name="salida_1_aux" id="salida_1_aux">
                             <option value="0">Raza Pequeña</option>
