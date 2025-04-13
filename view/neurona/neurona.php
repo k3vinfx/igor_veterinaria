@@ -293,8 +293,8 @@ dialog {
 
                             <!-- Detalle del tratamiento -->
                             <div class="form-group">
-                                <label for="detalleDosificacion">Detalle del Tratamiento</label>
-                                <input type="text" class="form-control" id="detalleDosificacion" name="detalleDosificacion"
+                                <label for="detalleDosificacion1">Detalle del Tratamiento</label>
+                                <input type="text" class="form-control" id="detalleDosificacion1" name="detalleDosificacion1"
                                     placeholder="Ej: 1 pastilla cada 8h por 5 días">
                             </div>
                            
@@ -361,7 +361,14 @@ dialog {
                                     <option value="Jarabe">Jarabe</option>
                                     <option value="Otro">Otro</option>
                                 </select>
-                                </div>
+                            </div>
+
+                                         <!-- Detalle del tratamiento -->
+                            <div class="form-group">
+                                <label for="detalleDosificacion2">Detalle del Tratamiento</label>
+                                <input type="text" class="form-control" id="detalleDosificacion2" name="detalleDosificacion2"
+                                    placeholder="Ej: 1 pastilla cada 8h por 5 días">
+                            </div>
 
                             <select class="custom-select selevt" name="salida_1_aux" id="salida_1_aux">
                             <option value="0">Raza Pequeña</option>
