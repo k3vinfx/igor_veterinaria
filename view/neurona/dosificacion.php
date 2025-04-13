@@ -246,7 +246,6 @@ $(document).ready(function () {
     $('#RegistroDocificacion').modal('show');
     const datos = localStorage.getItem('datosTratamiento');
     if (datos) {
-        try {
             const obj = JSON.parse(datos);
                     if (obj.efectividad !== undefined) {
             const valor = parseFloat(obj.efectividad) * 100;
