@@ -321,9 +321,7 @@ dialog {
                             ?>
                             </select>
                      
-                            <select class="custom-select selevt" name="salida_medicamento" id="salida_medicamento">
-                            <!-- Tipo de dosificación -->
-                            <div class="form-group">
+                         
                                 <label for="tipoDosificacion">Tipo de Dosificación</label>
                                 <select class="form-control" id="tipoDosificacion" name="tipoDosificacion">
                                     <option value="">Seleccione una opción</option>
@@ -334,7 +332,7 @@ dialog {
                                     <option value="Jarabe">Jarabe</option>
                                     <option value="Otro">Otro</option>
                                 </select>
-                            </div>
+                            
 
                             <!-- Detalle del tratamiento -->
                             <div class="form-group">
