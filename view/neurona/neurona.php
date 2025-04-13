@@ -61,13 +61,7 @@ dialog {
                                             <th>Sintoma 3</th>
                                             <th>Sintoma 4</th>
                                             <th>Sintoma 5</th>
-                                            <th>Sintoma 6</th>
-                                            <th>Sintoma 7</th>
-                                            <th>Sintoma 8</th>
-                                            <th>Sintoma 9</th>
-                                            <th>Sintoma 10</th>
-                                            <th>Sintoma 11</th>
-                                            <th>Sintoma 12</th>
+                                  
                                             <th>Examinaminación </th>
                                             <th>Diagnostico</th>
                                             <th>Tratamiento 1</th>
@@ -126,39 +120,7 @@ dialog {
                                             <label for="enfermedades">Sintoma 5</label>
                                             <input type="text" class="form-control" id="sintoma5" name="sintoma5" placeholder="Sintoma de la enfermedad" >
                                         </div>
-                                        <div class="form-group">
-                                            <label for="tratamientos">Sintoma 6</label>
-                                            <input type="text" class="form-control" id="sintoma6" name="sintoma6" placeholder="Sintoma de la enfermedad" >
-                                        </div>
-                    
-                                        <div class="form-group">
-                                            <label for="cirugias">Sintoma 7</label>
-                                            <input type="text" class="form-control" id="sintoma7" name="sintoma7" placeholder="Sintoma de la enfermedad" >
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="extras">Sintoma 8</label>
-                                            <input type="text" class="form-control" id="sintoma8" name="sintoma8" placeholder="Sintoma de la enfermedad" >
-                                        </div>  
-                                        <div class="form-group">
-                                            <label for="extras">Sintoma 9</label>
-                                            <input type="text" class="form-control" id="sintoma9" name="sintoma9" placeholder="Sintoma de la enfermedad" >
-                                        </div>                     
-                                    </div>
-
-                                    <div class="col-md-3">
-                                    <div class="form-group">
-                                            <label for="enfermedades">Sintoma 10</label>
-                                            <input type="text" class="form-control" id="sintoma10" name="sintoma10" placeholder="Sintoma de la enfermedad" >
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="tratamientos">Sintoma 11</label>
-                                            <input type="text" class="form-control" id="sintoma11" name="sintoma11" placeholder="Sintoma de la enfermedad" >
-                                        </div>
-                    
-                                        <div class="form-group">
-                                            <label for="cirugias">Sintoma 12</label>
-                                            <input type="text" class="form-control" id="sintoma12" name="sintoma12" placeholder="Sintoma de la enfermedad" >
-                                        </div>
+                                      
                                         <div class="form-group">
                                             <label for="extras">Examinación</label>
                                             <input type="text" class="form-control" id="examinacion" name="examinacion" placeholder="Examinación de la Enfermedad" required>
