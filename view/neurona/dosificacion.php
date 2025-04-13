@@ -98,56 +98,56 @@
             </div>
                <div class="modal-body">
                <form id="frm-dosificacion">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="tipoDosificacion">Tipo de Dosificación</label>
-                                <select class="form-control" id="tipoDosificacion" required>
-                                    <option value="">Seleccione...</option>
-                                    <option value="Pastillas">Pastillas</option>
-                                    <option value="Inyectable">Inyectable</option>
-                                    <option value="Pomada">Pomada</option>
-                                    <option value="Otro">Otro</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="dosis">Dosis</label>
-                                <input type="text" class="form-control" id="dosis" placeholder="Ej: 1 pastilla cada 8 horas" required>
-                            </div>
+               <div class="row">
+                    <!-- Tipo de Dosificación y Medicamento -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="tipoDosificacion">Tipo de Dosificación</label>
+                            <select class="form-control" id="tipoDosificacion" required>
+                                <option value="">Seleccione...</option>
+                                <option value="Pastillas">Pastillas</option>
+                                <option value="Inyectable">Inyectable</option>
+                                <option value="Pomada">Pomada</option>
+                                <option value="Otro">Otro</option>
+                            </select>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="fechaInicio">Fecha de Inicio</label>
-                                    <input type="date" class="form-control" id="fechaInicio" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="fechaFinal">Fecha de Final</label>
-                                    <input type="date" class="form-control" id="fechaFinal" required>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6">
-                            
-                            <div class="form-group">
-                                <label for="duracion">Duración</label>
-                                <input type="text" class="form-control" id="duracion" placeholder="Ej: 7 días" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="medicamento">Medicamento</label>
-                                <input type="text" class="form-control" rows="2" id="medicamento" placeholder="Ej: Iboprefeno" required>
-                            </div>
-                          
-                         
-                        </div>
-                
-
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="medicamento">Medicamento</label>
+                            <input type="text" class="form-control" id="medicamento" placeholder="Ej: Ibuprofeno" required>
+                        </div>
+                    </div>
+
+                    <!-- Fecha Inicio y Fecha Final -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="fechaInicio">Fecha de Inicio</label>
+                            <input type="date" class="form-control" id="fechaInicio" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="fechaFinal">Fecha de Final</label>
+                            <input type="date" class="form-control" id="fechaFinal" required>
+                        </div>
+                    </div>
+
+                    <!-- Dosis y Duración -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="dosis">Dosis</label>
+                            <input type="text" class="form-control" id="dosis" placeholder="Ej: 1 pastilla cada 8 horas" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="duracion">Duración</label>
+                            <input type="text" class="form-control" id="duracion" placeholder="Ej: 7 días" required>
+                        </div>
+                    </div>
+                </div>
+
                     <div class="form-group col-md-12 text-center">  
                         <label for="efectividad">Efectividad</label>
                         <input 
