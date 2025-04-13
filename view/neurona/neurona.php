@@ -277,9 +277,34 @@ dialog {
                  
 
                     <div class="col-md-4">
+
+
                       <div class="form-group">
-                            <label for="enfermedades">Respuesta esperada Tratamiento 1</label>
+                            <label for="enfermedades">Efectividad Tratamiento 1</label>
+
+                            
                             <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" required>
+                         
+                            <div class="form-group">
+                                <label for="tipoDosificacion">Tipo de Dosificación</label>
+                                <select class="form-control" id="tipoDosificacion" name="tipoDosificacion">
+                                    <option value="">Seleccione una opción</option>
+                                    <option value="Pastilla">Pastilla</option>
+                                    <option value="Inyectable">Inyectable</option>
+                                    <option value="Suero">Suero</option>
+                                    <option value="Pomada">Pomada</option>
+                                    <option value="Jarabe">Jarabe</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                                </div>
+
+                            <!-- Detalle del tratamiento -->
+                            <div class="form-group">
+                                <label for="detalleDosificacion">Detalle del Tratamiento</label>
+                                <input type="text" class="form-control" id="detalleDosificacion" name="detalleDosificacion"
+                                    placeholder="Ej: 1 pastilla cada 8h por 5 días">
+                            </div>
+                           
                             <select class="custom-select selevt" name="salida_1" id="salida_1">
                             <option value="0">Raza Pequeña</option>
                             <?php
@@ -321,25 +346,7 @@ dialog {
                             ?>
                             </select>
                      
-                         
-                                <label for="tipoDosificacion">Tipo de Dosificación</label>
-                                <select class="form-control" id="tipoDosificacion" name="tipoDosificacion">
-                                    <option value="">Seleccione una opción</option>
-                                    <option value="Pastilla">Pastilla</option>
-                                    <option value="Inyectable">Inyectable</option>
-                                    <option value="Suero">Suero</option>
-                                    <option value="Pomada">Pomada</option>
-                                    <option value="Jarabe">Jarabe</option>
-                                    <option value="Otro">Otro</option>
-                                </select>
-                            
-
-                            <!-- Detalle del tratamiento -->
-                            <div class="form-group">
-                                <label for="detalleDosificacion">Detalle del Tratamiento</label>
-                                <input type="text" class="form-control" id="detalleDosificacion" name="detalleDosificacion"
-                                    placeholder="Ej: 1 pastilla cada 8h por 5 días">
-                            </div>
+                           
 
 
                         </select>
