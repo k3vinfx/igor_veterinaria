@@ -41,9 +41,9 @@ dialog {
 
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-6">
-                        <h1 class="h3 mb-0 text-gray-800">NUEVO ENTRENAMIENTO</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Entrenamientos</h1>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#RegistroMVC">
-                            Nuevo
+                            Nuevo Entrenamiento de Enfermedad 
                         </button>
                     </div>
 
@@ -272,7 +272,8 @@ dialog {
             <div class="modal-body">
                 <form id="frm-proprietariox" action="?c=neurona&a=Neurona" method="post" class="form-row" enctype="multipart/form-data">
                     <!-- Formulario para propietario -->
-                    <div class="col-md-3">
+              
+                     <div class="col-md-4">
 
 
            
@@ -356,7 +357,7 @@ dialog {
            
                  
 
-
+                    <div class="col-md-4">
                       <div class="form-group">
                             <label for="enfermedades">Respuesta esperada Tratamiento 1</label>
                             <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" required>
@@ -402,6 +403,8 @@ dialog {
                             </select>
                      
                         </div>
+
+                    </div>
                         <div class="form-group">
                             <label for="tratamientos">Respuesta esperada Tratamiento 2</label>
                             <input type="text" class="form-control" id="tratamiento2" name="tratamiento2" placeholder="Tratamiento 2" >
