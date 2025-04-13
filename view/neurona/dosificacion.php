@@ -116,20 +116,6 @@
                                 <input type="text" class="form-control" id="dosis" placeholder="Ej: 1 pastilla cada 8 horas" required>
                             </div>
                         </div>
-                        
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="duracion">Duración</label>
-                                <input type="text" class="form-control" id="duracion" placeholder="Ej: 7 días" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="medicamento">Medicamento</label>
-                                <input type="text" class="form-control" rows="2" id="medicamento" placeholder="Ej: Iboprefeno" required>
-                            </div>
-                          
-                         
-                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -144,6 +130,22 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="col-md-6">
+                            
+                            <div class="form-group">
+                                <label for="duracion">Duración</label>
+                                <input type="text" class="form-control" id="duracion" placeholder="Ej: 7 días" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="medicamento">Medicamento</label>
+                                <input type="text" class="form-control" rows="2" id="medicamento" placeholder="Ej: Iboprefeno" required>
+                            </div>
+                          
+                         
+                        </div>
+                
 
                     </div>
                     <div class="form-group col-md-12 text-center">  
