@@ -276,7 +276,7 @@ dialog {
                 <form id="frm-proprietariox" action="?c=neurona&a=Neurona" method="post" class="form-row" enctype="multipart/form-data">
                     <!-- Formulario para propietario -->
               
-                     <div class="col-md-4">
+                     <div class="col-md-6">
                       <div class="form-group">
                             <label for="enfermedades">Efectividad Tratamiento 1</label>                    
                             <input type="text" class="form-control" id="tratamiento1" name="tratamiento1" placeholder="Tratamiento 1" required>
@@ -346,7 +346,7 @@ dialog {
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
 
                             <label for="tratamientos">Respuesta esperada Tratamiento 2</label>
